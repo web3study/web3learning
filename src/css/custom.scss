@@ -1,0 +1,417 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+@import url(./tailwindcss.base.reset.css);
+@tailwind components;
+@tailwind utilities;
+@import "fonts.scss";
+
+@layer utilities {
+  /* Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+}
+
+/* You can override the default Infima variables here. */
+:root {
+  --ifm-font-family-base: como-pcc, ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, Roboto, sans;
+  --ifm-color-primary: rgb(239,157,33);
+  --ifm-color-primary-dark: rgb(239,157,33);
+  --ifm-color-primary-darker: rgb(239,157,33);
+  --ifm-color-primary-darkest: rgb(239,157,33);
+  --ifm-color-primary-light: rgb(239,157,33);
+  --ifm-color-primary-lighter: rgb(239,157,33);
+  --ifm-color-primary-lightest: rgb(239,157,33);
+  --ifm-background-color: rgb(255, 255, 255);
+  --ifm-navbar-background-color: #ffffff;
+  --ifm-background-surface-color: #ffffff;
+  --ifm-code-background-color: rgba(15, 23, 42, 0.05);
+  --ifm-code-font-size: 95%;
+  --ifm-toc-border-color: rgba(0, 0, 0, 0.1);
+  // --ifm-navbar-height: 64px;
+  --ifm-navbar-sidebar-width: 90vw;
+}
+
+.navbar__logo {
+  height: 2.2rem;
+}
+[data-theme="dark"] .navbar__logo img {
+  filter: invert(100%);
+}
+.dropdown__link {
+  font-size: 1rem;
+  padding: 0.4rem 0.7rem;
+}
+.dropdown__menu {
+  min-width: 12rem;
+  padding: 0.8rem;
+}
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme="dark"] {
+  --ifm-color-primary: rgb(239,157,0);
+  --ifm-color-primary-dark: rgb(239,157,0);
+  --ifm-color-primary-darker: rgb(239,157,0);
+  --ifm-color-primary-darkest: rgb(239,157,0);
+  --ifm-color-primary-light: rgb(239,157,0);
+  --ifm-color-primary-lighter: rgb(239,157,0);
+  --ifm-color-primary-lightest: rgb(239,157,0);
+  --ifm-background-color: rgb(8, 8, 8) !important;
+  --ifm-navbar-background-color: rgb(14, 24, 26);
+  --ifm-background-surface-color: rgb(15, 34, 42);
+  --ifm-dropdown-background-color: rgb(14, 24, 26);
+  --ifm-code-background-color: rgba(255, 255, 255, 0.15);
+  --ifm-toc-border-color: rgba(255, 255, 255, 0.1);
+}
+
+.docusaurus-highlight-code-line {
+  background-color: rgba(0, 0, 0, 0.1);
+  display: block;
+  margin: 0 calc(-1 * var(--ifm-pre-padding));
+  padding: 0 var(--ifm-pre-padding);
+}
+
+[data-theme="dark"] .docusaurus-highlight-code-line {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+@media screen and (max-width: 996px) {
+  :root {
+    --ifm-font-size-base: 16px;
+  }
+  article .markdown h1,
+  article .markdown header h1 {
+    font-size: 2.2rem !important;
+  }
+  article h1[class^="blogPostTitle_"] {
+    font-size: 1.4rem !important;
+    @apply font-extrabold;
+  }
+  article h2[class^="blogPostTitle_"] {
+    font-size: 1.4rem !important;
+    @apply font-extrabold;
+  }
+}
+
+@media screen and (min-width: 997px) {
+  :root {
+    --ifm-font-size-base: 16px;
+  }
+  article .markdown h1,
+  article .markdown header h1 {
+    font-size: 2.2rem !important;
+  }
+  article h1[class^="blogPostTitle_"] {
+    font-size: 1.5rem !important;
+    @apply font-extrabold;
+  }
+  article h2[class^="blogPostTitle_"] {
+    font-size: 1.5rem !important;
+    @apply font-extrabold;
+  }
+}
+
+/* Announcment Bar */
+div[class^="announcementBar_"] {
+  background: linear-gradient(45deg, #ffffff, #e0f8ff);
+  background-size: 1000% 1000%;
+  animation: announcementBarBg 3s ease infinite;
+  font-weight: 500;
+}
+
+@keyframes announcementBarBg {
+  0% {
+    background-position: 0% 90%;
+  }
+  50% {
+    background-position: 100% 10%;
+  }
+  100% {
+    background-position: 0% 90%;
+  }
+}
+
+:root .navbar {
+  backdrop-filter: blur(8px);
+  background-color: rgb(242, 250, 255);
+  border-bottom: var(--ifm-toc-border-color) solid 0;
+  box-shadow: none;
+  @apply shadow-md shadow-slate-300/30;
+}
+:root .navbar.navbar-sidebar--show {
+  backdrop-filter: none;
+}
+
+// .container {
+//   @apply max-w-screen-xl;
+// }
+
+[data-theme="dark"] .navbar {
+  backdrop-filter: blur(8px);
+  background-color: rgba(0, 0, 0, 0.7);
+  @apply shadow shadow-slate-500/30;
+}
+@-moz-document url-prefix() {
+  :root .navbar {
+    background-color: rgba(255, 255, 255, 0.95);
+  }
+  [data-theme="dark"] .navbar {
+    backdrop-filter: none;
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+}
+
+.aa-DetachedSearchButton {
+  border-radius: 9999px !important;
+  border: none !important;
+  background: none !important;
+  cursor: pointer !important;
+}
+.aa-DetachedSearchButtonPlaceholder {
+  display: none;
+}
+
+// Wiki: use prose
+// currently disabled
+// main[class^="docMainContainer"] {
+//   article .markdown {
+//     @apply prose prose-amber lg:prose-base xl:prose-lg max-w-none;
+//   }
+// }
+// [data-theme="dark"] main[class^="docMainContainer"] {
+//   article .markdown {
+//     @apply prose-invert;
+//   }
+// }
+
+[itemtype="http://schema.org/Blog"] article #post-content,
+div[itemprop="articleBody"] {
+  @apply prose prose-amber lg:prose-base xl:prose-lg max-w-none;
+  // @apply prose-a:text-inherit;
+}
+
+[data-theme="dark"] [itemtype="http://schema.org/Blog"] article #post-content,
+[data-theme="dark"] div[itemprop="articleBody"] {
+  @apply prose-invert;
+}
+
+[itemtype="http://schema.org/Blog"] > header
+{
+  @apply bg-slate-400/20 rounded-lg px-6 py-3;
+  margin-bottom: 1rem !important;
+  > h1 {
+    @apply text-xl font-bold;
+  }
+}
+
+[itemtype="http://schema.org/BlogPosting"]
+{
+  margin-bottom: 2rem !important;
+  &.margin-bottom--xl {
+    margin-bottom: 2rem !important;
+  }
+  > footer {
+    @apply border-b border-slate-400/20 mx-0 my-2 px-0 pt-2 pb-1;
+    > div > b {
+      display: none !important;
+    }
+    > div.col {
+      padding: 0 !important;
+    }
+    > div > ul {
+      margin-left: 0 !important;
+    }
+  }
+}
+
+// Hide authors on posts list page
+.blog-list-page article > header > [class^="blogPostData_"] + div,
+.blog-tags-post-list-page article > header > [class^="blogPostData_"] + div {
+  @apply hidden;
+}
+
+div.theme-doc-toc-desktop > ul,
+div[class^="tableOfContents_"] > ul {
+  border: none;
+  @apply rounded-xl bg-gray-200/30;
+}
+
+[data-theme="dark"] div.theme-doc-toc-desktop > ul,
+[data-theme="dark"] div[class^="tableOfContents_"] > ul {
+  @apply bg-gray-300/10;
+}
+
+.table-of-contents__link {
+  @apply border-b border-b-amber-500/0;
+}
+
+.table-of-contents__link--active {
+  @apply font-bold border-b-amber-500;
+}
+
+article .markdown {
+  img {
+    @apply place-self-center self-center justify-self-center;
+    max-height: 60vh;
+    width: auto;
+  }
+  iframe {
+    @apply w-full aspect-video mb-2;
+  }
+  & img,
+  & iframe {
+    @apply rounded-xl;
+  }
+  // & a {
+  //   @apply text-inherit underline;
+  // }
+}
+
+article .markdown {
+  & iframe[src^="https://www.youtube.com/embed/"],
+  & iframe[src^="https://youtube.com/embed/"],
+  & iframe[src^="https://player.vimeo.com/"]
+  {
+    @apply aspect-video;
+  }
+}
+
+article .markdown {
+  & iframe[src^="https://www.youtube.com/embed/"],
+  & iframe[src^="https://youtube.com/embed/"],
+  & iframe[src^="https://player.vimeo.com/"],
+  & iframe[src^="https://open.spotify.com/embed/"],
+  & iframe[src^="https://audius.co/embed/"],
+  & iframe[src^="https://share.transistor.fm/e/"]
+  {
+    @apply bg-slate-500/20 mx-auto w-full lg:max-w-2xl;
+  }
+  img {
+    @apply mx-auto;
+  }
+}
+
+article .markdown {
+  & .twitter-tweet-rendered,
+  & .twitter-tweet {
+    @apply mx-auto max-w-full;
+  }
+  & iframe[id^="twitter-widget-"] {
+    @apply max-w-full;
+  }
+}
+
+article .markdown {
+  & iframe[src^="https://www.youtube.com/embed/"],
+  & iframe[src^="https://youtube.com/embed/"],
+  & iframe[src^="https://player.vimeo.com/"],
+  & iframe[src^="https://open.spotify.com/embed/"],
+  & iframe[src^="https://share.transistor.fm/e/"]
+  {
+    @apply sm:rounded-3xl;
+  }
+}
+
+.footnotes hr {
+  @apply border-0 border-b border-gray-500/30;
+}
+
+nav.pagination-nav {
+  .pagination-nav__link {
+    @apply border-0 bg-slate-500/[0.05] hover:bg-slate-500/[0.15] rounded-xl;
+  }
+
+  & .pagination-nav__sublabel,
+  & .pagination-nav__label {
+    @apply text-sm;
+  }
+
+  & .pagination-nav__sublabel {
+    @apply text-xs opacity-75 uppercase;
+  }
+
+  & .pagination-nav__label::before,
+  & .pagination-nav__label::after {
+    content: "" !important;
+  }
+  & div:first-child .pagination-nav__sublabel::before {
+    content: "◀ " !important;
+  }
+  & div:last-child .pagination-nav__sublabel::after {
+    content: " ▶" !important;
+  }
+}
+
+[data-theme="dark"] nav.pagination-nav {
+  .pagination-nav__link {
+    @apply bg-slate-500/10 hover:bg-slate-500/20;
+  }
+}
+
+.navbar__item .dropdown__menu {
+  @apply rounded-xl;
+  .dropdown__link {
+    @apply rounded-lg;
+  }
+}
+
+// wiki
+
+article .markdown .wikiPostHeadImgR {
+  > p {
+    @apply block md:inline-block mx-auto md:float-right;
+    clear: both;
+    img {
+      @apply mx-auto md:float-right sm:w-64 lg:w-56 xl:w-72 2xl:w-auto 2xl:max-w-sm;
+      @media screen and (min-width: 768px) {
+        margin-left: 1rem !important;
+        margin-bottom: 0.25rem !important;
+      }
+    }
+  }
+  &.limitW > p img {
+    @apply max-w-[16rem];
+  }
+}
+
+article .markdown .wikiPostListImgR {
+  > p {
+    @apply inline-block float-right;
+    clear: both;
+    img {
+      @apply float-right w-32 md:w-40;
+      margin-left: 1rem !important;
+      margin-bottom: 0.25rem !important;
+    }
+  }
+}
+
+article .markdown .TeamAvatar {
+  @apply rounded-full w-20 md:w-24 float-right;
+  clear: both;
+}
+
+// Wiki: tier fx on h3 > sup
+main[class^="docMainContainer"] {
+  article .markdown h3 > sup {
+    @apply bg-pink-500 text-white px-1 py-0.5 rounded-md;
+    font-size: 0.8rem;
+  }
+}
+
+// Wiki: code block
+main[class^="docMainContainer"] {
+  pre.prism-code {
+    max-height: 60vh;
+  }
+}

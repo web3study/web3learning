@@ -1,0 +1,23 @@
+[
+  {
+    "title": "密码学",
+    "href": "/crypto",
+    "description": "介绍密码学相关知识",
+    "tier": 1,
+    "imageUrl": "/img/bac111.png"
+  },
+  {
+    "title": "数据分析",
+    "href": "/analyze",
+    "description": "Web3大世界的数据",
+    "tier": 2,
+    "imageUrl": "/img/hanbao.png"
+  },
+  {
+    "title": "安全专题",
+    "href": "/security",
+    "description": "安全问题",
+    "tier": 3,
+    "imageUrl": "/img/dabao.png"
+  }
+]

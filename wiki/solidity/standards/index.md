@@ -1,0 +1,7 @@
+---
+title: 合约代码规范
+sidebar_label: 代码规范
+sidebar_position: 50
+image: /img/cover/pcc-ens.jpg
+description: .pcc.eth ENS subdomains can be claimed with a PCC cat, the ENS is tied to the cat and use that cat as PFP, also points to the wallet address holding the cat.
+---

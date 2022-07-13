@@ -249,7 +249,7 @@ module.exports = {
         title: "More",
         items: [
           {
-            label: "Web3 Stuty GitHub",
+            label: "Web3 Study GitHub",
             href: "https://github.com/web3study",
           },
         ],

@@ -47,15 +47,15 @@ module.exports = {
             to: "/crypto/threshold",
           },
           {
-            label: "🪂 安全多方计算",
+            label: "⛓ 安全多方计算",
             to: "/crypto/secure-multi-party",
           },
           {
-            label: "🪂 同态加密",
+            label: "🧰 同态加密",
             to: "/crypto/homomorphic",
           },
           {
-            label: "🪂 杂凑函数",
+            label: "👻 杂凑函数",
             to: "/crypto/hash",
           }
         ],
@@ -88,23 +88,23 @@ module.exports = {
         position: "left",
         items: [
           {
-            label: "😼 常见安全问题",
+            label: "👾 常见安全问题",
             to: "/security/question",
           },
           {
-            label: "🔗 安全问题汇总",
+            label: "🐞 安全问题汇总",
             to: "/security/pool",
           },
           {
-            label: "🎨 案例分析",
+            label: "🪲 案例分析",
             to: "/security/case",
           },
           {
-            label: "🛠 合约审计",
+            label: "👓 合约审计",
             to: "/security/audit",
           },
           {
-            label: "😻 试炼广场",
+            label: "🏟 试炼广场",
             to: "/security/try",
           },
         ],
@@ -169,23 +169,23 @@ module.exports = {
         to: "/navigation",
         items: [
           {
-            label: "😼 DEFI类",
+            label: "🏦 DEFI类",
             to: "/navigation/defi",
           },
           {
-            label: "🔗 NFT类",
+            label: "🎇 NFT类",
             to: "/navigation/nft",
           },
           {
-            label: "🎨 工具类",
+            label: "🛠 工具类",
             to: "/navigation/tool",
           },
           {
-            label: "🛠 数据类",
+            label: "📈 数据类",
             to: "/navigation/data",
           },
           {
-            label: "😻 分析类",
+            label: "🧮 分析类",
             to: "/navigation/analyze",
           },
         ],
@@ -197,16 +197,16 @@ module.exports = {
         to: "/about",
         items: [
           {
-            label: "About Web3 Study",
+            label: "📝 About Web3 Study",
             to: "/about",
           },
           {
-            label: "Contribute",
+            label: "🛤 Contribute",
             to: "/contribute",
           },
           {
             label: "Web3 Github",
-            href: "https://github.com/yzbbanban/web3study",
+            href: "https://github.com/web3study",
           },
         ],
       },
@@ -219,11 +219,11 @@ module.exports = {
         title: "Web3 study",
         items: [
           {
-            label: "About",
+            label: "🍯 About",
             to: "/aboutus",
           },
           {
-            label: "FAQ",
+            label: "🍩 FAQ",
             to: "/aboutus/faq",
           },
         ],
@@ -250,7 +250,7 @@ module.exports = {
         items: [
           {
             label: "Web3 Stuty GitHub",
-            href: "https://github.com/yzbbanban/web3study",
+            href: "https://github.com/web3study",
           },
         ],
       },

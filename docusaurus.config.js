@@ -3,7 +3,7 @@
 
 /** @type {import('@docusaurus/types')} */
 const config = {
-  title: "Web3 Stydy",
+  title: "Web3 Study",
   tagline: "#WeLoveThePurrs",
   url: "https://web3Study11111",
   baseUrl: "/",

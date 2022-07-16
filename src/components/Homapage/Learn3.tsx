@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./learn3.module.scss";
 import Link from "@docusaurus/Link";
+import copy from "copy-to-clipboard";
 
 type Nullable<T> = T | null;
 
@@ -15,10 +16,17 @@ type AuthorItem = {
 const AuthorList: AuthorItem[] = require("./authors.json");
 // 主页ens介绍
 export default function Learn3() {
+  const copytext = () => {
+    copy('0x236BE5490b1e21c83771a37820a25cF3c7c7c26B');
+    setIsMessage(true)
+    this.timer = setInterval(() => {
+      setIsMessage(false)
+    }, 1000);
+  };
+  const [isMessage, setIsMessage] = useState<boolean>(false);
   return (
     <section>
       <div className={"relative my-8 md:my-12 group " + styles.sectionBg}>
-
         <div className="absolute inset-0 w-full h-full">
           <img
             className={"w-full h-full object-cover " + styles.coverImg}
@@ -66,12 +74,28 @@ export default function Learn3() {
             </p>
           </div>
           <div className="pt-8">
-            <Link className="" to="/aboutus">
-              <span className="inline-block px-6 py-3 rounded-full bg-pink-500 hover:bg-white hover:shadow-lg hover:shadow-pink-500 text-base font-medium text-white hover:text-pink-500 transition-all duration-300 hover:-translate-y-1">
+            <Link to="/aboutus">
+              <span className="inline-block px-6 py-3 rounded-full bg-blue-500 hover:bg-white hover:shadow-lg hover:shadow-blue-500 text-base font-medium text-white hover:text-blue-500 transition-all duration-300 hover:-translate-y-1">
                 Learn More
               </span>
             </Link>
           </div>
+        </div>
+      </div>
+
+
+      <div className="relative max-w-5xl mx-auto text-center py-16 lg:py-24 px-8 sm:px-12 lg:px-3">
+        <span className="text-blue-500	">
+          <a target='blank' href='https://etherscan.io/address/0x236BE5490b1e21c83771a37820a25cF3c7c7c26B'>
+            捐赠地址: 0x236BE5490b1e21c83771a37820a25cF3c7c7c26B</a>
+        </span>
+        {isMessage && (
+          <span className="m-4">复制成功</span>
+        )}
+        <div className="pt-8">
+          <button onClick={() => copytext()} className="inline-block px-6 py-3 rounded-full bg-blue-500 hover:bg-white hover:shadow-lg hover:shadow-blue-500 text-base font-medium text-white hover:text-blue-500 transition-all duration-300 hover:-translate-y-1">
+            复制
+          </button>
         </div>
       </div>
 
@@ -121,6 +145,6 @@ export default function Learn3() {
           </div>
         </div>
       </div>
-    </section>
+    </section >
   );
 }

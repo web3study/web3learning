@@ -32,6 +32,8 @@ description: aaa
 
     /** 
      * @title Pet
+     * @author yzbban
+     * @notice Dog feed
      * @dev Pet test
      */
     contract Pet {
@@ -46,19 +48,21 @@ description: aaa
         //用户拥有的食物量
         mapping(address=>uint) feedOwners;
         //胜利者
-        address winner;
+        address private winner;
 
-        uint private foods;
+        uint public foods;
         uint public lastTime;
 
         constructor(){
             foods = 10;
         }
 
-        function getFoodCount() public view returns(uint){
-            return foods;
+
+        function getWinner() public view returns(address){
+            return winner;
         }
 
+        ///@notice  获取食物
         function receiveFood() external{
             require(block.timestamp > lastTime.add(2 minutes),"Cool down");
             require(foods>0,"Food not enough!");
@@ -68,6 +72,7 @@ description: aaa
             emit ReceiveFood(msg.sender);
         }
 
+        ///@notice  喂养食物
         function feed() external{
             require(foodOwners[msg.sender]>0,"Food");
             foodOwners[msg.sender] = foodOwners[msg.sender].sub(1);

@@ -31,7 +31,7 @@ description: aaa
   - boolean | uint | int | address | string | byte
 
 
-  ```
+  ```js
     // SPDX-License-Identifier: MIT
     pragma solidity ^0.8.13;
 
@@ -94,7 +94,7 @@ description: aaa
   
   有三种类型的变量，分别为状态变量、局部变量、全局变量
 
-  ```
+  ```js
     // SPDX-License-Identifier: MIT
     pragma solidity ^0.8.13;
 
@@ -118,7 +118,7 @@ description: aaa
 
   常量是不能修改的变量。它们的值是硬编码的，使用常量可以节省gas成本。
 
-  ```
+  ```js
     // SPDX-License-Identifier: MIT
     pragma solidity ^0.8.13;
 
@@ -134,7 +134,7 @@ description: aaa
 
   不可变变量就像常量。不可变变量的值可以在构造函数内部设置，但不能在之后修改。
 
-  ```
+  ```js
     // SPDX-License-Identifier: MIT
     pragma solidity ^0.8.13;
 
@@ -155,7 +155,7 @@ description: aaa
 
   要编写或更新状态变量，您需要发送一个事务。另一方面，你可以免费读取状态变量，不需要任何交易费用。
 
-  ```
+  ```js
     // SPDX-License-Identifier: MIT
     pragma solidity ^0.8.13;
 
@@ -180,7 +180,7 @@ description: aaa
 
   用 ether 支付交易。
   如：1 ether 等于 10^18 wei。
-  ```
+  ```js
     // SPDX-License-Identifier: MIT
     pragma solidity ^0.8.13;
 
@@ -200,7 +200,7 @@ description: aaa
 
   一笔交易会花费多少ether
 
-  计算方法：`gas spent * gas price`
+  计算函数：`gas spent * gas price`
   
   1. `gas`是一个计算单位
   2. `gas spent`是在此交易下会使用的
@@ -217,7 +217,7 @@ description: aaa
 
 
   如下面表述：
-  ```
+  ```js
     // SPDX-License-Identifier: MIT
     pragma solidity ^0.8.13;
 
@@ -228,7 +228,7 @@ description: aaa
         // 状态更改被撤消。
         // Gas spent 不会被退款
         function forever() public {
-            // 此方法会消耗当前区块的所有gas，及超出区块的gas limit上限，会失败
+            // 此函数会消耗当前区块的所有gas，及超出区块的gas limit上限，会失败
             while (true) {
                 i += 1;
             }
@@ -240,7 +240,7 @@ description: aaa
 ### 判断语句 If / Else
     
   Solidity 支持条件语句if、else if和else。
-  ```
+  ```js
     // SPDX-License-Identifier: MIT
     pragma solidity ^0.8.13;
 
@@ -273,7 +273,7 @@ description: aaa
   不要编写无界循环，因为这可能超过`gas limit`，导致事务失败。
   由于上述原因，while和do while循环很少使用。
 
-  ```
+  ```js
     // SPDX-License-Identifier: MIT
     pragma solidity ^0.8.13;
 
@@ -307,7 +307,7 @@ description: aaa
   valueType可以是任何类型，包括另一个映射或数组。
   Mappings 没有迭代器
 
-  ```
+  ```js
     // SPDX-License-Identifier: MIT
     pragma solidity ^0.8.13;
 
@@ -361,7 +361,7 @@ description: aaa
 
   数组可以具有编译时固定的大小，也可以具有动态的大小。
 
-  ```
+  ```js
     // SPDX-License-Identifier: MIT
     pragma solidity ^0.8.13;
 
@@ -417,7 +417,7 @@ description: aaa
   删除数组元素的例子
   通过从右到左移动元素来移除数组元素
 
-  ```
+  ```js
     // SPDX-License-Identifier: MIT
     pragma solidity ^0.8.13;
 
@@ -460,8 +460,7 @@ description: aaa
 
   通过将最后一个元素复制到要删除的位置来删除数组元素
 
-  ```
-
+  ```js
     // SPDX-License-Identifier: MIT
     pragma solidity ^0.8.13;
 
@@ -503,7 +502,7 @@ description: aaa
 
   solidity支持可枚举对象，它们对建模选择和跟踪状态很有用。枚举可以在solidity之外声明。
 
-  ```
+  ```js
     // SPDX-License-Identifier: MIT
     pragma solidity ^0.8.13;
 
@@ -551,7 +550,7 @@ description: aaa
 
   声明并导入Enum文件，Enum在其中声明
 
-  ```
+  ```js
     // SPDX-License-Identifier: MIT
     pragma solidity ^0.8.13;
     // This is saved 'EnumDeclaration.sol'
@@ -567,7 +566,7 @@ description: aaa
   ```
   导入上述枚举的文件
 
-  ```
+  ```js
     // SPDX-License-Identifier: MIT
     pragma solidity ^0.8.13;
 
@@ -582,7 +581,8 @@ description: aaa
 ### 结构 Structs
 
   您可以通过创建`struct`来定义自己的类型。它们对将相关数据分组很有用。结构可以在一个契约之外声明并导入到另一个契约中。
-  ```
+
+  ```js
     // SPDX-License-Identifier: MIT
     pragma solidity ^0.8.13;
 
@@ -639,7 +639,9 @@ description: aaa
 1. `storage` - 变量是一个状态变量(存储在区块链上)
 2. `memory` - 变量在内存中，当函数被调用时它就存在
 3. `calldata` - 包含函数参数的特殊数据位置
-  ```
+   
+
+  ```js
     // SPDX-License-Identifier: MIT
     pragma solidity ^0.8.13;
 
@@ -682,12 +684,12 @@ description: aaa
   ```
 
 
-### 方法（函数） Function
+### 函数（函数） Function
 
-  方法的返回值有多种类型
-  公共方法不能接受某些数据类型作为输入或输出
+  函数的返回值有多种类型
+  公共函数不能接受某些数据类型作为输入或输出
 
-  ```
+  ```js
     // SPDX-License-Identifier: MIT
     pragma solidity ^0.8.13;
 
@@ -773,9 +775,9 @@ description: aaa
 
 ### 可见性 View and Pure Functions
 
-  Getter类型的方法可以声明为`view`或`pure`。`view`声明不会更改任何状态。`pure`声明不会更改或读取状态变量。
+  Getter类型的函数可以声明为`view`或`pure`。`view`声明不会更改任何状态。`pure`声明不会更改或读取状态变量。
 
-  ```
+  ```js
     // SPDX-License-Identifier: MIT
     pragma solidity ^0.8.13;
 
@@ -806,8 +808,7 @@ error 将在交易期间撤消对状态的所有更改。
   
 使用自定义错误节省gas。
 
-  ```
-
+  ```js
     // SPDX-License-Identifier: MIT
     pragma solidity ^0.8.13;
 
@@ -854,7 +855,7 @@ error 将在交易期间撤消对状态的所有更改。
   ```
   其他示例
 
-  ```
+  ```js
     // SPDX-License-Identifier: MIT
     pragma solidity ^0.8.13;
 
@@ -892,16 +893,16 @@ error 将在交易期间撤消对状态的所有更改。
 
   ```
 
-### 方法修饰 Function Modifier
+### 函数修饰 Function Modifier
 
-  modifier可在方法运行前或者运行之后执行
+  modifier可在函数运行前或者运行之后执行
   主要功能：
   - 权限访问
   - 验证输入
   - 防止重入攻击
 
 
-  ```
+  ```js
     // SPDX-License-Identifier: MIT
     pragma solidity ^0.8.13;
 
@@ -967,7 +968,7 @@ error 将在交易期间撤消对状态的所有更改。
   - 一个便宜的存储方式
 
 
-  ```
+  ```js
     // SPDX-License-Identifier: MIT
     pragma solidity ^0.8.13;
 
@@ -987,11 +988,11 @@ error 将在交易期间撤消对状态的所有更改。
 
   ```
 
-### 构造方法 Constructor
+### 构造函数 Constructor
 
-  构造方法是可选择的一个方法，可以不写，此方法主要在合约创建的时候执行
+  构造函数是可选择的一个函数，可以不写，此函数主要在合约创建的时候执行
 
-  ```
+  ```js
     // SPDX-License-Identifier: MIT
     pragma solidity ^0.8.13;
 
@@ -1051,13 +1052,13 @@ error 将在交易期间撤消对状态的所有更改。
 ### 继承 Inheritance
 
   很多变成语言都会有此语法，Solidity支持多继承，使用`is`关键字，
-  - 如果想要被子合约重写，父合约的方法就必须叫上`virtual`的声明
-  - 子合约如果需要重写父类的合约方法，必须加上`override`
+  - 如果想要被子合约重写，父合约的函数就必须叫上`virtual`的声明
+  - 子合约如果需要重写父类的合约函数，必须加上`override`
   - 继承的顺序很重要
   - 适当的，可以整理出合约的继承关系，防止出现错乱问题
 
 
-  ```
+  ```js
     // SPDX-License-Identifier: MIT
     pragma solidity ^0.8.13;
 
@@ -1127,7 +1128,7 @@ error 将在交易期间撤消对状态的所有更改。
 
   状态变量，不能在子合约重新声明来重写
 
-  ```
+  ```js
     // SPDX-License-Identifier: MIT
     pragma solidity ^0.8.13;
 
@@ -1157,12 +1158,12 @@ error 将在交易期间撤消对状态的所有更改。
   ```
 
 
-### 调用父类方法 Calling Parent Contracts
+### 调用父类函数 Calling Parent Contracts
 
   父合约可以直接调用，也可以使用关键字`super`来调用。
-  通过使用关键字super，将调用所有直接父合约中的方法。
+  通过使用关键字super，将调用所有直接父合约中的函数。
 
-  ```
+  ```js
     // SPDX-License-Identifier: MIT
     pragma solidity ^0.8.13;
 
@@ -1235,28 +1236,1096 @@ error 将在交易期间撤消对状态的所有更改。
 
 ### 可见性 Visibility
 
-  方法和状态变量必须声明它们是否可以被其他合约访问。
+  函数和状态变量必须声明它们是否可以被其他合约访问。
 
-  方法可以声明为
+  函数可以声明为
   - `public` - 任何合约和帐户都可以调用
   - `private` - 仅在定义功能的合约内
   - `internal` - 仅继承内部功能的内部合约
   - `external` - 只有其他合约和帐户才能调用，内部不可调用
 
 
+  状态变量可以被声明为`public`，`private`，`internal`但是不能使用`external`
+
+  ```js
+    // SPDX-License-Identifier: MIT
+    pragma solidity ^0.8.13;
+
+    contract Base {
+        // Private function can only be called
+        // - inside this contract
+        // Contracts that inherit this contract cannot call this function.
+        function privateFunc() private pure returns (string memory) {
+            return "private function called";
+        }
+
+        function testPrivateFunc() public pure returns (string memory) {
+            return privateFunc();
+        }
+
+        // Internal function can be called
+        // - inside this contract
+        // - inside contracts that inherit this contract
+        function internalFunc() internal pure returns (string memory) {
+            return "internal function called";
+        }
+
+        function testInternalFunc() public pure virtual returns (string memory) {
+            return internalFunc();
+        }
+
+        // Public functions can be called
+        // - inside this contract
+        // - inside contracts that inherit this contract
+        // - by other contracts and accounts
+        function publicFunc() public pure returns (string memory) {
+            return "public function called";
+        }
+
+        // External functions can only be called
+        // - by other contracts and accounts
+        function externalFunc() external pure returns (string memory) {
+            return "external function called";
+        }
+
+        // This function will not compile since we're trying to call
+        // an external function here.
+        // function testExternalFunc() public pure returns (string memory) {
+        //     return externalFunc();
+        // }
+
+        // State variables
+        string private privateVar = "my private variable";
+        string internal internalVar = "my internal variable";
+        string public publicVar = "my public variable";
+        // State variables cannot be external so this code won't compile.
+        // string external externalVar = "my external variable";
+    }
+
+    contract Child is Base {
+        // Inherited contracts do not have access to private functions
+        // and state variables.
+        // function testPrivateFunc() public pure returns (string memory) {
+        //     return privateFunc();
+        // }
+
+        // Internal function call be called inside child contracts.
+        function testInternalFunc() public pure override returns (string memory) {
+            return internalFunc();
+        }
+    }
+
+  ```
+
+
 ### 接口 Interface
+
+  您可以通过声明一个Interface与其他合约进行交互。
+  Interface
+  - 没有任何详细的逻辑功能
+  - 可以继承其他的interfase
+  - 所有的可见性声明必须是external
+  - 没有constructor函数
+  - 不能声明状态变量
+
+
+  ```js
+    // SPDX-License-Identifier: MIT
+    pragma solidity ^0.8.13;
+
+    contract Counter {
+        uint public count;
+
+        function increment() external {
+            count += 1;
+        }
+    }
+
+    interface ICounter {
+        function count() external view returns (uint);
+
+        function increment() external;
+    }
+
+    contract MyContract {
+        function incrementCounter(address _counter) external {
+            ICounter(_counter).increment();
+        }
+
+        function getCount(address _counter) external view returns (uint) {
+            return ICounter(_counter).count();
+        }
+    }
+
+    // Uniswap example
+    interface UniswapV2Factory {
+        function getPair(address tokenA, address tokenB)
+            external
+            view
+            returns (address pair);
+    }
+
+    interface UniswapV2Pair {
+        function getReserves()
+            external
+            view
+            returns (
+                uint112 reserve0,
+                uint112 reserve1,
+                uint32 blockTimestampLast
+            );
+    }
+
+    contract UniswapExample {
+        address private factory = 0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f;
+        address private dai = 0x6B175474E89094C44Da98b954EedeAC495271d0F;
+        address private weth = 0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2;
+
+        function getTokenReserves() external view returns (uint, uint) {
+            address pair = UniswapV2Factory(factory).getPair(dai, weth);
+            (uint reserve0, uint reserve1, ) = UniswapV2Pair(pair).getReserves();
+            return (reserve0, reserve1);
+        }
+    }
+
+  ```
+
 ### 可支付 Payable
+
+  被`payable`修饰的函数或地址，可以在合约里接收eth
+
+  ```js
+    // SPDX-License-Identifier: MIT
+    pragma solidity ^0.8.13;
+
+    contract Payable {
+        // Payable address can receive Ether
+        address payable public owner;
+
+        // Payable constructor can receive Ether
+        constructor() payable {
+            owner = payable(msg.sender);
+        }
+
+        // Function to deposit Ether into this contract.
+        // Call this function along with some Ether.
+        // The balance of this contract will be automatically updated.
+        function deposit() public payable {}
+
+        // Call this function along with some Ether.
+        // The function will throw an error since this function is not payable.
+        function notPayable() public {}
+
+        // Function to withdraw all Ether from this contract.
+        function withdraw() public {
+            // get the amount of Ether stored in this contract
+            uint amount = address(this).balance;
+
+            // send all Ether to owner
+            // Owner can receive Ether since the address of owner is payable
+            (bool success, ) = owner.call{value: amount}("");
+            require(success, "Failed to send Ether");
+        }
+
+        // Function to transfer Ether from this contract to address from input
+        function transfer(address payable _to, uint _amount) public {
+            // Note that "to" is declared as payable
+            (bool success, ) = _to.call{value: _amount}("");
+            require(success, "Failed to send Ether");
+        }
+    }
+
+  ```
+
 ### 发送eth Sending Ether - Transfer, Send, and Call
+
+如何发送eth
+发送eth到其他合约：
+  - transfer (2300 gas, throws error)
+  - send (2300 gas, returns bool)
+  - call (forward all gas or set gas, returns bool)
+
+如何接收eth
+如果一个合约可以直接接收eth的转账需要写如下的函数：
+  - receive() external payable
+  - fallback() external payable
+
+建议使用
+
+- `call` 在2019年12月之后，建议使用与重入保护相结合的函数。
+
+防止重入
+- 再调用其他合约之前，处理好所有的状态改变
+- 使用modifier函数防止
+
+
+  ```js
+    // SPDX-License-Identifier: MIT
+    pragma solidity ^0.8.13;
+
+    contract ReceiveEther {
+        /*
+        Which function is called, fallback() or receive()?
+
+              send Ether
+                  |
+            msg.data is empty?
+                  / \
+                yes  no
+                /     \
+    receive() exists?  fallback()
+            /   \
+            yes   no
+            /      \
+        receive()   fallback()
+        */
+
+        // Function to receive Ether. msg.data must be empty
+        receive() external payable {}
+
+        // Fallback function is called when msg.data is not empty
+        fallback() external payable {}
+
+        function getBalance() public view returns (uint) {
+            return address(this).balance;
+        }
+    }
+
+    contract SendEther {
+        function sendViaTransfer(address payable _to) public payable {
+            // This function is no longer recommended for sending Ether.
+            _to.transfer(msg.value);
+        }
+
+        function sendViaSend(address payable _to) public payable {
+            // Send returns a boolean value indicating success or failure.
+            // This function is not recommended for sending Ether.
+            bool sent = _to.send(msg.value);
+            require(sent, "Failed to send Ether");
+        }
+
+        function sendViaCall(address payable _to) public payable {
+            // Call returns a boolean value indicating success or failure.
+            // This is the current recommended method to use.
+            (bool sent, bytes memory data) = _to.call{value: msg.value}("");
+            require(sent, "Failed to send Ether");
+        }
+    }
+
+  ```
+
 ### 回调 Fallback
+
+`fallback`是一个不接受任何参数也不返回任何内容的函数。
+
+会执行的部分
+  - 一个不存在的函数被调用
+  - eth被直接发送到一个合约，但是`receive()`不存在或`msg.data`数据不是空的
+当通过`transfer`或`send`调用时，`fallback` 上限为2300 gas limit。
+
+
+  ```js
+    // SPDX-License-Identifier: MIT
+    pragma solidity ^0.8.13;
+
+    contract Fallback {
+        event Log(uint gas);
+
+        // Fallback function must be declared as external.
+        fallback() external payable {
+            // send / transfer (forwards 2300 gas to this fallback function)
+            // call (forwards all of the gas)
+            emit Log(gasleft());
+        }
+
+        // Helper function to check the balance of this contract
+        function getBalance() public view returns (uint) {
+            return address(this).balance;
+        }
+    }
+
+    contract SendToFallback {
+        function transferToFallback(address payable _to) public payable {
+            _to.transfer(msg.value);
+        }
+
+        function callFallback(address payable _to) public payable {
+            (bool sent, ) = _to.call{value: msg.value}("");
+            require(sent, "Failed to send Ether");
+        }
+    }
+
+  ```
+
 ### 访问 Call
+
+  `call`是与其他合约交互的较为底层的函数。
+  当您通过调用`fallback`函数来发送eth时，推荐使用这种函数。
+  但是，这不是调用现有函数的推荐方式。
+
+  ```js
+    // SPDX-License-Identifier: MIT
+    pragma solidity ^0.8.13;
+
+    contract Receiver {
+        event Received(address caller, uint amount, string message);
+
+        fallback() external payable {
+            emit Received(msg.sender, msg.value, "Fallback was called");
+        }
+
+        function foo(string memory _message, uint _x) public payable returns (uint) {
+            emit Received(msg.sender, msg.value, _message);
+
+            return _x + 1;
+        }
+    }
+
+    contract Caller {
+        event Response(bool success, bytes data);
+
+        // Let's imagine that contract B does not have the source code for
+        // contract A, but we do know the address of A and the function to call.
+        function testCallFoo(address payable _addr) public payable {
+            // You can send ether and specify a custom gas amount
+            (bool success, bytes memory data) = _addr.call{value: msg.value, gas: 5000}(
+                abi.encodeWithSignature("foo(string,uint256)", "call foo", 123)
+            );
+
+            emit Response(success, data);
+        }
+
+        // Calling a function that does not exist triggers the fallback function.
+        function testCallDoesNotExist(address _addr) public {
+            (bool success, bytes memory data) = _addr.call(
+                abi.encodeWithSignature("doesNotExist()")
+            );
+
+            emit Response(success, data);
+        }
+    }
+
+  ```
+
 ### 委托访问 Delegatecall
+
+  与`call`类似，也是底层的函数
+  当合约A执行委托调用给合约B时，就会执行合约B的代码
+  并且使用A的存储、`msg.sender`和`msg.value`
+
+  ```js
+    // SPDX-License-Identifier: MIT
+    pragma solidity ^0.8.13;
+
+    // NOTE: Deploy this contract first
+    contract B {
+        // NOTE: storage layout must be the same as contract A
+        uint public num;
+        address public sender;
+        uint public value;
+
+        function setVars(uint _num) public payable {
+            num = _num;
+            sender = msg.sender;
+            value = msg.value;
+        }
+    }
+
+    contract A {
+        uint public num;
+        address public sender;
+        uint public value;
+
+        function setVars(address _contract, uint _num) public payable {
+            // A's storage is set, B is not modified.
+            (bool success, bytes memory data) = _contract.delegatecall(
+                abi.encodeWithSignature("setVars(uint256)", _num)
+            );
+        }
+    }
+
+  ```
+
+
 ### 选择器 Function Selector
+
+  调用函数时，`calldata` 的前4个字节指定要调用哪个函数。
+  这4个字节被称为函数选择器。
+  以下面的代码为例。它使用调用在地址addr处执行合约的转移。
+
+  ```js
+  addr.call(abi.encodeWithSignature("transfer(address,uint256)", 0xaaaaa, 123))
+  ```
+
+  abi.encodeWithSignature(....)返回的前4个字节是函数选择器。
+  如果预先计算并在代码中内联函数选择器，也许可以节省少量的gas
+  下面是函数选择器的计算函数。
+  ```js
+    // SPDX-License-Identifier: MIT
+    pragma solidity ^0.8.13;
+
+    contract FunctionSelector {
+        /*
+        "transfer(address,uint256)"
+        0xa9059cbb
+        "transferFrom(address,address,uint256)"
+        0x23b872dd
+        */
+        function getSelector(string calldata _func) external pure returns (bytes4) {
+            return bytes4(keccak256(bytes(_func)));
+        }
+    }
+
+  ```
+
+
 ### 调用其他合约 Calling Other Contract
-### Creating Contracts from a Contract
+
+  Contract可以通过两种方式调用其他Contract。
+  最简单的函数是直接调用它，比如A.foo(x, y, z)。
+  调用其他合约的另一种函数是使用底层调用。
+
+  ```js
+    // SPDX-License-Identifier: MIT
+    pragma solidity ^0.8.13;
+
+    contract Callee {
+        uint public x;
+        uint public value;
+
+        function setX(uint _x) public returns (uint) {
+            x = _x;
+            return x;
+        }
+
+        function setXandSendEther(uint _x) public payable returns (uint, uint) {
+            x = _x;
+            value = msg.value;
+
+            return (x, value);
+        }
+    }
+
+    contract Caller {
+        function setX(Callee _callee, uint _x) public {
+            uint x = _callee.setX(_x);
+        }
+
+        function setXFromAddress(address _addr, uint _x) public {
+            Callee callee = Callee(_addr);
+            callee.setX(_x);
+        }
+
+        function setXandSendEther(Callee _callee, uint _x) public payable {
+            (uint x, uint value) = _callee.setXandSendEther{value: msg.value}(_x);
+        }
+    }
+
+  ```
+
+
+### 使用合约创建合约 Creates other Contracts
+
+  其他合约可以使用new关键字创建合约。从0.8.0开始，new关键字通过指定salt选项支持create2特性。
+
+  ```js
+    // SPDX-License-Identifier: MIT
+    pragma solidity ^0.8.13;
+
+    contract Car {
+        address public owner;
+        string public model;
+        address public carAddr;
+
+        constructor(address _owner, string memory _model) payable {
+            owner = _owner;
+            model = _model;
+            carAddr = address(this);
+        }
+    }
+
+    contract CarFactory {
+        Car[] public cars;
+
+        function create(address _owner, string memory _model) public {
+            Car car = new Car(_owner, _model);
+            cars.push(car);
+        }
+
+        function createAndSendEther(address _owner, string memory _model) public payable {
+            Car car = (new Car){value: msg.value}(_owner, _model);
+            cars.push(car);
+        }
+
+        function create2(
+            address _owner,
+            string memory _model,
+            bytes32 _salt
+        ) public {
+            Car car = (new Car){salt: _salt}(_owner, _model);
+            cars.push(car);
+        }
+
+        function create2AndSendEther(
+            address _owner,
+            string memory _model,
+            bytes32 _salt
+        ) public payable {
+            Car car = (new Car){value: msg.value, salt: _salt}(_owner, _model);
+            cars.push(car);
+        }
+
+        function getCar(uint _index)
+            public
+            view
+            returns (
+                address owner,
+                string memory model,
+                address carAddr,
+                uint balance
+            )
+        {
+            Car car = cars[_index];
+
+            return (car.owner(), car.model(), car.carAddr(), address(car).balance);
+        }
+    }
+
+  ```
+
+
 ### 异常捕捉 Try / Catch
+
+   `try / catch`只能从`external`函数和合同创建中捕获错误。
+
+
+  ```js
+    // SPDX-License-Identifier: MIT
+    pragma solidity ^0.8.13;
+
+    // External contract used for try / catch examples
+    contract Foo {
+        address public owner;
+
+        constructor(address _owner) {
+            require(_owner != address(0), "invalid address");
+            assert(_owner != 0x0000000000000000000000000000000000000001);
+            owner = _owner;
+        }
+
+        function myFunc(uint x) public pure returns (string memory) {
+            require(x != 0, "require failed");
+            return "my func was called";
+        }
+    }
+
+    contract Bar {
+        event Log(string message);
+        event LogBytes(bytes data);
+
+        Foo public foo;
+
+        constructor() {
+            // This Foo contract is used for example of try catch with external call
+            foo = new Foo(msg.sender);
+        }
+
+        // Example of try / catch with external call
+        // tryCatchExternalCall(0) => Log("external call failed")
+        // tryCatchExternalCall(1) => Log("my func was called")
+        function tryCatchExternalCall(uint _i) public {
+            try foo.myFunc(_i) returns (string memory result) {
+                emit Log(result);
+            } catch {
+                emit Log("external call failed");
+            }
+        }
+
+        // Example of try / catch with contract creation
+        // tryCatchNewContract(0x0000000000000000000000000000000000000000) => Log("invalid address")
+        // tryCatchNewContract(0x0000000000000000000000000000000000000001) => LogBytes("")
+        // tryCatchNewContract(0x0000000000000000000000000000000000000002) => Log("Foo created")
+        function tryCatchNewContract(address _owner) public {
+            try new Foo(_owner) returns (Foo foo) {
+                // you can use variable foo here
+                emit Log("Foo created");
+            } catch Error(string memory reason) {
+                // catch failing revert() and require()
+                emit Log(reason);
+            } catch (bytes memory reason) {
+                // catch failing assert()
+                emit LogBytes(reason);
+            }
+        }
+    }
+
+  ```
+
 ### 导入 Import
+
+  Solidity支持导入本地和外部文件。
+
+  本地
+  目录结构可以如下：
+  ```js
+  ├── Import.sol
+  └── Foo.sol
+  ```
+  Foo.sol
+  ```js
+    // SPDX-License-Identifier: MIT
+    pragma solidity ^0.8.13;
+
+    struct Point {
+        uint x;
+        uint y;
+    }
+
+    error Unauthorized(address caller);
+
+    function add(uint x, uint y) pure returns (uint) {
+        return x + y;
+    }
+
+    contract Foo {
+        string public name = "Foo";
+    }
+
+  ```
+  Import.sol
+  ```js
+    // SPDX-License-Identifier: MIT
+    pragma solidity ^0.8.13;
+
+    // import Foo.sol from current directory
+    import "./Foo.sol";
+
+    // import {symbol1 as alias, symbol2} from "filename";
+    import {Unauthorized, add as func, Point} from "./Foo.sol";
+
+    contract Import {
+        // Initialize Foo.sol
+        Foo public foo = new Foo();
+
+        // Test Foo.sol by getting it's name.
+        function getFooName() public view returns (string memory) {
+            return foo.name();
+        }
+    }
+
+  ```
+  外部资源
+  你也可以通过简单地复制url从GitHub导入
+  ```js
+  // https://github.com/owner/repo/blob/branch/path/to/Contract.sol
+  import "https://github.com/owner/repo/blob/branch/path/to/Contract.sol";
+
+  // Example import ECDSA.sol from openzeppelin-contract repo, release-v4.5 branch
+  // https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v4.5/contracts/utils/cryptography/ECDSA.sol
+  import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v4.5/contracts/utils/cryptography/ECDSA.sol";
+
+  ```
+
+
 ### 库 Library
+
+  库类似于合约，但不能声明任何状态变量，也不能发送以太。
+  如果所有库函数都是内部的，则库嵌入到合约中，否则，必须先部署库，然后在部署契约之前链接库。
+
+  ```js
+    // SPDX-License-Identifier: MIT
+    pragma solidity ^0.8.13;
+
+    library SafeMath {
+        function add(uint x, uint y) internal pure returns (uint) {
+            uint z = x + y;
+            require(z >= x, "uint overflow");
+
+            return z;
+        }
+    }
+
+    library Math {
+        function sqrt(uint y) internal pure returns (uint z) {
+            if (y > 3) {
+                z = y;
+                uint x = y / 2 + 1;
+                while (x < z) {
+                    z = x;
+                    x = (y / x + x) / 2;
+                }
+            } else if (y != 0) {
+                z = 1;
+            }
+            // else z = 0 (default value)
+        }
+    }
+
+    contract TestSafeMath {
+        using SafeMath for uint;
+
+        uint public MAX_UINT = 2**256 - 1;
+
+        function testAdd(uint x, uint y) public pure returns (uint) {
+            return x.add(y);
+        }
+
+        function testSquareRoot(uint x) public pure returns (uint) {
+            return Math.sqrt(x);
+        }
+    }
+
+    // Array function to delete element at index and re-organize the array
+    // so that their are no gaps between the elements.
+    library Array {
+        function remove(uint[] storage arr, uint index) public {
+            // Move the last element into the place to delete
+            require(arr.length > 0, "Can't remove from empty array");
+            arr[index] = arr[arr.length - 1];
+            arr.pop();
+        }
+    }
+
+    contract TestArray {
+        using Array for uint[];
+
+        uint[] public arr;
+
+        function testArrayRemove() public {
+            for (uint i = 0; i < 3; i++) {
+                arr.push(i);
+            }
+
+            arr.remove(1);
+
+            assert(arr.length == 2);
+            assert(arr[0] == 0);
+            assert(arr[1] == 2);
+        }
+    }
+
+  ```
 ### ABI Decode
+
+  abi.encode encodes data into bytes.
+  abi.decode decodes bytes back into data.
+
+  ```js
+    // SPDX-License-Identifier: MIT
+    pragma solidity ^0.8.13;
+
+    contract AbiDecode {
+        struct MyStruct {
+            string name;
+            uint[2] nums;
+        }
+
+        function encode(
+            uint x,
+            address addr,
+            uint[] calldata arr,
+            MyStruct calldata myStruct
+        ) external pure returns (bytes memory) {
+            return abi.encode(x, addr, arr, myStruct);
+        }
+
+        function decode(bytes calldata data)
+            external
+            pure
+            returns (
+                uint x,
+                address addr,
+                uint[] memory arr,
+                MyStruct memory myStruct
+            )
+        {
+            // (uint x, address addr, uint[] memory arr, MyStruct myStruct) = ...
+            (x, addr, arr, myStruct) = abi.decode(data, (uint, address, uint[], MyStruct));
+        }
+    }
+
+  ```
+
 ### Hashing with Keccak256
+
+  keccak256计算输入的kecak -256哈希值。
+
+  使用场景
+  - 根据输入内容创建唯一id
+  - Commit-Reveal方案
+  - 缩小输入的数据，签名后的结果输入结果都较小，可以作为输入使用
+
+  ```js
+    // SPDX-License-Identifier: MIT
+    pragma solidity ^0.8.13;
+
+    contract HashFunction {
+        function hash(
+            string memory _text,
+            uint _num,
+            address _addr
+        ) public pure returns (bytes32) {
+            return keccak256(abi.encodePacked(_text, _num, _addr));
+        }
+
+        // Example of hash collision
+        // Hash collision can occur when you pass more than one dynamic data type
+        // to abi.encodePacked. In such case, you should use abi.encode instead.
+        function collision(string memory _text, string memory _anotherText)
+            public
+            pure
+            returns (bytes32)
+        {
+            // encodePacked(AAA, BBB) -> AAABBB
+            // encodePacked(AA, ABBB) -> AAABBB
+            return keccak256(abi.encodePacked(_text, _anotherText));
+        }
+    }
+
+    contract GuessTheMagicWord {
+        bytes32 public answer =
+            0x60298f78cc0b47170ba79c10aa3851d7648bd96f2f8e46a19dbc777c36fb0c00;
+
+        // Magic word is "Solidity"
+        function guess(string memory _word) public view returns (bool) {
+            return keccak256(abi.encodePacked(_word)) == answer;
+        }
+    }
+
+  ```
+
 ### 验证签名 Verifying Signature
+
+消息可以在链外签名，然后在链上使用智能合约进行验证。
+
+ethers.js示例
+  ```js
+    const accounts = await ethers.getSigners(2)
+    const VerifySignature = await ethers.getContractFactory("VerifySignature")
+    const contract = await VerifySignature.deploy()
+    await contract.deployed()
+
+    // const PRIV_KEY = "0x..."
+    // const signer = new ethers.Wallet(PRIV_KEY)
+    const signer = accounts[0]
+    const to = accounts[1].address
+    const amount = 999
+    const message = "Hello"
+    const nonce = 123
+
+    const hash = await contract.getMessageHash(to, amount, message, nonce)
+    const sig = await signer.signMessage(ethers.utils.arrayify(hash))
+
+    const ethHash = await contract.getEthSignedMessageHash(hash)
+
+    console.log("signer          ", signer.address)
+    console.log("recovered signer", await contract.recoverSigner(ethHash, sig))
+
+    // Correct signature and message returns true
+    expect(
+      await contract.verify(signer.address, to, amount, message, nonce, sig)
+    ).to.equal(true)
+
+    // Incorrect message returns false
+    expect(
+      await contract.verify(signer.address, to, amount + 1, message, nonce, sig)
+    ).to.equal(false)
+  ```
+
+  ```js
+  // SPDX-License-Identifier: MIT
+  pragma solidity ^0.8.13;
+
+  /* Signature Verification
+
+  How to Sign and Verify
+  # Signing
+  1. Create message to sign
+  2. Hash the message
+  3. Sign the hash (off chain, keep your private key secret)
+
+  # Verify
+  1. Recreate hash from the original message
+  2. Recover signer from signature and hash
+  3. Compare recovered signer to claimed signer
+  */
+
+  contract VerifySignature {
+      /* 1. Unlock MetaMask account
+      ethereum.enable()
+      */
+
+      /* 2. Get message hash to sign
+      getMessageHash(
+          0x14723A09ACff6D2A60DcdF7aA4AFf308FDDC160C,
+          123,
+          "coffee and donuts",
+          1
+      )
+
+      hash = "0xcf36ac4f97dc10d91fc2cbb20d718e94a8cbfe0f82eaedc6a4aa38946fb797cd"
+      */
+      function getMessageHash(
+          address _to,
+          uint _amount,
+          string memory _message,
+          uint _nonce
+      ) public pure returns (bytes32) {
+          return keccak256(abi.encodePacked(_to, _amount, _message, _nonce));
+      }
+
+      /* 3. Sign message hash
+      # using browser
+      account = "copy paste account of signer here"
+      ethereum.request({ method: "personal_sign", params: [account, hash]}).then(console.log)
+
+      # using web3
+      web3.personal.sign(hash, web3.eth.defaultAccount, console.log)
+
+      Signature will be different for different accounts
+      0x993dab3dd91f5c6dc28e17439be475478f5635c92a56e17e82349d3fb2f166196f466c0b4e0c146f285204f0dcb13e5ae67bc33f4b888ec32dfe0a063e8f3f781b
+      */
+      function getEthSignedMessageHash(bytes32 _messageHash)
+          public
+          pure
+          returns (bytes32)
+      {
+          /*
+          Signature is produced by signing a keccak256 hash with the following format:
+          "\x19Ethereum Signed Message\n" + len(msg) + msg
+          */
+          return
+              keccak256(
+                  abi.encodePacked("\x19Ethereum Signed Message:\n32", _messageHash)
+              );
+      }
+
+      /* 4. Verify signature
+      signer = 0xB273216C05A8c0D4F0a4Dd0d7Bae1D2EfFE636dd
+      to = 0x14723A09ACff6D2A60DcdF7aA4AFf308FDDC160C
+      amount = 123
+      message = "coffee and donuts"
+      nonce = 1
+      signature =
+          0x993dab3dd91f5c6dc28e17439be475478f5635c92a56e17e82349d3fb2f166196f466c0b4e0c146f285204f0dcb13e5ae67bc33f4b888ec32dfe0a063e8f3f781b
+      */
+      function verify(
+          address _signer,
+          address _to,
+          uint _amount,
+          string memory _message,
+          uint _nonce,
+          bytes memory signature
+      ) public pure returns (bool) {
+          bytes32 messageHash = getMessageHash(_to, _amount, _message, _nonce);
+          bytes32 ethSignedMessageHash = getEthSignedMessageHash(messageHash);
+
+          return recoverSigner(ethSignedMessageHash, signature) == _signer;
+      }
+
+      function recoverSigner(bytes32 _ethSignedMessageHash, bytes memory _signature)
+          public
+          pure
+          returns (address)
+      {
+          (bytes32 r, bytes32 s, uint8 v) = splitSignature(_signature);
+
+          return ecrecover(_ethSignedMessageHash, v, r, s);
+      }
+
+      function splitSignature(bytes memory sig)
+          public
+          pure
+          returns (
+              bytes32 r,
+              bytes32 s,
+              uint8 v
+          )
+      {
+          require(sig.length == 65, "invalid signature length");
+
+          assembly {
+              /*
+              First 32 bytes stores the length of the signature
+
+              add(sig, 32) = pointer of sig + 32
+              effectively, skips first 32 bytes of signature
+
+              mload(p) loads next 32 bytes starting at the memory address p into memory
+              */
+
+              // first 32 bytes, after the length prefix
+              r := mload(add(sig, 32))
+              // second 32 bytes
+              s := mload(add(sig, 64))
+              // final byte (first byte of the next 32 bytes)
+              v := byte(0, mload(add(sig, 96)))
+          }
+
+          // implicitly return (r, s, v)
+      }
+  }
+
+  ```
+
 ### gas优化 Gas Optimizations
+
+  gas优化方案
+  - 用`calldata`替换`memory`
+  - 状态变量加载到内存
+  - 用++i替换循环i++
+  - 缓存数组元素
+  - 减少循环
+  
+  ```js
+    // SPDX-License-Identifier: MIT
+    pragma solidity ^0.8.13;
+
+    // gas golf
+    contract GasGolf {
+        // start - 50908 gas
+        // use calldata - 49163 gas
+        // load state variables to memory - 48952 gas
+        // short circuit - 48634 gas
+        // loop increments - 48244 gas
+        // cache array length - 48209 gas
+        // load array elements to memory - 48047 gas
+        // uncheck i overflow/underflow - 47309 gas
+
+        uint public total;
+
+        // start - not gas optimized
+        // function sumIfEvenAndLessThan99(uint[] memory nums) external {
+        //     for (uint i = 0; i < nums.length; i += 1) {
+        //         bool isEven = nums[i] % 2 == 0;
+        //         bool isLessThan99 = nums[i] < 99;
+        //         if (isEven && isLessThan99) {
+        //             total += nums[i];
+        //         }
+        //     }
+        // }
+
+        // gas optimized
+        // [1, 2, 3, 4, 5, 100]
+        function sumIfEvenAndLessThan99(uint[] calldata nums) external {
+            uint _total = total;
+            uint len = nums.length;
+
+            for (uint i = 0; i < len; ) {
+                uint num = nums[i];
+                if (num % 2 == 0 && num < 99) {
+                    _total += num;
+                }
+                unchecked {
+                    ++i;
+                }
+            }
+
+            total = _total;
+        }
+    }
+
+  ```
+
+
+

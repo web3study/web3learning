@@ -10,7 +10,7 @@ description: aaa
   以下是一个经典的例子，remix（一种网页代码编辑器）默认3_Ballet.sol合约，内容较为齐全，可以不用理解具体的代码含义，先熟悉一个合约大概会有几种组成部分。
   主要功能：选举候选人，代表进行投票，并统计出投票结果
 
-  ``` 
+  ```js
     // SPDX-License-Identifier: GPL-3.0   1️⃣
     pragma solidity >=0.7.0 <0.9.0;
 

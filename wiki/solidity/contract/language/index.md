@@ -1917,8 +1917,7 @@ error 将在交易期间撤消对状态的所有更改。
   外部资源
   你也可以通过简单地复制url从GitHub导入
   ```js
-  // https://github.com/owner/repo/blob/branch/path/to/Contract.sol
-  import "https://github.com/owner/repo/blob/branch/path/to/Contract.sol";
+  import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v4.0/contracts/utils/math/SafeMath.sol";
 
   // Example import ECDSA.sol from openzeppelin-contract repo, release-v4.5 branch
   // https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v4.5/contracts/utils/cryptography/ECDSA.sol

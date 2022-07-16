@@ -500,8 +500,142 @@ description: aaa
   ```
 
 ### 枚举 Enum
+
+  solidity支持可枚举对象，它们对建模选择和跟踪状态很有用。枚举可以在solidity之外声明。
+
+  ```
+    // SPDX-License-Identifier: MIT
+    pragma solidity ^0.8.13;
+
+    contract Enum {
+        // Enum representing shipping status
+        enum Status {
+            Pending,
+            Shipped,
+            Accepted,
+            Rejected,
+            Canceled
+        }
+
+        // Default value is the first element listed in
+        // definition of the type, in this case "Pending"
+        Status public status;
+
+        // Returns uint
+        // Pending  - 0
+        // Shipped  - 1
+        // Accepted - 2
+        // Rejected - 3
+        // Canceled - 4
+        function get() public view returns (Status) {
+            return status;
+        }
+
+        // Update status by passing uint into input
+        function set(Status _status) public {
+            status = _status;
+        }
+
+        // You can update to a specific enum like this
+        function cancel() public {
+            status = Status.Canceled;
+        }
+
+        // delete resets the enum to its first value, 0
+        function reset() public {
+            delete status;
+        }
+    }
+
+  ```
+
+  声明并导入Enum文件，Enum在其中声明
+
+  ```
+    // SPDX-License-Identifier: MIT
+    pragma solidity ^0.8.13;
+    // This is saved 'EnumDeclaration.sol'
+
+    enum Status {
+        Pending,
+        Shipped,
+        Accepted,
+        Rejected,
+        Canceled
+    }
+
+  ```
+  导入上述枚举的文件
+
+  ```
+    // SPDX-License-Identifier: MIT
+    pragma solidity ^0.8.13;
+
+    import "./EnumDeclaration.sol";
+
+    contract Enum {
+        Status public status;
+    }
+
+  ```
+
 ### 结构 Structs
-### 数据声明 Data Locations - Storage, Memory and Calldata
+
+  您可以通过创建`struct`来定义自己的类型。它们对将相关数据分组很有用。结构可以在一个契约之外声明并导入到另一个契约中。
+  ```
+    // SPDX-License-Identifier: MIT
+    pragma solidity ^0.8.13;
+
+    contract Todos {
+        struct Todo {
+            string text;
+            bool completed;
+        }
+
+        // An array of 'Todo' structs
+        Todo[] public todos;
+
+        function create(string calldata _text) public {
+            // 3 ways to initialize a struct
+            // - calling it like a function
+            todos.push(Todo(_text, false));
+
+            // key value mapping
+            todos.push(Todo({text: _text, completed: false}));
+
+            // initialize an empty struct and then update it
+            Todo memory todo;
+            todo.text = _text;
+            // todo.completed initialized to false
+
+            todos.push(todo);
+        }
+
+        // Solidity automatically created a getter for 'todos' so
+        // you don't actually need this function.
+        function get(uint _index) public view returns (string memory text, bool completed) {
+            Todo storage todo = todos[_index];
+            return (todo.text, todo.completed);
+        }
+
+        // update text
+        function updateText(uint _index, string calldata _text) public {
+            Todo storage todo = todos[_index];
+            todo.text = _text;
+        }
+
+        // update completed
+        function toggleCompleted(uint _index) public {
+            Todo storage todo = todos[_index];
+            todo.completed = !todo.completed;
+        }
+    }
+
+  ```
+
+### 数据声明 Storage, Memory and Calldata
+
+
 ### 方法 Function
 ### 可见性 View and Pure Functions
 ### 错误及异常 Error

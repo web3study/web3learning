@@ -635,17 +635,615 @@ description: aaa
 
 ### 数据声明 Storage, Memory and Calldata
 
+  变量声明为`storage`、`memory`或`calldata`，以显式指定数据的位置。
+1. `storage` - 变量是一个状态变量(存储在区块链上)
+2. `memory` - 变量在内存中，当函数被调用时它就存在
+3. `calldata` - 包含函数参数的特殊数据位置
+  ```
+    // SPDX-License-Identifier: MIT
+    pragma solidity ^0.8.13;
 
-### 方法 Function
+    contract DataLocations {
+        uint[] public arr;
+        mapping(uint => address) map;
+        struct MyStruct {
+            uint foo;
+        }
+        mapping(uint => MyStruct) myStructs;
+
+        function f() public {
+            // call _f with state variables
+            _f(arr, map, myStructs[1]);
+
+            // get a struct from a mapping
+            MyStruct storage myStruct = myStructs[1];
+            // create a struct in memory
+            MyStruct memory myMemStruct = MyStruct(0);
+        }
+
+        function _f(
+            uint[] storage _arr,
+            mapping(uint => address) storage _map,
+            MyStruct storage _myStruct
+        ) internal {
+            // do something with storage variables
+        }
+
+        // You can return memory variables
+        function g(uint[] memory _arr) public returns (uint[] memory) {
+            // do something with memory array
+        }
+
+        function h(uint[] calldata _arr) external {
+            // do something with calldata array
+        }
+    }
+
+  ```
+
+
+### 方法（函数） Function
+
+  方法的返回值有多种类型
+  公共方法不能接受某些数据类型作为输入或输出
+
+  ```
+    // SPDX-License-Identifier: MIT
+    pragma solidity ^0.8.13;
+
+    contract Function {
+        // Functions can return multiple values.
+        function returnMany()
+            public
+            pure
+            returns (
+                uint,
+                bool,
+                uint
+            )
+        {
+            return (1, true, 2);
+        }
+
+        // Return values can be named.
+        function named()
+            public
+            pure
+            returns (
+                uint x,
+                bool b,
+                uint y
+            )
+        {
+            return (1, true, 2);
+        }
+
+        // Return values can be assigned to their name.
+        // In this case the return statement can be omitted.
+        function assigned()
+            public
+            pure
+            returns (
+                uint x,
+                bool b,
+                uint y
+            )
+        {
+            x = 1;
+            b = true;
+            y = 2;
+        }
+
+        // Use destructuring assignment when calling another
+        // function that returns multiple values.
+        function destructuringAssignments()
+            public
+            pure
+            returns (
+                uint,
+                bool,
+                uint,
+                uint,
+                uint
+            )
+        {
+            (uint i, bool b, uint j) = returnMany();
+
+            // Values can be left out.
+            (uint x, , uint y) = (4, 5, 6);
+
+            return (i, b, j, x, y);
+        }
+
+        // Cannot use map for either input or output
+
+        // Can use array for input
+        function arrayInput(uint[] memory _arr) public {}
+
+        // Can use array for output
+        uint[] public arr;
+
+        function arrayOutput() public view returns (uint[] memory) {
+            return arr;
+        }
+    }
+
+  ```
+
+
 ### 可见性 View and Pure Functions
+
+  Getter类型的方法可以声明为`view`或`pure`。`view`声明不会更改任何状态。`pure`声明不会更改或读取状态变量。
+
+  ```
+    // SPDX-License-Identifier: MIT
+    pragma solidity ^0.8.13;
+
+    contract ViewAndPure {
+        uint public x = 1;
+
+        // Promise not to modify the state.
+        function addToX(uint y) public view returns (uint) {
+            return x + y;
+        }
+
+        // Promise not to modify or read from the state.
+        function add(uint i, uint j) public pure returns (uint) {
+            return i + j;
+        }
+    }
+
+  ```
+
+
 ### 错误及异常 Error
+
+error 将在交易期间撤消对状态的所有更改。
+可以通过`require`、`revert` 或者`assert`
+- `require`用于执行前验证shu'ru'de。
+- `revert`与`require`相似。有关详细信息，请参见下面的代码。
+- `assert`断言用于检查永远不应该是错误的代码。断言失败可能意味着有一个错误。
+  
+使用自定义错误节省gas。
+
+  ```
+
+    // SPDX-License-Identifier: MIT
+    pragma solidity ^0.8.13;
+
+    contract Error {
+        function testRequire(uint _i) public pure {
+            // Require should be used to validate conditions such as:
+            // - inputs
+            // - conditions before execution
+            // - return values from calls to other functions
+            require(_i > 10, "Input must be greater than 10");
+        }
+
+        function testRevert(uint _i) public pure {
+            // Revert is useful when the condition to check is complex.
+            // This code does the exact same thing as the example above
+            if (_i <= 10) {
+                revert("Input must be greater than 10");
+            }
+        }
+
+        uint public num;
+
+        function testAssert() public view {
+            // Assert should only be used to test for internal errors,
+            // and to check invariants.
+
+            // Here we assert that num is always equal to 0
+            // since it is impossible to update the value of num
+            assert(num == 0);
+        }
+
+        // custom error
+        error InsufficientBalance(uint balance, uint withdrawAmount);
+
+        function testCustomError(uint _withdrawAmount) public view {
+            uint bal = address(this).balance;
+            if (bal < _withdrawAmount) {
+                revert InsufficientBalance({balance: bal, withdrawAmount: _withdrawAmount});
+            }
+        }
+    }
+
+
+  ```
+  其他示例
+
+  ```
+    // SPDX-License-Identifier: MIT
+    pragma solidity ^0.8.13;
+
+    contract Account {
+        uint public balance;
+        uint public constant MAX_UINT = 2**256 - 1;
+
+        function deposit(uint _amount) public {
+            uint oldBalance = balance;
+            uint newBalance = balance + _amount;
+
+            // balance + _amount does not overflow if balance + _amount >= balance
+            require(newBalance >= oldBalance, "Overflow");
+
+            balance = newBalance;
+
+            assert(balance >= oldBalance);
+        }
+
+        function withdraw(uint _amount) public {
+            uint oldBalance = balance;
+
+            // balance - _amount does not underflow if balance >= _amount
+            require(balance >= _amount, "Underflow");
+
+            if (balance < _amount) {
+                revert("Underflow");
+            }
+
+            balance -= _amount;
+
+            assert(balance <= oldBalance);
+        }
+    }
+
+  ```
+
 ### 方法修饰 Function Modifier
-### 时间 Events
+
+  modifier可在方法运行前或者运行之后执行
+  主要功能：
+  - 权限访问
+  - 验证输入
+  - 防止重入攻击
+
+
+  ```
+    // SPDX-License-Identifier: MIT
+    pragma solidity ^0.8.13;
+
+    contract FunctionModifier {
+        // We will use these variables to demonstrate how to use
+        // modifiers.
+        address public owner;
+        uint public x = 10;
+        bool public locked;
+
+        constructor() {
+            // Set the transaction sender as the owner of the contract.
+            owner = msg.sender;
+        }
+
+        // Modifier to check that the caller is the owner of
+        // the contract.
+        modifier onlyOwner() {
+            require(msg.sender == owner, "Not owner");
+            // Underscore is a special character only used inside
+            // a function modifier and it tells Solidity to
+            // execute the rest of the code.
+            _;
+        }
+
+        // Modifiers can take inputs. This modifier checks that the
+        // address passed in is not the zero address.
+        modifier validAddress(address _addr) {
+            require(_addr != address(0), "Not valid address");
+            _;
+        }
+
+        function changeOwner(address _newOwner) public onlyOwner validAddress(_newOwner) {
+            owner = _newOwner;
+        }
+
+        // Modifiers can be called before and / or after a function.
+        // This modifier prevents a function from being called while
+        // it is still executing.
+        modifier noReentrancy() {
+            require(!locked, "No reentrancy");
+
+            locked = true;
+            _;
+            locked = false;
+        }
+
+        function decrement(uint i) public noReentrancy {
+            x -= i;
+
+            if (i > 1) {
+                decrement(i - 1);
+            }
+        }
+    }
+
+  ```
+
+### 事件 Events
+
+  事件主要用于记录在区块链上
+  - 监听事件，并更新用户的一些功能，如界面、状态等
+  - 一个便宜的存储方式
+
+
+  ```
+    // SPDX-License-Identifier: MIT
+    pragma solidity ^0.8.13;
+
+    contract Event {
+        // Event declaration
+        // Up to 3 parameters can be indexed.
+        // Indexed parameters helps you filter the logs by the indexed parameter
+        event Log(address indexed sender, string message);
+        event AnotherLog();
+
+        function test() public {
+            emit Log(msg.sender, "Hello World!");
+            emit Log(msg.sender, "Hello EVM!");
+            emit AnotherLog();
+        }
+    }
+
+  ```
+
 ### 构造方法 Constructor
+
+  构造方法是可选择的一个方法，可以不写，此方法主要在合约创建的时候执行
+
+  ```
+    // SPDX-License-Identifier: MIT
+    pragma solidity ^0.8.13;
+
+    // Base contract X
+    contract X {
+        string public name;
+
+        constructor(string memory _name) {
+            name = _name;
+        }
+    }
+
+    // Base contract Y
+    contract Y {
+        string public text;
+
+        constructor(string memory _text) {
+            text = _text;
+        }
+    }
+
+    // There are 2 ways to initialize parent contract with parameters.
+
+    // Pass the parameters here in the inheritance list.
+    contract B is X("Input to X"), Y("Input to Y") {
+
+    }
+
+    contract C is X, Y {
+        // Pass the parameters here in the constructor,
+        // similar to function modifiers.
+        constructor(string memory _name, string memory _text) X(_name) Y(_text) {}
+    }
+
+    // Parent constructors are always called in the order of inheritance
+    // regardless of the order of parent contracts listed in the
+    // constructor of the child contract.
+
+    // Order of constructors called:
+    // 1. X
+    // 2. Y
+    // 3. D
+    contract D is X, Y {
+        constructor() X("X was called") Y("Y was called") {}
+    }
+
+    // Order of constructors called:
+    // 1. X
+    // 2. Y
+    // 3. E
+    contract E is X, Y {
+        constructor() Y("Y was called") X("X was called") {}
+    }
+
+  ```
+
 ### 继承 Inheritance
+
+  很多变成语言都会有此语法，Solidity支持多继承，使用`is`关键字，
+  - 如果想要被子合约重写，父合约的方法就必须叫上`virtual`的声明
+  - 子合约如果需要重写父类的合约方法，必须加上`override`
+  - 继承的顺序很重要
+  - 适当的，可以整理出合约的继承关系，防止出现错乱问题
+
+
+  ```
+    // SPDX-License-Identifier: MIT
+    pragma solidity ^0.8.13;
+
+    /* Graph of inheritance
+        A
+      / \
+      B   C
+    / \ /
+    F  D,E
+
+    */
+
+    contract A {
+        function foo() public pure virtual returns (string memory) {
+            return "A";
+        }
+    }
+
+    // Contracts inherit other contracts by using the keyword 'is'.
+    contract B is A {
+        // Override A.foo()
+        function foo() public pure virtual override returns (string memory) {
+            return "B";
+        }
+    }
+
+    contract C is A {
+        // Override A.foo()
+        function foo() public pure virtual override returns (string memory) {
+            return "C";
+        }
+    }
+
+    // Contracts can inherit from multiple parent contracts.
+    // When a function is called that is defined multiple times in
+    // different contracts, parent contracts are searched from
+    // right to left, and in depth-first manner.
+
+    contract D is B, C {
+        // D.foo() returns "C"
+        // since C is the right most parent contract with function foo()
+        function foo() public pure override(B, C) returns (string memory) {
+            return super.foo();
+        }
+    }
+
+    contract E is C, B {
+        // E.foo() returns "B"
+        // since B is the right most parent contract with function foo()
+        function foo() public pure override(C, B) returns (string memory) {
+            return super.foo();
+        }
+    }
+
+    // Inheritance must be ordered from “most base-like” to “most derived”.
+    // Swapping the order of A and B will throw a compilation error.
+    contract F is A, B {
+        function foo() public pure override(A, B) returns (string memory) {
+            return super.foo();
+        }
+    }
+
+  ```
+
+
 ### 继承的状态变量 Shadowing Inherited State Variables
+
+  状态变量，不能在子合约重新声明来重写
+
+  ```
+    // SPDX-License-Identifier: MIT
+    pragma solidity ^0.8.13;
+
+    contract A {
+        string public name = "Contract A";
+
+        function getName() public view returns (string memory) {
+            return name;
+        }
+    }
+
+    // Shadowing is disallowed in Solidity 0.6
+    // This will not compile
+    // contract B is A {
+    //     string public name = "Contract B";
+    // }
+
+    contract C is A {
+        // This is the correct way to override inherited state variables.
+        constructor() {
+            name = "Contract C";
+        }
+
+        // C.getName returns "Contract C"
+    }
+
+  ```
+
+
 ### 调用父类方法 Calling Parent Contracts
+
+  父合约可以直接调用，也可以使用关键字`super`来调用。
+  通过使用关键字super，将调用所有直接父合约中的方法。
+
+  ```
+    // SPDX-License-Identifier: MIT
+    pragma solidity ^0.8.13;
+
+    /* Inheritance tree
+      A
+    /  \
+    B   C
+    \ /
+      D
+    */
+
+    contract A {
+        // This is called an event. You can emit events from your function
+        // and they are logged into the transaction log.
+        // In our case, this will be useful for tracing function calls.
+        event Log(string message);
+
+        function foo() public virtual {
+            emit Log("A.foo called");
+        }
+
+        function bar() public virtual {
+            emit Log("A.bar called");
+        }
+    }
+
+    contract B is A {
+        function foo() public virtual override {
+            emit Log("B.foo called");
+            A.foo();
+        }
+
+        function bar() public virtual override {
+            emit Log("B.bar called");
+            super.bar();
+        }
+    }
+
+    contract C is A {
+        function foo() public virtual override {
+            emit Log("C.foo called");
+            A.foo();
+        }
+
+        function bar() public virtual override {
+            emit Log("C.bar called");
+            super.bar();
+        }
+    }
+
+    contract D is B, C {
+        // Try:
+        // - Call D.foo and check the transaction logs.
+        //   Although D inherits A, B and C, it only called C and then A.
+        // - Call D.bar and check the transaction logs
+        //   D called C, then B, and finally A.
+        //   Although super was called twice (by B and C) it only called A once.
+
+        function foo() public override(B, C) {
+            super.foo();
+        }
+
+        function bar() public override(B, C) {
+            super.bar();
+        }
+    }
+
+  ```
+
+
 ### 可见性 Visibility
+
+  方法和状态变量必须声明它们是否可以被其他合约访问。
+
+  方法可以声明为
+  - `public` - 任何合约和帐户都可以调用
+  - `private` - 仅在定义功能的合约内
+  - `internal` - 仅继承内部功能的内部合约
+  - `external` - 只有其他合约和帐户才能调用，内部不可调用
+
+
 ### 接口 Interface
 ### 可支付 Payable
 ### 发送eth Sending Ether - Transfer, Send, and Call

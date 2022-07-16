@@ -5,7 +5,7 @@
 const config = {
   title: "Web3 Study",
   tagline: "#WeLoveStudy",
-  url: "https://web3Study11111",
+  url: "https://web3study.club",
   baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",

@@ -5,8 +5,11 @@ sidebar_position: 40
 image: sss
 description: aaa
 ---
-## 全局变量
-`abi.decode(bytes memory encodedData, (...)) returns (...)`: ABI - 解码提供的数据。类型在括号中作为第二个参数给出。例子：(uint a, uint[2] memory b, bytes memory c) = abi.decode(data, (uint, uint[2], bytes))
+## 全局变量（扩展知识）
+
+`abi.decode(bytes memory encodedData, (...)) returns (...)`: ABI - 解码提供的数据。类型在括号中作为第二个参数给出。
+
+例子：`(uint a, uint[2] memory b, bytes memory c) = abi.decode(data, (uint, uint[2], bytes))`
 
 `abi.encode(...) returns (bytes memory)`: ABI - 编码给定的参数
 
@@ -70,9 +73,9 @@ description: aaa
 
 `ecrecover(bytes32 hash, uint8 v, bytes32 r, bytes32 s) returns (address)`：从椭圆曲线签名中恢复与公钥关联的地址，错误返回零
 
-`addmod(uint x, uint y, uint k) returns (uint)`: 计​​算以任意精度执行加法的位置，并且不会在 处回绕。断言从版本 0.5.0 开始。(x + y) % k2**256k != 0
+`addmod(uint x, uint y, uint k) returns (uint)`: 计​​算以任意精度执行加法的位置，并且不会在 处回绕。断言从版本 0.5.0 开始。`(x + y) % k2**256k != 0`
 
-`mulmod(uint x, uint y, uint k) returns (uint)`: 计​​算以任意精度执行乘法的位置，并且不会在 处回绕。断言从版本 0.5.0 开始。(x * y) % k2**256k != 0
+`mulmod(uint x, uint y, uint k) returns (uint)`: 计​​算以任意精度执行乘法的位置，并且不会在 处回绕。断言从版本 0.5.0 开始。`(x * y) % k2**256k != 0`
 
 `this`（当前合约的类型）：当前合约，可显式转换为`address`或`address payable`
 
@@ -104,7 +107,7 @@ description: aaa
 
 ## 函数可见性说明符
 
-```
+```js
 function myFunction() <visibility specifier> returns (bool) {
     return true;
 }

@@ -5,154 +5,91 @@ sidebar_position: 50
 image: sss
 description: aaa
 ---
-## 合约示例 
+## 一个完整的示例
 
-  以下是一个经典的例子，remix（一种网页代码编辑器）默认3_Ballet.sol合约，内容较为齐全，可以不用理解具体的代码含义，先熟悉一个合约大概会有几种组成部分。
-  主要功能：选举候选人，代表进行投票，并统计出投票结果
+  接下来会以一个简单的方式，从合约编写到部署，到简单的前端调用来做一个dapp的示例。
+  
+  Dapp的功能
+  - 可以领取食物，与上一次领取时间间隔2min
+  - 给小狗喂食物
+  - 每个人都可以去喂小狗
+  - 食物总量为10
+  - 开始时间为部署合约时间
+  - 最后食物消耗完，喂养多着获胜（数量相同，则按照先喂养的顺序）
+
+
+分析一下（主要为示例作用，尽量简化不做扩展）
+
+需要保存的参数：
+当前喂小狗的时间、每个人已喂的量、每个人当前还剩余的食物量、记录胜者
+
 
   ```js
-    // SPDX-License-Identifier: GPL-3.0   1️⃣
-    pragma solidity >=0.7.0 <0.9.0;
+    // SPDX-License-Identifier: MIT
+    pragma solidity ^0.8.13;
+
+    import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v4.0/contracts/utils/math/SafeMath.sol";
 
     /** 
-    * @title Ballot
-    * @dev Implements voting process along with vote delegation
-    */
-    contract Ballot {
-      
-        struct Voter {
-            uint weight; // weight is accumulated by delegation
-            bool voted;  // if true, that person already voted
-            address delegate; // person delegated to
-            uint vote;   // index of the voted proposal
+     * @title Pet
+     * @author yzbban
+     * @notice Dog feed
+     * @dev Pet test
+     */
+    contract Pet {
+        event Feed(address _owner);
+        event ReceiveFood(address _owner);
+
+        using SafeMath for uint;
+    
+        //用户拥有的食物量
+        mapping(address=>uint) foodOwners;
+
+        //用户拥有的食物量
+        mapping(address=>uint) feedOwners;
+        //胜利者
+        address private winner;
+
+        uint public foods;
+        uint public lastTime;
+
+        constructor(){
+            foods = 10;
         }
 
-        struct Proposal {
-            // If you can limit the length to a certain number of bytes, 
-            // always use one of bytes1 to bytes32 because they are much cheaper
-            bytes32 name;   // short name (up to 32 bytes)
-            uint voteCount; // number of accumulated votes
+
+        function getWinner() public view returns(address){
+            return winner;
         }
 
-        address public chairperson;
+        ///@notice  获取食物
+        function receiveFood() external{
+            require(block.timestamp > lastTime.add(2 minutes),"Cool down");
+            require(foods>0,"Food not enough!");
+            foods = foods.sub(1);
+            foodOwners[msg.sender] = foodOwners[msg.sender].add(1);
+            lastTime = block.timestamp;
+            emit ReceiveFood(msg.sender);
+        }
 
-        mapping(address => Voter) public voters;
-
-        Proposal[] public proposals;
-
-        /** 
-        * @dev Create a new ballot to choose one of 'proposalNames'.
-        * @param proposalNames names of proposals
-        */
-        constructor(bytes32[] memory proposalNames) {
-            chairperson = msg.sender;
-            voters[chairperson].weight = 1;
-
-            for (uint i = 0; i < proposalNames.length; i++) {
-                // 'Proposal({...})' creates a temporary
-                // Proposal object and 'proposals.push(...)'
-                // appends it to the end of 'proposals'.
-                proposals.push(Proposal({
-                    name: proposalNames[i],
-                    voteCount: 0
-                }));
+        ///@notice  喂养食物
+        function feed() external{
+            require(foodOwners[msg.sender]>0,"Food");
+            foodOwners[msg.sender] = foodOwners[msg.sender].sub(1);
+            feedOwners[msg.sender] = feedOwners[msg.sender].add(1);
+            if(feedOwners[msg.sender]>feedOwners[winner]){
+                winner = msg.sender;
             }
-        }
-        
-        /** 
-        * @dev Give 'voter' the right to vote on this ballot. May only be called by 'chairperson'.
-        * @param voter address of voter
-        */
-        function giveRightToVote(address voter) public {
-            require(
-                msg.sender == chairperson,
-                "Only chairperson can give right to vote."
-            );
-            require(
-                !voters[voter].voted,
-                "The voter already voted."
-            );
-            require(voters[voter].weight == 0);
-            voters[voter].weight = 1;
+            emit Feed(msg.sender);
         }
 
-        /**
-        * @dev Delegate your vote to the voter 'to'.
-        * @param to address to which vote is delegated
-        */
-        function delegate(address to) public {
-            Voter storage sender = voters[msg.sender];
-            require(!sender.voted, "You already voted.");
-            require(to != msg.sender, "Self-delegation is disallowed.");
-
-            while (voters[to].delegate != address(0)) {
-                to = voters[to].delegate;
-
-                // We found a loop in the delegation, not allowed.
-                require(to != msg.sender, "Found loop in delegation.");
-            }
-            sender.voted = true;
-            sender.delegate = to;
-            Voter storage delegate_ = voters[to];
-            if (delegate_.voted) {
-                // If the delegate already voted,
-                // directly add to the number of votes
-                proposals[delegate_.vote].voteCount += sender.weight;
-            } else {
-                // If the delegate did not vote yet,
-                // add to her weight.
-                delegate_.weight += sender.weight;
-            }
-        }
-
-        /**
-        * @dev Give your vote (including votes delegated to you) to proposal 'proposals[proposal].name'.
-        * @param proposal index of proposal in the proposals array
-        */
-        function vote(uint proposal) public {
-            Voter storage sender = voters[msg.sender];
-            require(sender.weight != 0, "Has no right to vote");
-            require(!sender.voted, "Already voted.");
-            sender.voted = true;
-            sender.vote = proposal;
-
-            // If 'proposal' is out of the range of the array,
-            // this will throw automatically and revert all
-            // changes.
-            proposals[proposal].voteCount += sender.weight;
-        }
-
-        /** 
-        * @dev Computes the winning proposal taking all previous votes into account.
-        * @return winningProposal_ index of winning proposal in the proposals array
-        */
-        function winningProposal() public view
-                returns (uint winningProposal_)
-        {
-            uint winningVoteCount = 0;
-            for (uint p = 0; p < proposals.length; p++) {
-                if (proposals[p].voteCount > winningVoteCount) {
-                    winningVoteCount = proposals[p].voteCount;
-                    winningProposal_ = p;
-                }
-            }
-        }
-
-        /** 
-        * @dev Calls winningProposal() function to get the index of the winner contained in the proposals array and then
-        * @return winnerName_ the name of the winner
-        */
-        function winnerName() public view
-                returns (bytes32 winnerName_)
-        {
-            winnerName_ = proposals[winningProposal()].name;
-        }
     }
 
-  ```
+    ```
 
-## 注释说明
-  1️⃣ 此为许可相关的表述方式，具体的可以参考SPDX许可列表网址：[SPDX许可列表](https://spdx.org/licenses/)
+ ## 注释说明
+1️⃣ 此为许可相关的表述方式，具体的可以参考SPDX许可列表网址：[SPDX许可列表](https://spdx.org/licenses/)
+
 
 ### 基本的语法构成
 

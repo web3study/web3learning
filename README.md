@@ -44,3 +44,8 @@ Currently deployed using Vercel for the `main` branch in this repo.
   6. navigation 导航类文章写在这里
   7. security 安全类文章写在这里
   8. wiki solidity基础写在这里
+
+
+## package.json添加日志
+
+  7-18 添加zh分词搜素 `nodejieba`

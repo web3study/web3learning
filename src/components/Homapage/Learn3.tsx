@@ -99,16 +99,16 @@ export default function Learn3() {
         </div>
       </div>
 
-      <div className="relative max-w-5xl mx-auto text-center py-16 lg:py-24 sm:px-12 lg:px-3">
-        <div className="relative flex flex-wrap justify-center content-center gap-3 lg:rounded-2xl lg:pl-0">
+      <div className="relative max-w-6xl mx-auto text-center py-16 lg:py-24 sm:px-12 lg:px-3">
+        <div className="relative flex flex-wrap lg:justify-center content-center lg:rounded-2xl lg:pl-0">
           {/* Individual collection */}
           {AuthorList.map((collection) => (
             <Link
               to={collection.href}
-              className="scroll-ml-12 scroll-mr-6 snap-always  snap-mandatory snap-start last:mr-12 shrink-0 flex flex-col rounded-xl md:rounded-2xl overflow-hidden  group"
+              className="shrink-0 flex my-3 flex-col rounded-xl md:rounded-2xl overflow-hidden group w-2/4 lg:w-1/4"
               key={collection.title}
             >
-              <div className="relative w-40 sm:w-40 lg:w-60 aspect-[4/5] bg-black/50 rounded-xl md:rounded-2xl">
+              <div className="relative w-40 sm:w-40 lg:w-60 aspect-[4/5] bg-black/50 rounded-xl md:rounded-2xl mx-auto">
                 {/* Inset Collection image */}
                 <div className="absolute inset-0">
                   <img
@@ -139,10 +139,6 @@ export default function Learn3() {
             </Link>
           ))}
 
-          {/* Hack for full-width */}
-          <div className="snap-end shrink-0 lg:hidden">
-            <div className="shrink-0 w-1 "></div>
-          </div>
         </div>
       </div>
     </section >

@@ -8,7 +8,7 @@ module.exports = [
       indexDocSidebarParentCategories: 3,
       indexBlog: true,
       indexPages: true,
-      language: ["en", "zh"],
+      language: "zh",
       style: undefined,
       lunr: {
         tokenizerSeparator: /[\s\-]+/,

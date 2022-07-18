@@ -55,4 +55,57 @@ Keccak-256("") = c5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a47
 
 在以太坊中，基于密码学所设计的杂凑函数无处不在，以太坊协议中多处用到了名为 Keccak-256 的密码学杂凑函数。Keccak-256 是 2007 年由 NIST 在 SHA-3 密码学哈希函数竞赛中提出的。 Keccak 胜出并最终在 2015 年成为 FIPS 202 标准。
 
-杂凑函数在区块链中一个重要的应用是利用钱包公钥，生成钱包地址。
+杂凑函数在区块链中一个重要的应用是利用钱包公钥，生成钱包地址，代码实例如下：
+
+```javascript
+const { utils, Wallet } = require("ethers");
+
+let walletMnemonic = Wallet.createRandom();//使用随机生成的私钥
+
+let privateKey = walletMnemonic.privateKey;//获取私钥
+
+let compare_public_key = walletMnemonic.publicKey;//通过调用直接获取公钥
+
+let publicKey = utils.computePublicKey(privateKey);//通过调用 computePublicKey 利用私钥计算对应公钥
+
+if (compare_public_key !== publicKey)//一致性比较
+{
+  console.log(`ERROR: calculated publicKey is error!`)
+}
+else
+{
+  console.log(`PASS: calculated publicKey is same with mnemonic generated!`)
+}
+
+console.log("Calculated PK:",publicKey);
+
+let slice_PublicKey = utils.hexDataSlice(publicKey,1);//移除第一个字节 0x04
+
+console.log("After hex slice operation:",slice_PublicKey);
+
+let keccak_result = utils.keccak256(slice_PublicKey);//计算公钥的 keccak256 杂凑函数
+
+console.log("After keccak calculate operation",keccak_result);
+
+let address = utils.hexDataSlice(keccak_result,12);//移除前12个字节，保留后 20 字节，keccack256 的输出结果共 32 字节长
+
+console.log("Manual calculated address",address);
+
+let checksum_address = utils.getAddress(address);//调用 getAddress方法 获取经过校验和修订后的地址
+
+if(checksum_address !== walletMnemonic.address)//地址一致性比较
+{
+  console.log("ERROR: address does not match");
+}
+else
+{
+  console.log("PASS: address checksum_address match with mnemonic address");
+}
+
+console.log("Address generate from mnemonic:",walletMnemonic.address);//利用已有 Wallet 库直接获取的公钥
+```
+
+上述代码执行结果如下图所示：
+
+![address_generate](./assets/address_execution_result.png)
+

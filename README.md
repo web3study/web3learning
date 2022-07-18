@@ -48,4 +48,7 @@ Currently deployed using Vercel for the `main` branch in this repo.
 
 ## package.json添加日志
 
-  7-18 添加zh分词搜素 `nodejieba`
+  7-18 
+  1. 添加zh分词搜素 `nodejieba`
+  2. 添加 @easyops-cn/docusaurus-search-local
+

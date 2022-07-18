@@ -23,11 +23,11 @@ module.exports = {
             to: "wiki/solidity",
           },
           {
-            label: "🎁 前端教程",
+            label: "🖥 前端教程",
             to: "wiki/web",
           },
           {
-            label: "🎁 工具库教程",
+            label: "🤖 工具库教程",
             to: "wiki/tool",
           },
           {

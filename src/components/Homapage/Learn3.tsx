@@ -100,7 +100,7 @@ export default function Learn3() {
       </div>
 
       <div className="relative max-w-5xl mx-auto text-center py-16 lg:py-24 sm:px-12 lg:px-3">
-        <div className="relative flex flex-wrap justify-center self-center gap-3 lg:rounded-2xl lg:pl-0">
+        <div className="relative flex flex-wrap justify-center content-center gap-3 lg:rounded-2xl lg:pl-0">
           {/* Individual collection */}
           {AuthorList.map((collection) => (
             <Link

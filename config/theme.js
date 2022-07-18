@@ -27,6 +27,10 @@ module.exports = {
             to: "wiki/web",
           },
           {
+            label: "🎁 工具库教程",
+            to: "wiki/tool",
+          },
+          {
             label: "🪂 openzeppelin详解",
             to: "wiki/oz",
           },

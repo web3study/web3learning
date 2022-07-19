@@ -35,7 +35,7 @@ og_url: https://www.bilibili.com/video/BV1h34y1n7A3
 ## 添加支持iframe的组件使用：
 
 ```
-<iframe width="100%" height="500" src="https://dune.com/bingowrt/BILIBILI-CHEER_UP-NFT" title="BILIBILI" frameborder="0" style={{background: "#F3F0FE", borderRadius: "12px"}}></iframe>
+<iframe width="100%" height="500" src="https://dune.com/bingowrt/BILIBILI-CHEER_UP-NFT" title="BILIBILI" frameBorder="0" style={{background: "#F3F0FE", borderRadius: "12px"}}></iframe>
 ```
 
 显示如图：
@@ -45,7 +45,7 @@ og_url: https://www.bilibili.com/video/BV1h34y1n7A3
 ## 🌼视频引入：
 
 ```
-<iframe src="https://player.bilibili.com/player.html?bvid=BV1h34y1n7A3" scrolling="no" frameborder="no" framespacing="0" allowfullscreen="false"></iframe>
+<iframe src="https://player.bilibili.com/player.html?bvid=BV1h34y1n7A3" scrolling="no" frameBorder="no" framespacing="0" allowFullScreen={false}></iframe>
 ```
 
 其中 `bvid=BV1h34y1n7A3` 可以打开bilibili直接引用：如

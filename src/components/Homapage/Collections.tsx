@@ -26,7 +26,7 @@ export default function Collections() {
               className="scroll-ml-12 scroll-mr-6 snap-always  snap-mandatory snap-start last:mr-12 shrink-0 flex flex-col rounded-xl md:rounded-2xl overflow-hidden  group"
               key={collection.title}
             >
-              <div className="relative w-60 sm:w-64 lg:w-72 aspect-[4/5] bg-black/50 rounded-xl md:rounded-2xl">
+              <div className="relative w-60 sm:w-64 lg:w-72 aspect-[4/5] bg-yellow-500 rounded-xl md:rounded-2xl">
                 {/* Inset Collection image */}
                 <div className="absolute inset-0">
                   <img
@@ -37,7 +37,10 @@ export default function Collections() {
                 </div>
 
                 {/* Collection description */}
-                <div className="absolute w-full bottom-0 p-3 flex gap-2 flex-col bg-gradient-to-b from-black/0 via-black/50 to-black/60 group-hover:from-black/0 group-hover:via-amber-800/50 group-hover:to-amber-800/75 text-white rounded-xl md:rounded-2xl">
+                <div className="absolute w-full bottom-0 p-3 flex gap-2 flex-col 
+                bg-gradient-to-b from-black/0 via-black/5 to-black/30
+                group-hover:from-black/0 group-hover:via-amber-800/50 
+                group-hover:to-amber-800/75 text-white rounded-xl md:rounded-2xl">
                   <div className="flex-1">
                     <div className="block">
                       <p className="text-base sm:text-lg font-bold uppercase truncate pt-8">
@@ -46,15 +49,6 @@ export default function Collections() {
                       <div className="flex justify-between mt-1">
                         <div className="text-xs font-bold uppercase leading-6 grow-0 truncate">
                           {collection.description}
-                        </div>
-                        <div className="shrink-0">
-                          {collection.tier ? (
-                            <div className="rounded-lg text-xs leading-6 px-2 uppercase font-semibold text-white bg-pink-500 group-hover:bg-white group-hover:text-pink-500 transition-all duration-300">
-                              Plate {collection.tier}
-                            </div>
-                          ) : (
-                            ""
-                          )}
                         </div>
                       </div>
                     </div>

@@ -84,8 +84,8 @@ export default function Learn3() {
       </div>
 
 
-      <div className="relative max-w-5xl mx-auto text-center py-16 lg:py-24 px-8 sm:px-12 lg:px-3">
-        <span className="text-blue-500	">
+      <div className="relative max-w-5xl mx-auto text-center py-5 lg:px-8 sm:px-12 lg:px-3">
+        <span className="text-blue-500">
           <a target='blank' href='https://etherscan.io/address/0x236BE5490b1e21c83771a37820a25cF3c7c7c26B'>
             捐赠地址: 0x236BE5490b1e21c83771a37820a25cF3c7c7c26B</a>
         </span>

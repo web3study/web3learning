@@ -32,7 +32,7 @@ export default function Share() {
             </p>
             <div className="block pt-8 pb-4 md:pb-0 text-center md:text-left">
               <Link to="/aboutus">
-                <span className="inline-block px-6 py-3 rounded-full bg-pink-500 hover:bg-white hover:shadow-lg hover:shadow-pink-500 text-base font-medium text-white hover:text-pink-500 transition-all duration-300 hover:-translate-y-1">
+                <span className="inline-block px-6 py-3 rounded-full bg-blue-500 hover:bg-white hover:shadow-lg hover:shadow-blue-500 text-base font-medium text-white hover:text-pink-500 transition-all duration-300 hover:-translate-y-1">
                   Learn More
                 </span>
               </Link>

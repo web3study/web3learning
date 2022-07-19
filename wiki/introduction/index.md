@@ -5,7 +5,7 @@ sidebar_position: 10
 image: /img/bac111.png
 description: 这
 ---
-![eth](assets/hero.webp)
+![eth](assets/hero.jpg)
 
 ### 为何要写此教程
 

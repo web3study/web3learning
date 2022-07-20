@@ -49,12 +49,16 @@ module.exports = [
     },
   ],
   [
-    "@docusaurus/plugin-content-docs",
+    "@docusaurus/plugin-content-blog",
     {
-      id: "security",
-      routeBasePath: "security",
-      sidebarPath: require.resolve("../sidebars.js"),
-      path: "./security",
+      id: "fun",
+      routeBasePath: "fun",
+      path: "./fun",
+      blogTitle: "fun",
+      blogDescription: "blog",
+      showReadingTime: true,
+      postsPerPage: 50,
+      blogSidebarCount: 100,
     },
   ],
   [

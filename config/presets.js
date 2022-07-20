@@ -17,7 +17,7 @@ module.exports = [
         routeBasePath: "news",
         path: "news",
         blogTitle: "news",
-        blogDescription: "posts LALALAL",
+        blogDescription: "blog",
         showReadingTime: true,
         postsPerPage: 50,
         blogSidebarCount: 100,

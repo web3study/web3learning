@@ -1,0 +1,23 @@
+coffee:
+  name: coffee
+  title: '#lalalal'
+  image_url: /img/team/coffee.png
+  url: https://twitter.com/coffee
+
+heisenberg:
+  name: heisenberg
+  title: runtao.eth
+  image_url: /img/team/heisenberg.png
+  url: https://twitter.com/bingowrtI
+
+r0ckgh0st:
+  name: r0ckgh0st
+  title: r0ckgh0st.eth
+  image_url: /img/team/dabao.jpeg
+  url: https://twitter.com/GrantYu1
+
+ban:
+  name: ban
+  title: '#yzbban.eth'
+  image_url: /img/team/ban.png
+  url: https://twitter.com/yzbban

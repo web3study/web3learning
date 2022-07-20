@@ -26,7 +26,8 @@ export default function Learn3() {
   const [isMessage, setIsMessage] = useState<boolean>(false);
   return (
     <section>
-      <div className={"relative my-8 md:my-12 group " + styles.sectionBg}>
+      <div style={{ backgroundImage: 'url(img/bac555.png)' }}
+        className={"relative bg-fixed bg-center my-8 md:my-12 group " + styles.sectionBg}>
         <div className="absolute inset-0 w-full h-full">
           <img
             className={"w-full h-full object-cover " + styles.coverImg}
@@ -61,24 +62,26 @@ export default function Learn3() {
         />
 
         <div className="relative max-w-4xl mx-auto text-center py-16 lg:py-24 px-8 sm:px-12 lg:px-3">
-          <h3 className="text-3xl md:text-5xl uppercase pb-4 tracking-widest">
-            欢迎加入web3大家庭
-            <span className="block pt-1 text-xl md:text-3xl tracking-normal font-light">
-              一起共建
-            </span>
-          </h3>
-          <div className="text-base sm:text-xl lg:text-lg xl:text-xl">
-            <p>我们想打造一个较为完备web3学习体系，先以eth为基础进行发散，后续会加入更多的模块，也欢迎大家一起来建造</p>
-            <p>
-              你憧憬未来的时候，不能预先把所有点点滴滴的事联系起来；唯有未来你在回忆过去的时候，你才是会明白那些点点滴滴是如何联系在一起的
-            </p>
-          </div>
-          <div className="pt-8">
-            <Link to="/aboutus">
-              <span className="inline-block px-6 py-3 rounded-full bg-blue-500 hover:bg-white hover:shadow-lg hover:shadow-blue-500 text-base font-medium text-white hover:text-blue-500 transition-all duration-300 hover:-translate-y-1">
-                Learn More
+          <div>
+            <h3 className="text-3xl md:text-5xl uppercase pb-4 tracking-widest">
+              欢迎加入web3大家庭
+              <span className="block pt-1 text-xl md:text-3xl tracking-normal font-light">
+                一起共建
               </span>
-            </Link>
+            </h3>
+            <div className="text-base sm:text-xl lg:text-lg xl:text-xl">
+              <p>我们想打造一个较为完备web3学习体系，先以eth为基础进行发散，后续会加入更多的模块，也欢迎大家一起来建造</p>
+              <p>
+                你憧憬未来的时候，不能预先把所有点点滴滴的事联系起来；唯有未来你在回忆过去的时候，你才是会明白那些点点滴滴是如何联系在一起的
+              </p>
+            </div>
+            <div className="pt-8">
+              <Link to="/aboutus">
+                <span className="inline-block px-6 py-3 rounded-full bg-blue-500 hover:bg-white hover:shadow-lg hover:shadow-blue-500 text-base font-medium text-white hover:text-blue-500 transition-all duration-300 hover:-translate-y-1">
+                  Learn More
+                </span>
+              </Link>
+            </div>
           </div>
         </div>
       </div>

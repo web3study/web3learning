@@ -70,6 +70,15 @@ module.exports = [
       path: "./crypto",
     },
   ],
+  [
+    "@docusaurus/plugin-content-docs",
+    {
+      id: "security",
+      routeBasePath: "security",
+      sidebarPath: require.resolve("../sidebars.js"),
+      path: "./security",
+    },
+  ],
   async function myPlugin(context, options) {
     return {
       name: "docusaurus-tailwindcss",

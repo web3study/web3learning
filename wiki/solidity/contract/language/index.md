@@ -7,7 +7,7 @@ description: aaa
 ---
   电脑端可以直接使用右侧目录选择想看的内容，手机端下拉选择内容
 
-### Hello World
+### Hello-World
 
 部署即可打印出Hello World的日志内容（event的用法下面会说）
 
@@ -25,7 +25,7 @@ description: aaa
     }
   ```
 
-### 数据类型 Data Types
+### 数据类型Data-Types
 
   我们向您介绍一些在Solidity中可用的原始数据类型。
   - boolean | uint | int | address | string | byte
@@ -90,7 +90,7 @@ description: aaa
 
   ```
 
-### 变量 Variables
+### 变量Variables
   
   有三种类型的变量，分别为状态变量、局部变量、全局变量
 
@@ -114,7 +114,7 @@ description: aaa
     }
   ```
 
-### 常量 Constants
+### 常量Constants
 
   常量是不能修改的变量。它们的值是硬编码的，使用常量可以节省gas成本。
 
@@ -130,7 +130,7 @@ description: aaa
 
   ```
 
-### 不可变 Immutable
+### 不可变Immutable
 
   不可变变量就像常量。不可变变量的值可以在构造函数内部设置，但不能在之后修改。
 
@@ -151,7 +151,7 @@ description: aaa
 
   ```
 
-### 读取写入变量 Reading and Writing to a State Variable
+### 读取写入变量Reading-and-Writing-to-a-State-Variable
 
   要编写或更新状态变量，您需要发送一个事务。另一方面，你可以免费读取状态变量，不需要任何交易费用。
 
@@ -176,7 +176,7 @@ description: aaa
 
   ```
 
-### 单位 ether and Wei
+### 单位ether-and-Wei
 
   用 ether 支付交易。
   如：1 ether 等于 10^18 wei。
@@ -196,7 +196,7 @@ description: aaa
 
   ```
 
-### Gas and Gas Price
+### Gas-and-GasPrice
 
   一笔交易会花费多少ether
 
@@ -237,7 +237,7 @@ description: aaa
 
   ```
 
-### 判断语句 If / Else
+### 判断语句If-Else
     
   Solidity 支持条件语句if、else if和else。
   ```js
@@ -267,7 +267,7 @@ description: aaa
     }
 
   ```
-### 循环语句 For and While Loop
+### 循环语句For-and-While-Loop
 
   Solidity支持for、while和do while循环。
   不要编写无界循环，因为这可能超过`gas limit`，导致事务失败。
@@ -300,7 +300,7 @@ description: aaa
     }
 
   ```
-### 映射 Mapping
+### 映射Mapping
 
   映射是使用语法映射 `mapping(keyType => valueType)`。
   keyType可以是任何内置值类型、字节、字符串或任何合约。
@@ -357,7 +357,7 @@ description: aaa
 
   ```
 
-### 数组 Array
+### 数组Array
 
   数组可以具有编译时固定的大小，也可以具有动态的大小。
 
@@ -498,7 +498,7 @@ description: aaa
 
   ```
 
-### 枚举 Enum
+### 枚举Enum
 
   solidity支持可枚举对象，它们对建模选择和跟踪状态很有用。枚举可以在solidity之外声明。
 
@@ -578,7 +578,7 @@ description: aaa
 
   ```
 
-### 结构 Structs
+### 结构Structs
 
   您可以通过创建`struct`来定义自己的类型。它们对将相关数据分组很有用。结构可以在一个契约之外声明并导入到另一个契约中。
 
@@ -633,7 +633,7 @@ description: aaa
 
   ```
 
-### 数据声明 Storage, Memory and Calldata
+### 数据声明Storage-Memory-and-Calldata
 
   变量声明为`storage`、`memory`或`calldata`，以显式指定数据的位置。
 1. `storage` - 变量是一个状态变量(存储在区块链上)
@@ -684,10 +684,26 @@ description: aaa
   ```
 
 
-### 函数（函数） Function
+### 函数Function
 
   函数的返回值有多种类型
   公共函数不能接受某些数据类型作为输入或输出
+  针对于函数，给一个简单的介绍
+
+```js
+    function FunctionName([parameters]) 
+        {public|private|internal|external} 
+        [pure|constant|view|payable]
+        [modifiers]
+        [returns(return types)]
+```
+
+一个函数分为多个模块，
+- `function`作为函数声明，
+- `FunctionName`代表函数名，
+- `{public|private|internal|external} `代表函数的可见性[Visibility](#可见性visibility)，
+- `[pure|view|payable|constant]`代表函数返回类型或执行类型 [view](#视图view-and-pure-functions),其中`payable`代表可支付[Payable](#可支付payable)，`constant`代表常量与变量的声明是一样的（目前已不再使用，可以忽略，使用`pure`、`view`即可）
+- `[modifiers]`代表函数的修饰，在函数逻辑代码之前或之后执行[modifiers](#函数修饰function-modifier)
 
   ```js
     // SPDX-License-Identifier: MIT
@@ -773,7 +789,91 @@ description: aaa
   ```
 
 
-### 可见性 View and Pure Functions
+
+### 可见性Visibility
+
+  函数和状态变量必须声明它们是否可以被其他合约访问。
+
+  函数可以声明为
+  - `public` - 任何合约和帐户都可以调用
+  - `private` - 仅在定义功能的合约内
+  - `internal` - 仅继承内部功能的内部合约
+  - `external` - 只有其他合约和帐户才能调用，内部不可调用
+
+
+  状态变量可以被声明为`public`，`private`，`internal`但是不能使用`external`
+
+  ```js
+    // SPDX-License-Identifier: MIT
+    pragma solidity ^0.8.13;
+
+    contract Base {
+        // Private function can only be called
+        // - inside this contract
+        // Contracts that inherit this contract cannot call this function.
+        function privateFunc() private pure returns (string memory) {
+            return "private function called";
+        }
+
+        function testPrivateFunc() public pure returns (string memory) {
+            return privateFunc();
+        }
+
+        // Internal function can be called
+        // - inside this contract
+        // - inside contracts that inherit this contract
+        function internalFunc() internal pure returns (string memory) {
+            return "internal function called";
+        }
+
+        function testInternalFunc() public pure virtual returns (string memory) {
+            return internalFunc();
+        }
+
+        // Public functions can be called
+        // - inside this contract
+        // - inside contracts that inherit this contract
+        // - by other contracts and accounts
+        function publicFunc() public pure returns (string memory) {
+            return "public function called";
+        }
+
+        // External functions can only be called
+        // - by other contracts and accounts
+        function externalFunc() external pure returns (string memory) {
+            return "external function called";
+        }
+
+        // This function will not compile since we're trying to call
+        // an external function here.
+        // function testExternalFunc() public pure returns (string memory) {
+        //     return externalFunc();
+        // }
+
+        // State variables
+        string private privateVar = "my private variable";
+        string internal internalVar = "my internal variable";
+        string public publicVar = "my public variable";
+        // State variables cannot be external so this code won't compile.
+        // string external externalVar = "my external variable";
+    }
+
+    contract Child is Base {
+        // Inherited contracts do not have access to private functions
+        // and state variables.
+        // function testPrivateFunc() public pure returns (string memory) {
+        //     return privateFunc();
+        // }
+
+        // Internal function call be called inside child contracts.
+        function testInternalFunc() public pure override returns (string memory) {
+            return internalFunc();
+        }
+    }
+
+  ```
+
+### 视图View-and-Pure-Functions
 
   Getter类型的函数可以声明为`view`或`pure`。`view`声明不会更改任何状态。`pure`声明不会更改或读取状态变量。
 
@@ -798,7 +898,122 @@ description: aaa
   ```
 
 
-### 错误及异常 Error
+### 可支付Payable
+
+  被`payable`修饰的函数或地址，可以在合约里接收eth
+
+  ```js
+    // SPDX-License-Identifier: MIT
+    pragma solidity ^0.8.13;
+
+    contract Payable {
+        // Payable address can receive Ether
+        address payable public owner;
+
+        // Payable constructor can receive Ether
+        constructor() payable {
+            owner = payable(msg.sender);
+        }
+
+        // Function to deposit Ether into this contract.
+        // Call this function along with some Ether.
+        // The balance of this contract will be automatically updated.
+        function deposit() public payable {}
+
+        // Call this function along with some Ether.
+        // The function will throw an error since this function is not payable.
+        function notPayable() public {}
+
+        // Function to withdraw all Ether from this contract.
+        function withdraw() public {
+            // get the amount of Ether stored in this contract
+            uint amount = address(this).balance;
+
+            // send all Ether to owner
+            // Owner can receive Ether since the address of owner is payable
+            (bool success, ) = owner.call{value: amount}("");
+            require(success, "Failed to send Ether");
+        }
+
+        // Function to transfer Ether from this contract to address from input
+        function transfer(address payable _to, uint _amount) public {
+            // Note that "to" is declared as payable
+            (bool success, ) = _to.call{value: _amount}("");
+            require(success, "Failed to send Ether");
+        }
+    }
+
+  ```
+
+### 函数修饰Function-Modifier
+
+  modifier可在函数运行前或者运行之后执行
+  主要功能：
+  - 权限访问
+  - 验证输入
+  - 防止重入攻击
+
+
+  ```js
+    // SPDX-License-Identifier: MIT
+    pragma solidity ^0.8.13;
+
+    contract FunctionModifier {
+        // We will use these variables to demonstrate how to use
+        // modifiers.
+        address public owner;
+        uint public x = 10;
+        bool public locked;
+
+        constructor() {
+            // Set the transaction sender as the owner of the contract.
+            owner = msg.sender;
+        }
+
+        // Modifier to check that the caller is the owner of
+        // the contract.
+        modifier onlyOwner() {
+            require(msg.sender == owner, "Not owner");
+            // Underscore is a special character only used inside
+            // a function modifier and it tells Solidity to
+            // execute the rest of the code.
+            _;
+        }
+
+        // Modifiers can take inputs. This modifier checks that the
+        // address passed in is not the zero address.
+        modifier validAddress(address _addr) {
+            require(_addr != address(0), "Not valid address");
+            _;
+        }
+
+        function changeOwner(address _newOwner) public onlyOwner validAddress(_newOwner) {
+            owner = _newOwner;
+        }
+
+        // Modifiers can be called before and / or after a function.
+        // This modifier prevents a function from being called while
+        // it is still executing.
+        modifier noReentrancy() {
+            require(!locked, "No reentrancy");
+
+            locked = true;
+            _;
+            locked = false;
+        }
+
+        function decrement(uint i) public noReentrancy {
+            x -= i;
+
+            if (i > 1) {
+                decrement(i - 1);
+            }
+        }
+    }
+
+  ```
+
+### 错误及异常Error
 
 error 将在交易期间撤消对状态的所有更改。
 可以通过`require`、`revert` 或者`assert`
@@ -893,75 +1108,8 @@ error 将在交易期间撤消对状态的所有更改。
 
   ```
 
-### 函数修饰 Function Modifier
 
-  modifier可在函数运行前或者运行之后执行
-  主要功能：
-  - 权限访问
-  - 验证输入
-  - 防止重入攻击
-
-
-  ```js
-    // SPDX-License-Identifier: MIT
-    pragma solidity ^0.8.13;
-
-    contract FunctionModifier {
-        // We will use these variables to demonstrate how to use
-        // modifiers.
-        address public owner;
-        uint public x = 10;
-        bool public locked;
-
-        constructor() {
-            // Set the transaction sender as the owner of the contract.
-            owner = msg.sender;
-        }
-
-        // Modifier to check that the caller is the owner of
-        // the contract.
-        modifier onlyOwner() {
-            require(msg.sender == owner, "Not owner");
-            // Underscore is a special character only used inside
-            // a function modifier and it tells Solidity to
-            // execute the rest of the code.
-            _;
-        }
-
-        // Modifiers can take inputs. This modifier checks that the
-        // address passed in is not the zero address.
-        modifier validAddress(address _addr) {
-            require(_addr != address(0), "Not valid address");
-            _;
-        }
-
-        function changeOwner(address _newOwner) public onlyOwner validAddress(_newOwner) {
-            owner = _newOwner;
-        }
-
-        // Modifiers can be called before and / or after a function.
-        // This modifier prevents a function from being called while
-        // it is still executing.
-        modifier noReentrancy() {
-            require(!locked, "No reentrancy");
-
-            locked = true;
-            _;
-            locked = false;
-        }
-
-        function decrement(uint i) public noReentrancy {
-            x -= i;
-
-            if (i > 1) {
-                decrement(i - 1);
-            }
-        }
-    }
-
-  ```
-
-### 事件 Events
+### 事件Events
 
   事件主要用于记录在区块链上
   - 监听事件，并更新用户的一些功能，如界面、状态等
@@ -988,7 +1136,7 @@ error 将在交易期间撤消对状态的所有更改。
 
   ```
 
-### 构造函数 Constructor
+### 构造函数Constructor
 
   构造函数是可选择的一个函数，可以不写，此函数主要在合约创建的时候执行
 
@@ -1049,7 +1197,7 @@ error 将在交易期间撤消对状态的所有更改。
 
   ```
 
-### 继承 Inheritance
+### 继承Inheritance
 
   很多变成语言都会有此语法，Solidity支持多继承，使用`is`关键字，
   - 如果想要被子合约重写，父合约的函数就必须叫上`virtual`的声明
@@ -1124,7 +1272,7 @@ error 将在交易期间撤消对状态的所有更改。
   ```
 
 
-### 继承的状态变量 Shadowing Inherited State Variables
+### 继承的状态变量Shadowing-Inherited-State-Variables
 
   状态变量，不能在子合约重新声明来重写
 
@@ -1158,7 +1306,7 @@ error 将在交易期间撤消对状态的所有更改。
   ```
 
 
-### 调用父类函数 Calling Parent Contracts
+### 调用父类函数Calling-Parent-Contracts
 
   父合约可以直接调用，也可以使用关键字`super`来调用。
   通过使用关键字super，将调用所有直接父合约中的函数。
@@ -1234,91 +1382,7 @@ error 将在交易期间撤消对状态的所有更改。
   ```
 
 
-### 可见性 Visibility
-
-  函数和状态变量必须声明它们是否可以被其他合约访问。
-
-  函数可以声明为
-  - `public` - 任何合约和帐户都可以调用
-  - `private` - 仅在定义功能的合约内
-  - `internal` - 仅继承内部功能的内部合约
-  - `external` - 只有其他合约和帐户才能调用，内部不可调用
-
-
-  状态变量可以被声明为`public`，`private`，`internal`但是不能使用`external`
-
-  ```js
-    // SPDX-License-Identifier: MIT
-    pragma solidity ^0.8.13;
-
-    contract Base {
-        // Private function can only be called
-        // - inside this contract
-        // Contracts that inherit this contract cannot call this function.
-        function privateFunc() private pure returns (string memory) {
-            return "private function called";
-        }
-
-        function testPrivateFunc() public pure returns (string memory) {
-            return privateFunc();
-        }
-
-        // Internal function can be called
-        // - inside this contract
-        // - inside contracts that inherit this contract
-        function internalFunc() internal pure returns (string memory) {
-            return "internal function called";
-        }
-
-        function testInternalFunc() public pure virtual returns (string memory) {
-            return internalFunc();
-        }
-
-        // Public functions can be called
-        // - inside this contract
-        // - inside contracts that inherit this contract
-        // - by other contracts and accounts
-        function publicFunc() public pure returns (string memory) {
-            return "public function called";
-        }
-
-        // External functions can only be called
-        // - by other contracts and accounts
-        function externalFunc() external pure returns (string memory) {
-            return "external function called";
-        }
-
-        // This function will not compile since we're trying to call
-        // an external function here.
-        // function testExternalFunc() public pure returns (string memory) {
-        //     return externalFunc();
-        // }
-
-        // State variables
-        string private privateVar = "my private variable";
-        string internal internalVar = "my internal variable";
-        string public publicVar = "my public variable";
-        // State variables cannot be external so this code won't compile.
-        // string external externalVar = "my external variable";
-    }
-
-    contract Child is Base {
-        // Inherited contracts do not have access to private functions
-        // and state variables.
-        // function testPrivateFunc() public pure returns (string memory) {
-        //     return privateFunc();
-        // }
-
-        // Internal function call be called inside child contracts.
-        function testInternalFunc() public pure override returns (string memory) {
-            return internalFunc();
-        }
-    }
-
-  ```
-
-
-### 接口 Interface
+### 接口Interface
 
   您可以通过声明一个Interface与其他合约进行交互。
   Interface
@@ -1390,54 +1454,8 @@ error 将在交易期间撤消对状态的所有更改。
 
   ```
 
-### 可支付 Payable
 
-  被`payable`修饰的函数或地址，可以在合约里接收eth
-
-  ```js
-    // SPDX-License-Identifier: MIT
-    pragma solidity ^0.8.13;
-
-    contract Payable {
-        // Payable address can receive Ether
-        address payable public owner;
-
-        // Payable constructor can receive Ether
-        constructor() payable {
-            owner = payable(msg.sender);
-        }
-
-        // Function to deposit Ether into this contract.
-        // Call this function along with some Ether.
-        // The balance of this contract will be automatically updated.
-        function deposit() public payable {}
-
-        // Call this function along with some Ether.
-        // The function will throw an error since this function is not payable.
-        function notPayable() public {}
-
-        // Function to withdraw all Ether from this contract.
-        function withdraw() public {
-            // get the amount of Ether stored in this contract
-            uint amount = address(this).balance;
-
-            // send all Ether to owner
-            // Owner can receive Ether since the address of owner is payable
-            (bool success, ) = owner.call{value: amount}("");
-            require(success, "Failed to send Ether");
-        }
-
-        // Function to transfer Ether from this contract to address from input
-        function transfer(address payable _to, uint _amount) public {
-            // Note that "to" is declared as payable
-            (bool success, ) = _to.call{value: _amount}("");
-            require(success, "Failed to send Ether");
-        }
-    }
-
-  ```
-
-### 发送eth Sending Ether - Transfer, Send, and Call
+### 发送eth-Sending–Ether-Transfer-Send-and-Call
 
 如何发送eth
 发送eth到其他合约：
@@ -1514,7 +1532,7 @@ error 将在交易期间撤消对状态的所有更改。
 
   ```
 
-### 回调 Fallback
+### 回调Fallback
 
 `fallback`是一个不接受任何参数也不返回任何内容的函数。
 
@@ -1557,7 +1575,7 @@ error 将在交易期间撤消对状态的所有更改。
 
   ```
 
-### 访问 Call
+### 访问Call
 
   `call`是与其他合约交互的较为底层的函数。
   当您通过调用`fallback`函数来发送eth时，推荐使用这种函数。
@@ -1607,7 +1625,7 @@ error 将在交易期间撤消对状态的所有更改。
 
   ```
 
-### 委托访问 Delegatecall
+### 委托访问Delegatecall
 
   与`call`类似，也是底层的函数
   当合约A执行委托调用给合约B时，就会执行合约B的代码
@@ -1647,7 +1665,7 @@ error 将在交易期间撤消对状态的所有更改。
   ```
 
 
-### 选择器 Function Selector
+### 选择器Function-Selector
 
   调用函数时，`calldata` 的前4个字节指定要调用哪个函数。
   这4个字节被称为函数选择器。
@@ -1679,7 +1697,7 @@ error 将在交易期间撤消对状态的所有更改。
   ```
 
 
-### 调用其他合约 Calling Other Contract
+### 调用其他合约Calling-Other-Contract
 
   Contract可以通过两种方式调用其他Contract。
   最简单的函数是直接调用它，比如A.foo(x, y, z)。
@@ -1724,7 +1742,7 @@ error 将在交易期间撤消对状态的所有更改。
   ```
 
 
-### 使用合约创建合约 Creates other Contracts
+### 使用合约创建合约Creates-other-Contracts
 
   其他合约可以使用new关键字创建合约。从0.8.0开始，new关键字通过指定salt选项支持create2特性。
 
@@ -1794,7 +1812,7 @@ error 将在交易期间撤消对状态的所有更改。
   ```
 
 
-### 异常捕捉 Try / Catch
+### 异常捕捉Try-Catch
 
    `try / catch`只能从`external`函数和合同创建中捕获错误。
 
@@ -1871,7 +1889,7 @@ error 将在交易期间撤消对状态的所有更改。
   ├── Import.sol
   └── Foo.sol
   ```
-  Foo.sol
+#### Foo.sol
   ```js
     // SPDX-License-Identifier: MIT
     pragma solidity ^0.8.13;
@@ -1892,7 +1910,7 @@ error 将在交易期间撤消对状态的所有更改。
     }
 
   ```
-  Import.sol
+#### Import.sol
   ```js
     // SPDX-License-Identifier: MIT
     pragma solidity ^0.8.13;
@@ -1914,7 +1932,7 @@ error 将在交易期间撤消对状态的所有更改。
     }
 
   ```
-  外部资源
+#### 外部资源
   你也可以通过简单地复制url从GitHub导入
   ```js
   import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v4.0/contracts/utils/math/SafeMath.sol";
@@ -1926,7 +1944,7 @@ error 将在交易期间撤消对状态的所有更改。
   ```
 
 
-### 库 Library
+### 库Library
 
   库类似于合约，但不能声明任何状态变量，也不能发送以太。
   如果所有库函数都是内部的，则库嵌入到合约中，否则，必须先部署库，然后在部署契约之前链接库。
@@ -2004,7 +2022,7 @@ error 将在交易期间撤消对状态的所有更改。
     }
 
   ```
-### ABI Decode
+### ABI-Decode
 
   abi.encode encodes data into bytes.
   abi.decode decodes bytes back into data.
@@ -2045,7 +2063,7 @@ error 将在交易期间撤消对状态的所有更改。
 
   ```
 
-### Hashing with Keccak256
+### Hashing-with-Keccak256
 
   keccak256计算输入的kecak -256哈希值。
 
@@ -2093,7 +2111,7 @@ error 将在交易期间撤消对状态的所有更改。
 
   ```
 
-### 验证签名 Verifying Signature
+### 验证签名Verifying-Signature
 
 消息可以在链外签名，然后在链上使用智能合约进行验证。
 
@@ -2267,7 +2285,7 @@ ethers.js示例
 
   ```
 
-### gas优化 Gas Optimizations
+### gas优化Gas-Optimizations
 
   gas优化方案
   - 用`calldata`替换`memory`

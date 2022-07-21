@@ -1,5 +1,7 @@
 import React, { FC, useEffect } from "react";
 import { useColorMode } from "@docusaurus/theme-common";
+import GitalkComponent from "gitalk/dist/gitalk-component";
+import 'gitalk/dist/gitalk.css'
 
 type EmbedTweetProps = {
   children: React.ReactNode;
@@ -20,12 +22,18 @@ export const EmbedTweet: FC<EmbedTweetProps> = ({ children }) => {
   }, [isDarkTheme]);
 
   return (
-    <blockquote
-      className="twitter-tweet"
-      data-theme={isDarkTheme ? "dark" : "light"}
-      data-dnt="true"
-    >
-      {children}
-    </blockquote>
+    <div>
+      <blockquote
+        className="twitter-tweet"
+        data-theme={isDarkTheme ? "dark" : "light"}
+        data-dnt="true"
+      >
+        {children}
+      </blockquote>
+      <GitalkComponent options={{
+        clientID: "6d9d3c75273d743d6d06",
+        clientSecret: '15aae6d0e411f13b295bae6b2f820722ea2a308c',
+      }} />
+    </div>
   );
 };

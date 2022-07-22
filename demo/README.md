@@ -137,3 +137,14 @@ import TabItem from '@theme/TabItem';
 显示：
 
 ![image.png](assets/image-20220708214000-naw99sz.png)
+
+
+
+import {EmbedTweet} from '@site/src/components/Social'
+
+<EmbedTweet class="twitter-tweet" data-dnt="true">
+  <a
+    href="https://twitter.com/7u3lYyRjnvTlyNq/status/1550291939530244097"
+    >Jul 22, 2022</a
+  >
+</EmbedTweet>

@@ -4,10 +4,25 @@ title: 如何贡献
 
 # Contribute to Web3 Study
 
+
+import {EmbedTweet} from '@site/src/components/Social'
+import {EmbedGitalk} from '@site/src/components/Talk'
+
+<EmbedTweet class="twitter-tweet" data-dnt="true">
+  <a
+    href="https://twitter.com/7u3lYyRjnvTlyNq/status/1550291939530244097"
+    >Jul 22, 2022</a
+  >
+</EmbedTweet>
+
+<EmbedGitalk></EmbedGitalk>
+
 ## 提交意见或者建议的方式
 
 
 ## 捐赠地址
+
+![0x236BE5490b1e21c83771a37820a25cF3c7c7c26B](https://etherscan.io/address/0x236BE5490b1e21c83771a37820a25cF3c7c7c26B)
 
 :::warning
 

@@ -15,14 +15,14 @@ import {EmbedGitalk} from '@site/src/components/Talk'
   >
 </EmbedTweet>
 
-<EmbedGitalk></EmbedGitalk>
-
 ## 提交意见或者建议的方式
+
+<EmbedGitalk></EmbedGitalk>
 
 
 ## 捐赠地址
 
-![0x236BE5490b1e21c83771a37820a25cF3c7c7c26B](https://etherscan.io/address/0x236BE5490b1e21c83771a37820a25cF3c7c7c26B)
+[0x236BE5490b1e21c83771a37820a25cF3c7c7c26B](https://etherscan.io/address/0x236BE5490b1e21c83771a37820a25cF3c7c7c26B)
 
 :::warning
 

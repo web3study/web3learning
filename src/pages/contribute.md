@@ -1,21 +1,14 @@
 ---
 title: 如何贡献
 ---
-
-# Contribute to Web3 Study
-
-
 import {EmbedTweet} from '@site/src/components/Social'
 import {EmbedGitalk} from '@site/src/components/Talk'
 
 <EmbedTweet class="twitter-tweet" data-dnt="true">
-  <a
-    href="https://twitter.com/7u3lYyRjnvTlyNq/status/1550291939530244097"
-    >Jul 22, 2022</a
-  >
+  <a href="https://twitter.com/7u3lYyRjnvTlyNq/status/1550291939530244097">Jul 22, 2022</a>
 </EmbedTweet>
 
-## 提交意见或者建议的方式
+## 提交建议
 
 <EmbedGitalk></EmbedGitalk>
 
@@ -26,6 +19,7 @@ import {EmbedGitalk} from '@site/src/components/Talk'
 
 :::warning
 
-Never share your confidential information, passwords, private keys or seed phrases with ANYONE! Be extra careful when receiving any external links or online forms. Always keep an eye out for malicious parties in the Dark Forest 👀
+Never share your confidential information, passwords, private keys or seed phrases with ANYONE! Be extra careful when
+receiving any external links or online forms. Always keep an eye out for malicious parties in the Dark Forest 👀
 
 :::

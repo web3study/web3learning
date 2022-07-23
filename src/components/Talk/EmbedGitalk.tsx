@@ -1,25 +1,33 @@
-import React, { FC, useEffect } from "react";
-import GitalkComponent from "gitalk/dist/gitalk-component";
-import BrowserOnly from '@docusaurus/BrowserOnly';
-import 'gitalk/dist/gitalk.css'
+import React, {FC, useEffect, useRef} from "react";
+import {useColorMode} from "@docusaurus/theme-common";
 
-type EmbedGitalkProps = {
-  children: React.ReactNode;
+type EmbedGitalk2Props = {
+    children: React.ReactNode;
 };
 
-export const EmbedGitalk: FC<EmbedGitalkProps> = () => {
-  return (
-    <div>
-      <BrowserOnly fallback={<div></div>}>{() =>
-        <GitalkComponent options={{
-          clientID: "6d9d3c75273d743d6d06",
-          clientSecret: '15aae6d0e411f13b295bae6b2f820722ea2a308c',
-          repo: 'web3learning',
-          owner: 'web3study',
-          admin: ['yzbbanban'],
-          labels: ['Gitalk']
-        }} />
-      }</BrowserOnly>
-    </div>
-  );
-};
+export const EmbedGitalk: FC<EmbedGitalk2Props> = ({children}) => {
+    const containerRef = useRef(null);
+    const theme = useColorMode().colorMode
+    const isDark = theme === "dark"
+
+    console.log(isDark)
+
+    useEffect(() => {
+        const createUtterancesEl = () => {
+            const script = document.createElement('script');
+            script.src = 'https://giscus.app/client.js';
+            script.setAttribute('data-repo', 'web3study/web3learning');
+            script.setAttribute('data-repo-id', 'R_kgDOHprWRw');
+            script.setAttribute('data-category', 'General');
+            script.setAttribute('data-category-id', 'DIC_kwDOHprWR84CQYdT');
+            script.setAttribute('data-term', 'contribute');
+            script.setAttribute('data-theme', '' + theme);
+            script.setAttribute('data-lang', 'zh-CN');
+            script.crossOrigin = 'anonymous';
+            script.async = true;
+            containerRef.current.appendChild(script);
+        };
+        createUtterancesEl();
+    }, [isDark]);
+    return <div ref={containerRef}/>;
+}

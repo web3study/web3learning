@@ -1,33 +1,33 @@
-import React, { FC, useEffect } from "react";
-import { useColorMode } from "@docusaurus/theme-common";
+import React, {FC, useEffect} from "react";
+import {useColorMode} from "@docusaurus/theme-common";
 
 type EmbedTweetProps = {
-  children: React.ReactNode;
+    children: React.ReactNode;
 };
 
-export const EmbedTweet: FC<EmbedTweetProps> = ({ children }) => {
-  const { isDarkTheme } = useColorMode();
+export const EmbedTweet: FC<EmbedTweetProps> = ({children}) => {
+    const isDark = useColorMode().colorMode === "dark";
 
-  useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "https://platform.twitter.com/widgets.js";
-    script.async = true;
-    document.body.appendChild(script);
+    useEffect(() => {
+        const script = document.createElement("script");
+        script.src = "https://platform.twitter.com/widgets.js";
+        script.async = true;
+        document.body.appendChild(script);
 
-    return () => {
-      document.body.removeChild(script);
-    };
-  }, [isDarkTheme]);
+        return () => {
+            document.body.removeChild(script);
+        };
+    }, [isDark]);
 
-  return (
-    <div>
-      <blockquote
-        className="twitter-tweet"
-        data-theme={isDarkTheme ? "dark" : "light"}
-        data-dnt="true"
-      >
-        {children}
-      </blockquote>
-    </div>
-  );
+    return (
+        <div>
+            <blockquote
+                className="twitter-tweet"
+                data-theme={isDark ? "dark" : "light"}
+                data-dnt="true"
+            >
+                {children}
+            </blockquote>
+        </div>
+    );
 };

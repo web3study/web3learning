@@ -1,7 +1,5 @@
 import React from "react";
 
-type Nullable<T> = T | null;
-
 type AuthorItem = {
   title: string;
   href: string;

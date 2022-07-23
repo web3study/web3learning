@@ -5,7 +5,10 @@ sidebar_position: 10
 image: /img/bac111.png
 description: 工具
 ---
+import ToolNav from './ToolNav';
 
-### 工具1
+### 钱包
+
+<ToolNav></ToolNav>
 
 ### 工具2

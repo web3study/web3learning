@@ -5,6 +5,8 @@ sidebar_position: 10
 image: /img/bac111.png
 description: 这
 ---
+import {EmbedGitalk} from '@site/wiki/solidity/EmbedGitalk'
+
 ![eth](assets/bac-info1.png)
 
 ### 为何要写此教程

@@ -5,7 +5,7 @@ sidebar_position: 10
 image: /img/bac111.png
 description: 这
 ---
-import {EmbedGitalk} from '@site/wiki/solidity/EmbedGitalk'
+import {EmbedGiscus} from '@site/src/components/Talk'
 
 ![eth](assets/bac-info1.png)
 
@@ -34,5 +34,5 @@ import {EmbedGitalk} from '@site/wiki/solidity/EmbedGitalk'
 
 🍩相关技术的持续更新迭代，当然本教程中，也会有一些不正确的叙述，欢迎大家指正
 
-
+<EmbedGiscus>giscusIntroduction</EmbedGiscus>
   

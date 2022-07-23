@@ -1,17 +1,14 @@
 import React, {FC, useEffect, useRef} from "react";
 import {useColorMode} from "@docusaurus/theme-common";
 
-type EmbedGitalkProps = {
+type EmbedGiscusProps = {
     children: React.ReactNode;
 };
 
-export const EmbedGitalk: FC<EmbedGitalkProps> = ({}) => {
+export const EmbedGiscus: FC<EmbedGiscusProps> = ({children}) => {
     const containerRef = useRef(null);
     const theme = useColorMode().colorMode
     const isDark = theme === "dark"
-
-    console.log(isDark)
-
     useEffect(() => {
         const createUtterancesEl = () => {
             const script = document.createElement('script');
@@ -20,7 +17,7 @@ export const EmbedGitalk: FC<EmbedGitalkProps> = ({}) => {
             script.setAttribute('data-repo-id', 'R_kgDOHprWRw');
             script.setAttribute('data-category', 'General');
             script.setAttribute('data-category-id', 'DIC_kwDOHprWR84CQYdT');
-            script.setAttribute('data-term', 'giscusIntroduction');
+            script.setAttribute('data-term', '' + children);
             script.setAttribute('data-mapping', 'specific');
             script.setAttribute('data-theme', '' + theme);
             script.setAttribute('data-lang', 'zh-CN');

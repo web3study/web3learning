@@ -5,7 +5,7 @@ sidebar_position: 20
 image: sss
 description: 主要写一些关于区块链的基本知识，去中心化、比特币，简单的概括，如果需要详情，可以跳转到对应的说明文档
 ---
-import {EmbedGitalk} from './EmbedGitalk'
+import {EmbedGiscus} from '@site/src/components/Talk'
 
 ![](assets/bac-info.png)
 
@@ -19,4 +19,4 @@ import {EmbedGitalk} from './EmbedGitalk'
 区块链起源于比特币背后的技术，但它的意义远不止于此。这是实现交易和数据的信任、透明、去中心化的信息账本。
 这听起来可能很无聊，但这项技术可能是我们这个时代的重大创新之一。
 
-<EmbedGitalk></EmbedGitalk>
+<EmbedGiscus>giscusSolidity</EmbedGiscus>

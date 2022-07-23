@@ -5,7 +5,7 @@ sidebar_position: 20
 image: /img/bac111.png
 description: aaa
 ---
-import {EmbedGitalk} from './EmbedGitalk'
+import {EmbedGiscus} from '@site/src/components/Talk'
 
 ![](assets/bac-info3.png)
 
@@ -223,4 +223,4 @@ rinkeby 测试网水龙头
 [chainlist](https://chainlist.org/) 中有较全的链列表，可以访问查看其他链的信息
 
 
-<EmbedGitalk></EmbedGitalk>
+<EmbedGiscus>giscusBasis</EmbedGiscus>

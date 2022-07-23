@@ -1,1 +1,1 @@
-export * from "./EmbedGitalk";
+export * from "./EmbedGiscus";

@@ -1,11 +1,11 @@
 import React, {FC, useEffect, useRef} from "react";
 import {useColorMode} from "@docusaurus/theme-common";
 
-type EmbedGitalk2Props = {
+type EmbedGitalkProps = {
     children: React.ReactNode;
 };
 
-export const EmbedGitalk: FC<EmbedGitalk2Props> = ({children}) => {
+export const EmbedGitalk: FC<EmbedGitalkProps> = ({}) => {
     const containerRef = useRef(null);
     const theme = useColorMode().colorMode
     const isDark = theme === "dark"

@@ -1,6 +1,6 @@
 ---
-title: 部署与验证
-sidebar_label: 部署与验证
+title: truffle
+sidebar_label: truffle
 sidebar_position: 40
 image: /img/bac111.png
 description: desc

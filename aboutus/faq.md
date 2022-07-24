@@ -2,7 +2,7 @@
 title: FAQ
 sidebar_label: FAQ
 sidebar_position: 20
-image: /img/cover/pcc-ens.jpg
+image: /img/bac111.png
 author: 'ban'
 description: FAQ for .pcc.eth ENS Subdomains
 ---

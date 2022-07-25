@@ -237,7 +237,7 @@ module.exports = {
         items: [
           {
             label: "Website",
-            href: "https://www.xxx.com/",
+            href: "https://www.web3study.club/",
           },
           {
             label: "Discord",

@@ -25,7 +25,7 @@
     "description": "NFT信息聚合平台",
     "href": "https://www.nftgo.io",
     "title": "nftgo",
-    "imageUrl": "/img/nav/nftgo.jpeg"
+    "imageUrl": "/img/nav/nftgo.png"
   },
   {
     "id": 5,
@@ -95,7 +95,7 @@
     "description": "NFT巨鲸动向",
     "href": "https://nftgo.io/whale-tracking/trade",
     "title": "nftgo whale",
-    "imageUrl": "/img/nav/nftgo.jpeg"
+    "imageUrl": "/img/nav/nftgo.png"
   },
   {
     "id": 15,

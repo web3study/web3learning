@@ -8,6 +8,7 @@ description: aaa
 
 ### 测试工具
 
+- [getwaffle](https://getwaffle.io/) 测试智能合约的最先进的框架
 - [OpenZeppelin Test environment](https://docs.openzeppelin.com/test-environment/0.1/) - 是一个智能合约测试库：它提供帮助您编写测试的实用程序，但它不会为您运行测试。与Mocha一起工作
 - [Brownie](https://github.com/eth-brownie/brownie) - 针对以太坊虚拟机的智能合约基于Python的开发和测试框架
 - [Truffle](https://trufflesuite.com/truffle/) - 使用以太坊虚拟机（EVM）的区块链开发环境、测试框架和资产管道

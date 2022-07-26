@@ -11,7 +11,7 @@ description: desc
 
 - 官方文档 [remix](https://remix-ide.readthedocs.io/en/latest/#) 
 - 官方文档 [truffle](https://trufflesuite.com/docs/truffle/)， [truffle中文版连接](https://learnblockchain.cn/docs/truffle/quickstart.html#) 
-- 官方文档 [hardhat](https://learnblockchain.cn/docs/hardhat/getting-started/) 
+- 官方文档 [hardhat](https://hardhat.org/hardhat-runner/docs), [hardhat中文版](https://learnblockchain.cn/docs/hardhat/getting-started/) 
 
 :::info
 这里初学者建议使用remix，开发者可以使用hardhat（使用ethers.js部署、测试更便于前端等全栈的操作），truffle也根据相关喜好来选择

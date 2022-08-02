@@ -1,23 +1,23 @@
 [
   {
     "id": 1,
-    "title": "Metamask",
-    "href": "https://web3study.club",
-    "description": "常用钱包",
-    "imageUrl": "/img/bac111.png"
+    "title": "OpenZeppelin",
+    "href": "https://docs.openzeppelin.com/",
+    "description": "安全智能合约开发库",
+    "imageUrl": "/img/nav/oz.png"
+  },
+  {
+    "id": 1,
+    "title": "REMIX",
+    "href": "https://remix.ethereum.org/",
+    "description": "智能合约在线IDE",
+    "imageUrl": "/img/nav/remixlogo.jpeg"
   },
   {
     "id": 2,
-    "title": "TokenPocket",
-    "href": "https://web3study.club",
-    "description": "手机钱包",
-    "imageUrl": "/img/hanbao.png"
-  },
-  {
-    "id": 3,
-    "title": "Im token",
-    "href": "https://web3study.club",
-    "description": "手机钱包",
-    "imageUrl": "/img/ban.png"
+    "title": "Metamask",
+    "href": "https://metamask.io/",
+    "description": "多端钱包，网页调试用",
+    "imageUrl": "/img/nav/metamasklogo.jpeg"
   }
 ]

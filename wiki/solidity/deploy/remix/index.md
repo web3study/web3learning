@@ -17,7 +17,14 @@ import {EmbedGiscus} from '@site/src/components/Talk'
 
 这里介绍两种方式
 - 线上直接编写
+  直接使用即可，根据文件目录选择文件编写，并按照后续的讲解进行学习
 - 使用插件使得remix可以使用本地文件
+  此方法需要安装插件，记得之前一定要安装好node环境
+  1. 安装 remixd 执行环境 `npm install -g remixd`
+  2. `remixd -s '绝对文件路径' --remix-ide https://remix.ethereum.org`（如果出现不可运行的可以使用管理员运行）
+  3. 打开remix的`localhost` workspaces 如图![img.png](assets/imglocal.png)，
+  然后点击`Connect`即可,![img.png](assets/imglocal2.png)
+  
 
 :::info
 目前remix大都使用github上的数据源，所以对于网络要求可能会比较高（科学上网），不然有可能会出现加载不出的情况

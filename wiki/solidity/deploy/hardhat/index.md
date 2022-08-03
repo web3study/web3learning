@@ -7,7 +7,7 @@ description: desc
 ---
 import {EmbedGiscus} from '@site/src/components/Talk'
 
-在简单介绍之前，需要安装相应的开发环境，此处依然使用的是node环境，IDE可以使用 [Visual Studio Code](https://code.visualstudio.com/)
+在简单介绍之前，需要安装相应的开发环境，此处依然使用的是node环境 [Node](../../dev/index.md)，IDE可以使用 [Visual Studio Code](https://code.visualstudio.com/)
 
 ### 简述
 
@@ -23,7 +23,7 @@ Hardhat的很多功能都来自于插件，而作为开发者，你可以自由�
 
 初始化项目前，需要先安装本地hardhat：
 
-```js
+```shell
 npm install --save-dev hardhat
 ```
 Hardhat是通过本地安装在项目中使用的。这样你的环境就可以重现，也可以避免未来的版本冲突。
@@ -55,7 +55,7 @@ IDE中的显示：
 我们也可以直接使用vscode的终端进行创建，接下来最好也是使用vscode自带的终端执行命令如快速了解可用的命令和任务：
 
 执行 `npx hardhat`：
-```js
+```
 Hardhat version 2.10.1
 
 Usage: hardhat [GLOBAL OPTIONS] <TASK> [TASK OPTIONS]
@@ -93,7 +93,7 @@ To get help for a specific task run: npx hardhat help [task]
 :::info 提示
 Hardhat会让提示你如何安装，但是，如果出错了，你可以用
 
-```js
+```shell
 npm install --save-dev @nomiclabs/hardhat-waffle ethereum-waffle chai @nomiclabs/hardhat-ethers ethers`
 ```
 来安装它们。
@@ -134,7 +134,7 @@ module.exports = {
 #### 编译合约
 
 创建的`sample project`默认有一个，在`contracts`文件夹中，打开`Greeter.sol`
-```js
+```shell
 //SPDX-License-Identifier: Unlicense
 pragma solidity ^0.8.0;
 
@@ -162,7 +162,7 @@ contract Greeter {
 其中有些特殊的部分：`console.log(...)`这个在控制台是打印日志，但是此处是hardhat特有的，所以，使用其他编译器，可能会出现错误
 
 每个程序都需要编译生成虚拟机支持的语言（这里不赘述），所以合约也需要进行编译，使用命令
-```js
+```shell
 npx hardhat compile
 ```
 执行后可能需要等待一段时间，执行好若无编译错误：
@@ -236,7 +236,6 @@ main()
     console.error(error);
     process.exit(1);
   });
-
 ```
 测试内容：部署Greeter，部署时参数为：`Hello, Hardhat`，部署完成后打印部署后的合约
 使用`npx hardhat run scripts/sample-script.js`执行
@@ -260,11 +259,15 @@ metamask存在一个默认的`localhost`节点，想要添加，可以换成 `12
 :::
 配置好后，导入启动节点中的私钥，即可查看余额如图所示：
 ![img_7.png](assets/img_7.png)
+如果想要自己创建地址使用，可以使用此命令，提供水龙头
+```shell
+npx hardhat --network localhost faucet <your address>
+```
 
 如果要把Hardhat连接到这个节点上，例如，要在这个网络上运行一个部署脚本，只需要使用--network localhost来运行脚本。
 
 你可以试一试，先用npx hardhat node启动一个节点，并使用network参数重新运行示例脚本：
-```js
+```shell
 npx hardhat run scripts/sample-script.js --network localhost
 ```
 

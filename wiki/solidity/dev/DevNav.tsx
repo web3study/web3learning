@@ -17,7 +17,7 @@ export default function DevNav() {
                     <a href={collection.href}>
                         <div key={index} style={{width: '120px'}}>
                             <img src={collection.imageUrl} style={{width: '100px', height: '100px'}}/>
-                            <div style={{marginTop: '10px'}}>{collection.title}</div>
+                            <div style={{marginTop: '10px',fontSize:'18px'}}>{collection.title}</div>
                             <div style={{marginTop: '10px', fontSize: '10px'}}>{collection.description}</div>
                         </div>
                     </a>

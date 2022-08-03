@@ -11,6 +11,8 @@ import {EmbedGiscus} from '@site/src/components/Talk'
 
 这里主要对3中常用工具（或框架）进行说明，其他的根据需求解释
 
+如需学习入门测试部分，可以进入[这里](../monitor)进行学习
+
 - 官方文档 [remix](https://remix-ide.readthedocs.io/en/latest/#) 
 - 官方文档 [truffle](https://trufflesuite.com/docs/truffle/)， [truffle中文版连接](https://learnblockchain.cn/docs/truffle/quickstart.html#) 
 - 官方文档 [hardhat](https://hardhat.org/hardhat-runner/docs), [hardhat中文版](https://learnblockchain.cn/docs/hardhat/getting-started/) 

@@ -35,7 +35,7 @@ Truffle 支持的模板类型较多，想要快速实现有一个[Truffle Boxes]
 ```shell
 truffle unbox metacoin
 ```
-![img.png](img.png)
+![img.png](assets/img.png)
 即可创建完成
 
 :::info注
@@ -68,14 +68,14 @@ truffle unbox metacoin
 ```shell
 truffle test ./test/TestMetacoin.sol
 ```
-![img_1.png](img_1.png)
+![img_1.png](assets/img_1.png)
 
 运行脚本测试
 ```shell
 truffle test ./test/metacoin.js
 ```
 输出：
-![img_2.png](img_2.png)
+![img_2.png](assets/img_2.png)
 
 ### 编译合约
 ```shell
@@ -108,7 +108,7 @@ Compiling your contracts...
 truffle develop
 ```
 输出：
-![img_3.png](img_3.png)
+![img_3.png](assets/img_3.png)
 这也显示了10个账号，和他们对你的私钥，这些账号可以用来和区块链进行交互。
 
 在 `truffle(develop)>` 提示符（因为提供了一个交互式控制台）下， Truffle 的命令可以不带前缀 `truffle` 执行。比如，可以直接输入`compile` 来执行`truffle compile`，

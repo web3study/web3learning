@@ -3,7 +3,7 @@ title: 100问
 sidebar_label: 100问
 sidebar_position: 10
 image: /img/bac111.png
-description: 工具类
+description: 100问
 ---
 
 问：以太坊的有价通证叫什么？

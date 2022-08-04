@@ -181,7 +181,7 @@ module.exports = {
             to: "/navigation/nft",
           },
           {
-            label: "🛠 工具类",
+            label: "🛠 开发类",
             to: "/navigation/tool",
           },
           {

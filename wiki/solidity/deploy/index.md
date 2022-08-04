@@ -6,6 +6,9 @@ image: /img/bac111.png
 description: desc
 ---
 import {EmbedGiscus} from '@site/src/components/Talk'
+import DocCardList from '@theme/DocCardList';
+import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
+
 
 ![](./assets/bac-info11.jpg "bac")
 
@@ -42,5 +45,7 @@ import {EmbedGiscus} from '@site/src/components/Talk'
 [Truffle](https://marketplace.visualstudio.com/items?itemName=trufflesuite-csi.truffle-vscode) ：VS Code 的 Truffle 简化了您在 eth 上创建、构建、调试和部署智能合约的方式。++ 适用于所有与 EVM 兼容的区块链和第 2 层扩展解决方案。
 
 本章节主要描述入门与常用的一些操作、指令或者编写，其他深层次的可以关注后续的文档更新或者阅读原文
+
+<DocCardList items={useCurrentSidebarCategory().items}/>
 
 <EmbedGiscus>deploySol</EmbedGiscus>

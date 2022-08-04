@@ -61,6 +61,10 @@ module.exports = {
           {
             label: "👻 杂凑函数",
             to: "/crypto/hash",
+          },
+          {
+            label: "🧮 数学知识",
+            to: "/crypto/math",
           }
         ],
       },

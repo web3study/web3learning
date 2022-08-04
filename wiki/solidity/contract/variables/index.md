@@ -1,6 +1,6 @@
 ---
 title: 全局变量
-sidebar_label: 全局变量
+sidebar_label: 😁全局变量
 sidebar_position: 40
 image: sss
 description: aaa

@@ -1,6 +1,6 @@
 ---
 title: 语法结构
-sidebar_label: 语法结构
+sidebar_label: 😅语法结构
 sidebar_position: 20
 image: sss
 description: aaa

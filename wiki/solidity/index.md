@@ -1,5 +1,5 @@
 ---
-title: 🌝新手入门
+title: 新手入门
 sidebar_label: 🌝新手入门
 sidebar_position: 20
 image: sss

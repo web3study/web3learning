@@ -1,6 +1,6 @@
 ---
 title: remix
-sidebar_label: remix
+sidebar_label: 🙃remix
 sidebar_position: 10
 image: /img/bac111.png
 description: remix

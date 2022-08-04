@@ -1,5 +1,5 @@
 ---
-title: 🫤开发库
+title: 开发库
 sidebar_label: 🫤开发库
 sidebar_position: 5
 image: /img/bac111.png

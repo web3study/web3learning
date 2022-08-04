@@ -1,6 +1,6 @@
 ---
 title: 合约基础
-sidebar_label: 合约基础
+sidebar_label: 🧐合约基础
 sidebar_position: 20
 image: /img/bac111.png
 description: aaa

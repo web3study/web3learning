@@ -1,6 +1,6 @@
 ---
 title: 了解区块链
-sidebar_label: 了解区块链
+sidebar_label: 😋了解区块链
 sidebar_position: 10
 image: /img/bac111.png
 description: aaa

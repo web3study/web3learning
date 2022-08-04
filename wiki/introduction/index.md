@@ -1,6 +1,6 @@
 ---
 title: 前言
-sidebar_label: 前言
+sidebar_label: 😀前言
 sidebar_position: 10
 image: /img/bac111.png
 description: 这

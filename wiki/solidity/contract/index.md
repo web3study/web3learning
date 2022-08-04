@@ -1,6 +1,6 @@
 ---
 title: 合约学习
-sidebar_label: 合约学习
+sidebar_label: 😌合约学习
 sidebar_position: 30
 image: sss
 description: aaa

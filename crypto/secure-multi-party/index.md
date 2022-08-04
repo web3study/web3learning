@@ -1,7 +1,7 @@
 ---
 title: 安全多方计算
 sidebar_label: 安全多方计算
-sidebar_position: 50
+sidebar_position: 30
 image: /img/bac111.png
 description: 安全多方计算
 ---

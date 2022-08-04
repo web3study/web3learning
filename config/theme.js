@@ -240,6 +240,10 @@ module.exports = {
             href: "https://www.web3study.club/",
           },
           {
+            label: "中文网",
+            href: "https://web3.yzbbanban.com/",
+          },
+          {
             label: "Discord",
             href: "http://discord.gg/",
           },

@@ -1,9 +1,9 @@
 ---
-title: 安全
-sidebar_label: 安全
-sidebar_position: 10
+title: 安全概览
+sidebar_label: 安全概览
+sidebar_position: 5
 image: /img/bac111.png
-description: 安全
+description: 安全概览
 ---
 
 ### 安全1

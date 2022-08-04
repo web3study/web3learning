@@ -1,7 +1,7 @@
 ---
 title: 椭圆曲线
 sidebar_label: 椭圆曲线
-sidebar_position: 50
+sidebar_position: 10
 image: /img/bac111.png
 description: 椭圆曲线
 ---

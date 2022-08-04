@@ -1,7 +1,7 @@
 ---
 title: 巨鲸信息
 sidebar_label: 巨鲸信息
-sidebar_position: 50
+sidebar_position: 40
 image: /img/bac111.png
 description: 巨鲸信息
 ---

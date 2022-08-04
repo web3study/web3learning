@@ -1,7 +1,7 @@
 ---
 title: 同态加密
 sidebar_label: 同态加密
-sidebar_position: 50
+sidebar_position: 40
 image: /img/bac111.png
 description: 同态加密
 ---

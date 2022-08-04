@@ -12,7 +12,7 @@ const navList: AuthorItem[] = require("./navList.json");
 // 主页ens介绍
 export default function Nav() {
   return (
-    <div style={{ display: 'flex', flexWrap: 'wrap', textAlign: 'center', gap: '10px' }}>
+    <div style={{ display: 'flex', flexWrap: 'wrap', textAlign: 'center', gap: '10px'}}>
       {navList.map((collection, index) => (
         <div key={index}>
           <a href={collection.href}>

@@ -196,6 +196,10 @@ module.exports = {
             label: "🧮 分析类",
             to: "/navigation/analyze",
           },
+          {
+            label: "🤢 题库",
+            to: "/navigation/question",
+          },
         ],
       },
       //此在 src pages 文件夹中

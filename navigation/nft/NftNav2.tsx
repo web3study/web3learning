@@ -14,7 +14,8 @@ export default function NftNav() {
     return (
         <div style={{display: 'flex', flexWrap: 'wrap', gap: '10px'}}>
             {navList.map((collection, index) => (
-                <div key={index} style={{padding: '10px', backgroundColor: '#eeeeee22',width:'400px'}}>
+                <div key={index}
+                     style={{padding: '20px', backgroundColor: '#eeeeee22', borderRadius: '10px', width: '400px'}}>
                     <a href={collection.href} target={"_blank"}>
                         <img src={collection.imageUrl} style={{width: '400px', height: '200px'}}/>
                         <div>{collection.title}</div>

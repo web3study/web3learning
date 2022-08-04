@@ -22,146 +22,153 @@
   },
   {
     "id": 4,
+    "description": "NFT的动态监听",
+    "href": "https://bestshow.io/#/Home",
+    "title": "NFTSniper",
+    "imageUrl": "/img/nav/bestshow.png"
+  },
+  {
+    "id": 5,
     "description": "NFT信息聚合平台",
     "href": "https://www.nftgo.io",
     "title": "nftgo",
     "imageUrl": "/img/nav/nftgo.png"
   },
   {
-    "id": 5,
+    "id": 6,
     "description": "NFT聚合类网站",
     "href": "https://coniun.io",
     "title": "coniun",
     "imageUrl": "/img/nav/coniun.png"
   },
   {
-    "id": 6,
+    "id": 7,
     "description": "NFT聚合类网站",
     "href": "https://app.watchtower.cc/pulse",
     "title": "watchtower",
     "imageUrl": "/img/nav/watchtower.jpeg"
   },
   {
-    "id": 7,
+    "id": 8,
     "description": "NFT综合行情网站",
     "href": "https://compass.art",
     "title": "compass",
     "imageUrl": "/img/nav/compass.png"
   },
   {
-    "id": 8,
+    "id": 9,
     "description": "专业NFT资讯平台",
     "href": "https://nftplazas.com",
     "title": "nftplazas",
     "imageUrl": "/img/nav/nftplazas.jpeg"
   },
   {
-    "id": 9,
+    "id": 10,
     "description": "最快的NFT排名及浏览器稀缺度插件",
     "href": "https://www.traitsniper.com",
     "title": "traitsniper",
     "imageUrl": "/img/nav/traitsniper.jpeg"
   },
   {
-    "id": 10,
+    "id": 11,
     "description": "NFT稀有度及成交量排名",
     "href": "https://rarity.tools",
     "title": "rarity",
     "imageUrl": "/img/nav/rt.jpeg"
   },
   {
-    "id": 11,
+    "id": 12,
     "description": "NFT新项目热度排行",
     "href": "https://mintyscore.com/home",
     "title": "mintyscore",
     "imageUrl": "/img/nav/minty.jpeg"
   },
   {
-    "id": 12,
+    "id": 13,
     "description": "NFT新项目预告网站",
     "href": "https://www.cryptoscores.io",
     "title": "cryptoscores",
     "imageUrl": "/img/nav/cryptoscores.jpeg"
   },
   {
-    "id": 13,
+    "id": 14,
     "description": "以太坊域名NFT",
     "href": "https://ens.domains",
     "title": "ens",
     "imageUrl": "/img/nav/ens.jpeg"
   },
   {
-    "id": 14,
+    "id": 15,
     "description": "NFT巨鲸动向",
     "href": "https://nftgo.io/whale-tracking/trade",
     "title": "nftgo whale",
     "imageUrl": "/img/nav/nftgo.png"
   },
   {
-    "id": 15,
+    "id": 16,
     "description": "NFT稀有度查询",
     "href": "https://raritysniffer.com",
     "title": "raritysniffer",
     "imageUrl": "/img/nav/rarity.png"
   },
   {
-    "id": 16,
+    "id": 17,
     "description": "NFT市值追踪网站",
     "href": "https://evaluate.market",
     "title": "evaluate",
     "imageUrl": "/img/nav/evaluate.jpeg"
   },
   {
-    "id": 17,
+    "id": 18,
     "description": "NFT成本、收益测算查询",
     "href": "https://nftbank.ai/landing",
     "title": "nftbank",
     "imageUrl": "/img/nav/nftbank.jpeg"
   },
   {
-    "id": 18,
+    "id": 19,
     "description": "查看实时mint情况",
     "href": "https://whatsminting.live",
     "title": "whatsminting",
     "imageUrl": "/img/nav/minting.png"
   },
   {
-    "id": 19,
+    "id": 20,
     "description": "查看实时mint情况",
     "href": "https://moby.gg",
     "title": "moby",
     "imageUrl": "/img/nav/moby.jpeg"
   },
   {
-    "id": 20,
+    "id": 21,
     "description": "NFT地板价查询",
     "href": "https://nftpricefloor.com",
     "title": "nftpricefloor",
     "imageUrl": "/img/nav/NFTPriceFloor.jpeg"
   },
   {
-    "id": 21,
+    "id": 22,
     "description": "NFT地板价查询",
     "href": "https://wgmi.io",
     "title": "wgmi",
     "imageUrl": "/img/nav/wgmi.jpeg"
   },
   {
-    "id": 22,
+    "id": 23,
     "description": "NFT批量买入工具网站",
     "href": "https://beta.gem.xyz",
     "title": "gem",
     "imageUrl": "/img/nav/gem.jpeg"
   },
   {
-    "id": 23,
+    "id": 24,
     "description": "NFT批量买入工具网站",
     "href": "https://www.genie.xyz",
     "title": "genie",
     "imageUrl": "/img/nav/genie.png"
   },
   {
-    "id": 24,
+    "id": 25,
     "description": "观察NFT钱包盈利及操作",
     "href": "https://www.prysm.xyz",
     "title": "prysm",

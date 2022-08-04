@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "description": "Compass 提供您发现获胜交易所需的 NFT 数据和分析。由Vincze Kalnoky和\u200B\u200BPeter Szoke 创立。Compass Art 按数量、平均价格提供对 NFT 的访问，并以简洁明了的方式列出市场上的收藏品。该网站还通过 NFT 项目的便捷推特、网站和不和谐链接提供了最新添加的集合和即将推出的项目的综合列表。",
+    "href": "https://compass.art",
+    "title": "Compass NFT",
+    "imageUrl": "/img/nav/compass10.png"
+  },
+  {
+    "id": 2,
+    "description": "Nansen 由 Alex Svanevik、Evgeny Medvedev 和 Lars Bakke Krogvig 与 Andreessen Horowitz 等著名的种子期投资者共同创立，是一个区块链分析平台，它将链上数据与包含数百万钱包标签的庞大且不断增长的数据库相结合。这使得 NFT 爱好者可以通过利润、铸造费、二级市场费用等查看 NFT 钱包的排行榜。\n\n",
+    "href": "https://www.nansen.ai/",
+    "title": "Nansen",
+    "imageUrl": "/img/nav/nansen10.png"
+  },
+  {
+    "id": 3,
+    "description": "Son Nguyen 是 Trait Sniper 的创始人，Trait Sniper 是一种常用的 NFT 工具，用于在 Twitter 上进行狙击和翻转，拥有约 28,000 名关注者。\n\nTrait Sniper 提供对稀有性的洞察，并提供有关即将到来的 NFT 项目的最新信息。新项目一上市，Trait Sniper 就会使用其机器人在 30 秒内计算其稀有度，其付费版本提供实时更新。\n\n付费版本的可定制气体设置以及 MetaMask 和 OpenSea 集成，承诺用户在人群之前垄断市场。用户还可以选择显示请求和警报，以及按特征、排名和价格进行过滤",
+    "href": "https://app.traitsniper.com/",
+    "title": "Trait Sniper",
+    "imageUrl": "/img/nav/traitsniper10.png"
+  },
+  {
+    "id": 4,
+    "description": "Rarity Sniper 是最有前途的实用 NFT 工具之一。它拥有此列表中最友好、最时尚的用户界面之一。\n\n它可容纳 Ethereum、Solana、Polygon、Binance 和许多其他区块链，并且还托管大约 1250 个经过批准的集合。它提供 NFT 的稀有度分数、等级和特征，并拥有强大的 Discord 和 Twitter 社区，分别为 300K 和 389k。\n\n它还有带有 NFT 新闻、日历、chrome 扩展和即将添加的统计功能的页面。",
+    "href": "https://raritysniper.com/nft-collections",
+    "title": "Rarity Sniper",
+    "imageUrl": "/img/nav/raritysniper10.png"
+  },
+  {
+    "id": 5,
+    "description": "NFTHelpr 是 2022 年 5 月的区块铸币新工具，但它不完全是一个工具，而是最好的策展人。\n\n随着 NFT 交易和分析工具的市场竞争不断升级，创始人@stojjee 设计了一个精心策划的平台来访问最好的工具，包括传统上强大的工具以及其他刚刚进入市场的强大工具。\n\n每个工具都由 NFTHelpr 团队精心策划，以确保为 NFTHelpr 的 200 名价值通行证持有者提供快速、无缝和无忧的交易。\n\n",
+    "href": "https://www.nfthelpr.xyz/",
+    "title": "nfthelpr",
+    "imageUrl": "/img/nav/nfthelpr10.png"
+  },
+  {
+    "id": 6,
+    "description": "NFT Stats 是一个访问量很大的网站，因为它提供了对 NFT 收藏的基本见解，以帮助用户购买和铸造。它的打开页面显示过去 24 小时内出售的 NFT 数量和交易量。该网站的 3 个主要功能是：NFT Sales、NFT Collections 和 Rarity Explorer。\n\n最受欢迎的功能是“NFT 排名”，因为它包括跟踪前 30 天的热门收藏、新收藏和热门收藏。NFT Stats 提供了在不同时间范围（24 小时、7 天和 30 天）下销售的顶级收藏品的快速细分，以确定一件物品的销售价格和时间。每个系列都有一个专门的详细信息页面，其中包含最近 3 个月的价格图表。",
+    "href": "https://www.nft-stats.com/",
+    "title": "NFT Stats",
+    "imageUrl": "/img/nav/nft-stats10.png"
+  },
+  {
+    "id": 7,
+    "description": "Icy.tools的友好界面让 NFT 分析对爱好者来说变得简单。\n\n该网站以前一天的精选“趋势收藏”开头，而其其他功能包括“发现选项卡”，可让您查看过去一小时内的顶级铸造 NFT 以及过去 6 小时、1 天和多得多。如果您正在寻找快速翻转，您还可以将趋势集合的排名过滤到 15 到 30 分钟。\n\nIcy.tools还提供基本统计数据，例如每个收藏的底价、平均价格和数量。其高级订阅有助于在买卖双方窗口下访问任何钱包地址的每个收藏和交易历史的详细市场分析。\n\n",
+    "href": "https://icy.tools/",
+    "title": "Icy.Tools",
+    "imageUrl": "/img/nav/icytools10.png"
+  },
+  {
+    "id": 8,
+    "description": "创始人 Daniel Minsu Kim 与 Digital Currency Group 和#Hashed 等著名的种子轮投资者于 2021 年成立了 NFTBank。\n\nNFTBank 拥有令人惊叹且直观的用户界面，为投资者提供计算投资回报率、活动、支出、报税甚至自动分类的“每日交易”等服务。他们声称，他们平台的用户发现 NFT 投资机会的速度比非用户快 10 倍。它也是该领域 NFT 最受欢迎的投资组合服务，因为它支持所有 NFT 项目和区块链。",
+    "href": "https://nftbank.ai/",
+    "title": "NFTBank",
+    "imageUrl": "/img/nav/nftbank10.png"
+  },
+  {
+    "id": 9,
+    "description": "CryptoSlam 是最近进入 NFT 工具市场的 900 万美元战略种子轮。该工具由 Clay Coffman 创建，分析 NFT 市场并按交易量对收藏品进行分类，每个收藏品都有自己的专用页面，涵盖实时销售、市场和铸币。\n\n同样，不同集合中的每个 NFT 也有一个显示价格、特殊特性和稀有度的页面。它根据全球指数、粉丝代币和 NFT 收藏品的销量对 NFT 进行排名。",
+    "href": "https://cryptoslam.io/",
+    "title": "CryptoSlam",
+    "imageUrl": "/img/nav/cryptoSlam10.png"
+  },
+  {
+    "id": 10,
+    "description": "Moby Insight 的Moby.gg拥有最时尚的用户体验和界面设计之一，提供实时 NFT 监控和洞察。\n\n它为您提供销售、鲸鱼、薄荷糖和钱包活动的实时信息。它还提供市场和铸币厂的排名，以及每当新 NFT 推出时通知用户的“智能警报”。\n\n该平台以 0.1 ETH 的价格提供上述服务，以及一系列历史数据和实时图表。Moby.gg还提供有关正在发生的交易的信息，包括在预售期间帮助用户衡量 NFT 的受欢迎程度。\n\n然而，据说 Moby.gg的用户体验不方便，因为所有提到的有价值的数据都在多个选项卡上，这使得交叉引用对用户来说变得困难和乏味。",
+    "href": "https://moby.gg/",
+    "title": "Moby.gg",
+    "imageUrl": "/img/nav/moby10.png"
+  }
+]

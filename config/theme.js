@@ -177,16 +177,16 @@ module.exports = {
         to: "/navigation",
         items: [
           {
-            label: "🏦 DEFI类",
-            to: "/navigation/defi",
-          },
-          {
             label: "🎇 NFT类",
             to: "/navigation/nft",
           },
           {
             label: "🛠 工具类",
             to: "/navigation/tool",
+          },
+          {
+            label: "🏦 DEFI类",
+            to: "/navigation/defi",
           },
           {
             label: "📈 数据类",

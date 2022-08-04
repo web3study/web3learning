@@ -1,7 +1,7 @@
 ---
 title: 分析类
 sidebar_label: 分析类
-sidebar_position: 20
+sidebar_position: 50
 image: /img/bac111.png
 description: 分析类
 ---

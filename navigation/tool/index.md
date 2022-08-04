@@ -1,9 +1,9 @@
 ---
-title: 工具
-sidebar_label: 工具
-sidebar_position: 10
+title: 工具类
+sidebar_label: 工具类
+sidebar_position: 20
 image: /img/bac111.png
-description: 工具
+description: 工具类
 ---
 import ToolNav from './ToolNav';
 

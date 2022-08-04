@@ -15,7 +15,7 @@ module.exports = {
         to: "wiki/introduction",
         items: [
           {
-            label: "🐈 前言",
+            label: "🔋 前言",
             to: "wiki/introduction",
           },
           {
@@ -23,20 +23,24 @@ module.exports = {
             to: "wiki/solidity",
           },
           {
-            label: "🖥 前端教程",
-            to: "wiki/web",
-          },
-          {
             label: "🤖 工具库教程",
             to: "wiki/tool",
           },
           {
-            label: "🪂 openzeppelin详解",
+            label: "🖥 前端教程",
+            to: "wiki/web",
+          },
+          {
+            label: "⚙️ openzeppelin详解",
             to: "wiki/oz",
           },
           {
             label: "🪂 源码解析",
             to: "wiki/code",
+          },
+          {
+            label: "👁 代码示例",
+            to: "wiki/example",
           },
         ],
       },

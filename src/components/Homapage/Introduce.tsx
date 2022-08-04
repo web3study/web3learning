@@ -19,6 +19,9 @@ export default function Introduce() {
                 <p className="pt-1 text-base sm:pt-3 sm:text-xl lg:text-lg xl:text-xl">
                   Web3 学习授课，旨在便于同学们学习、汇总、记录、使用平台，指向一个全新的学习汇总导航
                 </p>
+                <span className=" block text-4xl font-bold sm:text-5xl xl:text-3xl">
+                    这里有你想找到的入门知识
+                </span>
               </div>
             </div>
           </div>

@@ -11,6 +11,8 @@ import NftNav2 from './NftNav2';
 ![bac](./assets/bac-info12.jpg)
 
 ### 通用工具
+import {EmbedGiscus} from '@site/src/components/Talk'
+
 <NftNav></NftNav>
 
 ### 前10名NFT分析、使用工具
@@ -23,3 +25,6 @@ NFT 市场仍处于早期阶段，并有望在未来几年增长，各种日益�
 （以下为推荐，可能会与上面列举的重复）
 
 <NftNav2></NftNav2>
+
+
+<EmbedGiscus>giscusNftTools</EmbedGiscus>

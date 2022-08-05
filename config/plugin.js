@@ -53,7 +53,7 @@ module.exports = [
     {
       id: "fun",
       routeBasePath: "fun",
-      path: "./fun",
+      path: "fun",
       blogTitle: "fun",
       blogDescription: "blog",
       showReadingTime: true,

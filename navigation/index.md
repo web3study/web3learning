@@ -5,13 +5,13 @@ sidebar_position: 1
 image: /img/bac111.png
 description: 导航
 ---
-import Nav from './Nav';
+import {NftNav} from '@site/src/components/Nav/N1'
 
 ![img.png](assets/img.png)
 
 ### 热门推荐
 
-<Nav>./navList.json</Nav>
+<NftNav>./json/tool.json</NftNav>
   
 ### NFT
 

@@ -3,28 +3,28 @@
     "name":"coffee",
     "title": "cybercaf.eth",
     "href": "https://twitter.com/coolsy123",
-    "description": "这是介绍这是介绍这是介绍这是介绍这是介绍这是介绍",
+    "description": "----",
     "imageUrl": "/img/team/coffee.png"
   },
   {
     "name":"heisenberg",
     "title": "runtao.eth",
     "href": "https://twitter.com/bingowrtI",
-    "description": "这是介绍这是介绍这是介绍这是介绍这是介绍这是介绍",
+    "description": "----",
     "imageUrl": "/img/team/heisenberg.png"
   },
   {
     "name":"r0ckgh0st",
     "title": "r0ckgh0st.eth",
     "href": "https://twitter.com/GrantYu1",
-    "description": "这是介绍这是介绍这是介绍这是介绍这是介绍这是介绍",
+    "description": "----",
     "imageUrl": "/img/team/dabao.jpeg"
   },
   {
     "name":"ban",
     "title": "yzbban.eth",
     "href": "https://twitter.com/yzbban",
-    "description": "这是介绍这是介绍这是介绍这是介绍这是介绍这是介绍",
+    "description": "----",
     "imageUrl": "/img/team/ban.png"
   }
 ]

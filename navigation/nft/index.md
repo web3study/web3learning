@@ -5,15 +5,16 @@ sidebar_position: 10
 image: /img/bac111.png
 description: NFT相关及数据分析工具汇总
 ---
-import NftNav from './NftNav';
-import NftNav2 from './NftNav2';
+import {NftNav} from '@site/src/components/Nav/N1'
+import {NftNav2} from '@site/src/components/Nav/N2'
 
 ![bac](./assets/bac-info12.jpg)
 
 ### 通用工具
+
 import {EmbedGiscus} from '@site/src/components/Talk'
 
-<NftNav></NftNav>
+<NftNav>./json/tool.json</NftNav>
 
 ### 前10名NFT分析、使用工具
 
@@ -24,7 +25,6 @@ NFT 市场仍处于早期阶段，并有望在未来几年增长，各种日益�
 随着其他 NFT 用例的兴起，例如部分所有权、知识产权、价值存储、实物资产所有权证明和更复杂的金融工具，人们只能想象 NFT 工具的演变。但有一件事是肯定的，激动人心的时刻即将到来。
 （以下为推荐，可能会与上面列举的重复）
 
-<NftNav2></NftNav2>
-
+<NftNav2>./json/tool2.json</NftNav2>
 
 <EmbedGiscus>giscusNftTools</EmbedGiscus>

@@ -5,7 +5,7 @@ sidebar_position: 5
 image: /img/bac111.png
 description: 开发库
 ---
-import DevNav from './DevNav';
+import {NftNav} from '@site/src/components/Nav/N1'
 
 ### 工具
 
@@ -66,7 +66,7 @@ npm install npm --global # 升级 npm 到最新版本
 
 ### 主要工具
 这里主要介绍下常用的或者会用到的工具库（持续更新）
-<DevNav></DevNav>
+<NftNav>./json/devtool.json</NftNav>
 ---
 
 放松一下

@@ -1,4 +1,4 @@
-import React from "react";
+import React, {FC} from "react";
 
 type AuthorItem = {
     title: string;
@@ -6,11 +6,11 @@ type AuthorItem = {
     description: string;
     imageUrl: string;
 };
-
-const navList: AuthorItem[] = require("./navList2.json");
-
-// 主页ens介绍
-export default function NftNav() {
+type NftNavProps = {
+    children: React.ReactNode;
+};
+export const NftNav2: FC<NftNavProps> = ({children}) => {
+    const navList: AuthorItem[] = require('' + children);
     return (
         <div style={{display: 'flex', flexWrap: 'wrap', gap: '10px'}}>
             {navList.map((collection, index) => (

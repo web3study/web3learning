@@ -1,4 +1,4 @@
-import React from "react";
+import React, {FC} from "react";
 
 type AuthorItem = {
     title: string;
@@ -7,10 +7,12 @@ type AuthorItem = {
     imageUrl: string;
 };
 
-const navList: AuthorItem[] = require("./navList.json");
+type NftNavProps = {
+    children: React.ReactNode;
+};
 
-// 主页ens介绍
-export default function NftNav() {
+export const NftNav: FC<NftNavProps> = ({children}) => {
+    const navList: AuthorItem[] = require('' + children);
     return (
         <div style={{display: 'flex', flexWrap: 'wrap', textAlign: 'center', gap: '10px'}}>
             {navList.map((collection, index) => (
@@ -18,7 +20,7 @@ export default function NftNav() {
                      style={{padding: '10px', backgroundColor: '#eeeeee22', borderRadius: '10px', width: '200px'}}>
                     <a href={collection.href} target={"_blank"}>
                         <img src={collection.imageUrl} style={{width: '100px', height: '100px'}}/>
-                        <div>{collection.title}</div>
+                        <div style={{marginTop: '10px',fontSize:'18px'}}>{collection.title}</div>
                         <div style={{fontSize: '10px'}}>{collection.description}</div>
                     </a>
                 </div>

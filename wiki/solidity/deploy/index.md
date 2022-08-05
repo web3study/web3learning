@@ -46,6 +46,6 @@ import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
 
 本章节主要描述入门与常用的一些操作、指令或者编写，其他深层次的可以关注后续的文档更新或者阅读原文
 
-<DocCardList items={useCurrentSidebarCategory().items}/>
+<DocCardList items={useCurrentSidebarCategory().items} />
 
 <EmbedGiscus>deploySol</EmbedGiscus>

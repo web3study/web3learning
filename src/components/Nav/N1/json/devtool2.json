@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "title": "OpenZeppelin",
+    "href": "https://docs.openzeppelin.com/",
+    "description": "安全智能合约开发库",
+    "imageUrl": "/img/nav/oz.png"
+  },
+  {
+    "id": 2,
+    "title": "REMIX",
+    "href": "https://remix.ethereum.org/",
+    "description": "智能合约在线IDE",
+    "imageUrl": "/img/nav/remixlogo.jpeg"
+  },
+  {
+    "id": 3,
+    "title": "Metamask",
+    "href": "https://metamask.io/",
+    "description": "多端钱包，网页调试用",
+    "imageUrl": "/img/nav/metamasklogo.jpeg"
+  },
+  {
+    "id": 4,
+    "title": "infura",
+    "href": "https://www.infura.io/",
+    "description": "世界上最强大的高可用性区块链API和开发人员工具",
+    "imageUrl": "/img/nav/infura.jpeg"
+  },
+  {
+    "id": 5,
+    "title": "chain link",
+    "href": "https://chain.link/",
+    "description": "业内顶尖的智能合约去中心化预言机网络解决方案",
+    "imageUrl": "/img/nav/chainlink.jpeg"
+  },
+  {
+    "id": 6,
+    "title": "truffle",
+    "href": "https://trufflesuite.com/docs/truffle/",
+    "description": "进行 DApp 开发的世界级开发环境、测试框架",
+    "imageUrl": "/img/nav/truffle.jpeg"
+  },
+  {
+    "id": 7,
+    "title": "hardhat",
+    "href": "https://hardhat.org/hardhat-runner/docs",
+    "description": "编译、部署、测试和调试以太坊应用的开发环境",
+    "imageUrl": "/img/nav/hardhat.jpeg"
+  }
+]
+

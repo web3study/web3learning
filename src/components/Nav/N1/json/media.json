@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "title": "金色财经",
+    "href": "https://www.jinse.com/",
+    "description": "国内的区块链行业媒体平台",
+    "imageUrl": "/img/nav/jinse.png"
+  },
+  {
+    "id": 2,
+    "title": "巴比特",
+    "href": "https://www.8btc.com/",
+    "description": "区块链内容平台",
+    "imageUrl": "/img/nav/babite.jpeg"
+  },
+  {
+    "id": 3,
+    "title": "链节点",
+    "href": "https://www.chainnode.com/",
+    "description": "链节点 ChainNode，由巴比特社区品牌升级而来",
+    "imageUrl": "/img/nav/chainnode.png"
+  }
+]

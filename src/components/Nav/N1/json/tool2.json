@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "description": "最大的NFT交易网站",
+    "href": "https://opensea.io",
+    "title": "opensea",
+    "imageUrl": "/img/nav/opensea.svg"
+  },
+  {
+    "id": 2,
+    "description": "NFT交易平台",
+    "href": "https://rarible.com",
+    "title": "rarible",
+    "imageUrl": "/img/nav/rar.png"
+  },
+  {
+    "id": 3,
+    "description": "NFT数据统计网站",
+    "href": "https://www.finder.com/nfts/nft-collections",
+    "title": "finder",
+    "imageUrl": "/img/nav/finder.png"
+  },
+  {
+    "id": 4,
+    "description": "NFT的动态监听",
+    "href": "https://bestshow.io/#/Home",
+    "title": "NFTSniper",
+    "imageUrl": "/img/nav/bestshow.png"
+  },
+  {
+    "id": 5,
+    "description": "NFT信息聚合平台",
+    "href": "https://www.nftgo.io",
+    "title": "nftgo",
+    "imageUrl": "/img/nav/nftgo.png"
+  },
+  {
+    "id": 6,
+    "description": "NFT聚合类网站",
+    "href": "https://coniun.io",
+    "title": "coniun",
+    "imageUrl": "/img/nav/coniun.png"
+  },
+  {
+    "id": 7,
+    "description": "NFT聚合类网站",
+    "href": "https://app.watchtower.cc/pulse",
+    "title": "watchtower",
+    "imageUrl": "/img/nav/watchtower.jpeg"
+  },
+  {
+    "id": 8,
+    "description": "NFT综合行情网站",
+    "href": "https://compass.art",
+    "title": "compass",
+    "imageUrl": "/img/nav/compass.png"
+  }
+]

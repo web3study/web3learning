@@ -10,13 +10,16 @@ import {NftNav} from '@site/src/components/Nav/N1'
 ![img.png](assets/img.png)
 
 ### NFT
-<NftNav>./json/tool.json</NftNav>
+<NftNav>./json/tool2.json</NftNav>
+
 ### 工具类
+<NftNav>./json/devtool2.json</NftNav>
 
 ### 基础设施
+<NftNav>./json/baseapp.json</NftNav>
 
 ### 媒体咨询
+<NftNav>./json/media.json</NftNav>
 
-### 投资孵化
-
-
+### DAO
+<NftNav>./json/dao.json</NftNav>

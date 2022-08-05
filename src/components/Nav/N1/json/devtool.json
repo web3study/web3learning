@@ -7,14 +7,14 @@
     "imageUrl": "/img/nav/oz.png"
   },
   {
-    "id": 1,
+    "id": 2,
     "title": "REMIX",
     "href": "https://remix.ethereum.org/",
     "description": "智能合约在线IDE",
     "imageUrl": "/img/nav/remixlogo.jpeg"
   },
   {
-    "id": 2,
+    "id": 3,
     "title": "Metamask",
     "href": "https://metamask.io/",
     "description": "多端钱包，网页调试用",

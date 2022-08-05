@@ -9,12 +9,8 @@ import {NftNav} from '@site/src/components/Nav/N1'
 
 ![img.png](assets/img.png)
 
-### 热门推荐
-
-<NftNav>./json/tool.json</NftNav>
-  
 ### NFT
-
+<NftNav>./json/tool.json</NftNav>
 ### 工具类
 
 ### 基础设施

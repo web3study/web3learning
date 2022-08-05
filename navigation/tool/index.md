@@ -5,10 +5,9 @@ sidebar_position: 20
 image: /img/bac111.png
 description: 开发类
 ---
-import ToolNav from './ToolNav';
+import {NftNav} from '@site/src/components/Nav/N1'
 
-### 钱包
+### 工具
 
-<ToolNav></ToolNav>
+<NftNav>./json/devtool2.json</NftNav>
 
-### 工具2

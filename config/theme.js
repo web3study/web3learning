@@ -204,6 +204,10 @@ module.exports = {
             label: "🤢 题库",
             to: "/navigation/question",
           },
+          {
+            label: "📚 建议阅读",
+            to: "/navigation/book",
+          },
         ],
       },
       //此在 src pages 文件夹中

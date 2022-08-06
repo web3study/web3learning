@@ -1,8 +1,8 @@
 ---
-title: 建议阅读
-sidebar_label: 🔌建议阅读
+title: 推荐阅读
+sidebar_label: 🔌推荐阅读
 sidebar_position: 70
-description: 建议阅读
+description: 推荐阅读
 ---
 
 ### 白皮书
@@ -26,4 +26,4 @@ description: 建议阅读
 
 [区块链黑暗森林自救手册](./assets/区块链黑暗森林自救手册V1.pdf) 如果有安全相关的问题，可以阅读下，避免自己出现安全问题
 
-[激进市场](./assets/激进市场.pdf) 扩展阅读
+[激进市场](./assets/激进市场.pdf) 主要描述激进市场的一种思维

@@ -205,7 +205,7 @@ module.exports = {
             to: "/navigation/question",
           },
           {
-            label: "📚 建议阅读",
+            label: "📚 推荐阅读",
             to: "/navigation/book",
           },
         ],

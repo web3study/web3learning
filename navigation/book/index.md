@@ -7,10 +7,10 @@ description: 推荐阅读
 
 ### 白皮书
 
-
 [UniswapV2白皮书](./assets/uniswapV2.pdf) 集中的流动性，让个别有限合伙人能够对其资本配置的价格范围进行细微的控制。
 
-[UniswapV3白皮书](./assets/uniswapV3.pdf) | [UniswapV3 流动性数学](./assets/uniswapV3LiquidityMath.pdf) 集中的流动性，让个别有限合伙人能够对其资本配置的价格范围进行细微的控制。
+[UniswapV3白皮书](./assets/uniswapV3.pdf) | [UniswapV3 流动性数学](./assets/uniswapV3LiquidityMath.pdf)
+集中的流动性，让个别有限合伙人能够对其资本配置的价格范围进行细微的控制。
 
 [ChainlinkV2白皮书](./assets/chainlinkV2.pdf) 去中心化Oracle网络(DONs)在区块链生态系统中的作用，为智能合约提供去中心化服务套件的关键进展。
 
@@ -27,3 +27,16 @@ description: 推荐阅读
 [区块链黑暗森林自救手册](./assets/区块链黑暗森林自救手册V1.pdf) 如果有安全相关的问题，可以阅读下，避免自己出现安全问题
 
 [激进市场](./assets/激进市场.pdf) 主要描述激进市场的一种思维
+
+### 投研报告
+
+[头等舱](./assets/Report_Bored_Ape_Yacht_Club_Christina_PC_CN-43271985.pdf) BAYC 投研报告
+
+[比鲸资本](./assets/DAO赛道研报.pdf) DAO赛道研究报告（2022 1月5日）
+
+[溯元育新](./assets/DAO-Bankless_x_Gitcoin-2022.1-200.pdf) DAO 人类协作的新疆域（2022 1月）
+
+[证券研究报告](./assets/H3_AP202110221524258713_1.pdf) 2021年NFT行业概览:文化与社交的数字确权价值
+
+[Folius Ventures](./assets/foliusVenturesWeb3DeckV8-25-2021CN.pdf) Web3专题身处从1到N前夜,展望Web3.0未来（8-25-2021 版）
+

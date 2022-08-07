@@ -10,7 +10,7 @@ description: 推荐阅读
 
 [UniswapV2白皮书](./assets/uniswapV2.pdf) 集中的流动性，让个别有限合伙人能够对其资本配置的价格范围进行细微的控制。
 
-[UniswapV3白皮书](./assets/uniswapV3.pdf) | [UniswapV3 流动性数学](./asset/uniswap-v3-liquidity-math.pdf) 集中的流动性，让个别有限合伙人能够对其资本配置的价格范围进行细微的控制。
+[UniswapV3白皮书](./assets/uniswapV3.pdf) | [UniswapV3 流动性数学](./asset/uniswapV3LiquidityMath.pdf) 集中的流动性，让个别有限合伙人能够对其资本配置的价格范围进行细微的控制。
 
 [ChainlinkV2白皮书](./assets/chainlinkV2.pdf) 去中心化Oracle网络(DONs)在区块链生态系统中的作用，为智能合约提供去中心化服务套件的关键进展。
 

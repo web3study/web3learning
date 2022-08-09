@@ -52,3 +52,9 @@ Currently deployed using Vercel for the `main` branch in this repo.
   1. 添加zh分词搜素 `nodejieba`
   2. 添加 @easyops-cn/docusaurus-search-local
 
+### 其他内容
+  
+  1. 日常更新
+  2. 示例代码
+  3. 案例分析
+  4. 测试

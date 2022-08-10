@@ -119,6 +119,7 @@ contract NFT is ERC721URIStorage, Ownable {
 可铸造的ERC-721 OpenZeppelin令牌合约提供了一个`mint`函数，该函数只能由合约的所有者调用。默认情况下，所有者是合同的部署者地址。
 
 ```js
+// SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.0;
 
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";

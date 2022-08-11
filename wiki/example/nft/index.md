@@ -28,7 +28,7 @@ OpenZeppelin Wizard等工具为开发人员提供了单击和编写功能，以�
 * `remix`：直接使用在线编辑器即可 [Remix](https://remix.ethereum.org/)
 
 * `metamask`钱包：[Metamask](https://metamask.io/)
-*  `Rinkeby` 测试网水龙头：[Rinkeby]([https://rinkebyfaucet.com/](https://rinkebyfaucet.com/)) 另外chainlink也提供了一个[ChainLink Rinkeby]([https://faucetlink.to/select]())
+*  `Rinkeby` 测试网水龙头：[Rinkeby](https://rinkebyfaucet.com/) 另外chainlink也提供了一个[ChainLink Rinkeby](https://faucetlink.to/select)
 * `Opensea` 测试网，可以从这里查看到你部署的NFT显示的内容 [Opensea testnet](https://testnets.opensea.io/zh-CN) 此为测试网，主网为：[Opensea](https://opensea.io/)
 * `Rinkeby` 区块链浏览器 [Rinkeby scan](https://rinkeby.etherscan.io/)
 * `OpenZeppelin`合约开发库，这部分直接使用github上的数据来用（如果不行，后面会介绍下解决方案，通过remix插件使用本地的库来写）

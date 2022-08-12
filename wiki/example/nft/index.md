@@ -461,6 +461,8 @@ contract TestNft2 is ERC721Enumerable, Ownable {
      */
     function whitelistMint(address recipient) public payable returns (uint256) {
         require(msg.value == MINT_PRICE, "TestNft2: Whitelist price error");
+        require(whitelist[msg.sender], "TestNft2: Not in whitelist");
+        whitelist[msg.sender] = false;
         uint256 newTokenId = _tokenIds.current();
         require(newTokenId < TOTAL_SUPPLY, "TestNft2: Over total supply");
         _safeMint(recipient, newTokenId);

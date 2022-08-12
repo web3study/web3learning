@@ -273,6 +273,65 @@ npx hardhat run scripts/sample-script.js --network localhost
 
 恭喜你，你已经创建了一个项目，运行了一个Hardhat任务，编译了一个智能合约，安装了一个Waffle插件，使用Waffle和ethers.js插件编写并运行了一个测试，并部署了一个合约。
 
+### 配置项
+
+要设置您的配置，您必须从`hardhat.config.js`导出一个对象。
+该对象可以包含`defaultNetwork`、`networks`、`solid`、`paths` 和 `mocha` 等条目。
+
+例如
+
+```js
+module.exports = {
+  defaultNetwork: "rinkeby",
+  networks: {
+    hardhat: {
+    },
+    rinkeby: {
+      url: "https://eth-mainnet.alchemyapi.io/v2/123abc123abc123abc123abc123abcde",
+      accounts: [privateKey1, privateKey2, ...]
+    }
+  },
+  solidity: {
+    version: "0.5.15",
+    settings: {
+      optimizer: {
+        enabled: true,
+        runs: 200
+      }
+    }
+  },
+  paths: {
+    sources: "./contracts",
+    tests: "./test",
+    cache: "./cache",
+    artifacts: "./artifacts"
+  },
+  mocha: {
+    timeout: 20000
+  }
+}
+```
+
+网络配置字段是一个可选对象，其中网络名称映射到它们的配置。
+`Hardhat`中有两种网络:基于`JSON-RPC`的网络和内置的Hardhat网络。
+通过设置配置的`defaultNetwork`字段，您可以自定义运行Hardhat时默认使用的网络。
+如果忽略此配置，其默认值为`hardhat`
+
+- chainId: Hardhat Network的区块链使用的链ID号。默认值:31337。
+- from:作为默认发件人使用的地址。如果不提供，则使用Hardhat网络的第一个帐户。
+- gas:它的值应该是“auto”或一个数字。如果使用一个数字，它将是每个事务默认使用的天然气限额。如果使用“auto”，则会自动估算汽油限额。默认值:9500000。
+- gasPrice:它的值应该是“auto”或一个数字。这个参数表现得像气体。默认值:8000000000。气体倍增器:用来将气体估计结果相乘的数字
+- gasMultiplier:由于气体估计过程的不确定性，用来将气体估计结果相乘以使其有一些松弛的数字。默认值:1。
+- accounts：该字段可以被配置为以下之一： 
+描述高清钱包的对象。这是默认值。它可以具有以下任何字段：
+  - mnemonic：BIP39定义的12或24个单词助记符。默认值：`“test test test test test test test test test test test junk”`
+  - initialIndex：派生的初始索引。默认值：0。
+  - path：所有派生键的高清父母。默认值：`“M/44'/60'/0'/0”`。
+  - count：要得出的帐户数量。默认值：`20`。
+  - accountsBalance：分配给每个派生帐户的余额（在WEI中）的字符串。默认值：`“1000000000000000000000000”`（10000 ETH）。
+  HardHat网络将创建的初始帐户的数组。他们每个人都必须是一个具有`privateKey`和`balance`的对象。
+- blockGasLimit:在Hardhat网络的区块链中使用的区块气体限制。默认值:9500000
+
 
 <EmbedGiscus>deployWithHardhat</EmbedGiscus>
 

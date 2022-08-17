@@ -12,6 +12,15 @@ description: desc
 
 这里主要介绍ERC20，ERC777是ERC20的加强版，添加了对1820的支持，可以防止误将TOKEN打入不支持1820的合约之中
 
+### 所需环境
+
+* `remix`：直接使用在线编辑器即可 [Remix](https://remix.ethereum.org/)
+* `metamask`钱包：[Metamask](https://metamask.io/)
+*  `Rinkeby` 测试网水龙头：[Rinkeby](https://rinkebyfaucet.com/) 另外chainlink也提供了一个[ChainLink Rinkeby](https://faucetlink.to/select)
+* `Rinkeby` 区块链浏览器 [Rinkeby scan](https://rinkeby.etherscan.io/)
+* `OpenZeppelin`合约开发库，这部分直接使用github上的数据来用（如果不行，后面会介绍下解决方案，通过remix插件使用本地的库来写）
+
+
 ### 为什么要构建自己的ERC-20 TOKEN
 
 [ERC-20 标准](https://ethereum.org/en/developers/docs/standards/tokens/erc-20/)

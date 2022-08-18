@@ -5,6 +5,7 @@ sidebar_position: 20
 image: /img/bac111.png
 description: desc
 ---
+import {EmbedGiscus} from '@site/src/components/Talk'
 
 这里主要介绍 [Rainbowkit](https://www.rainbowkit.com/) 与 [wagmi](https://wagmi.sh/docs/getting-started) 库的使用
 
@@ -176,3 +177,4 @@ export default MyApp;
 
 其他的关于contract的调用，可以参考 [ wagmi ](https://wagmi.sh/docs/getting-started)
 
+<EmbedGiscus>giscusReact</EmbedGiscus>

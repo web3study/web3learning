@@ -7,7 +7,6 @@ module.exports = [
       indexDocs: true,
       indexDocSidebarParentCategories: 3,
       indexBlog: true,
-      indexPages: true,
       language: "zh",
       style: undefined,
       lunr: {

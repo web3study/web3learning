@@ -28,6 +28,8 @@ description: 推荐阅读
 
 [激进市场](./assets/激进市场.pdf) 主要描述激进市场的一种思维
 
+[How to NFT](./assets/how_to_nft.pdf) NFT的应用
+
 ### 投研报告
 
 [头等舱](./assets/Report_Bored_Ape_Yacht_Club_Christina_PC_CN-43271985.pdf) BAYC 投研报告

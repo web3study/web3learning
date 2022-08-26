@@ -32,6 +32,8 @@ description: 推荐阅读
 
 ### 投研报告
 
+[元宇宙动态研究与跟踪](./assets/元宇宙动态研究与跟踪.pdf) 元宇宙动态研究与跟踪
+
 [头等舱](./assets/Report_Bored_Ape_Yacht_Club_Christina_PC_CN-43271985.pdf) BAYC 投研报告
 
 [比鲸资本](./assets/DAO赛道研报.pdf) DAO赛道研究报告（2022 1月5日）

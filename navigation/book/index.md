@@ -30,6 +30,8 @@ description: 推荐阅读
 
 [How to NFT](./assets/how_to_nft.pdf) NFT的应用
 
+[深入浅出数据分析](./assets/深入浅出数据分析.pdf) 深入浅出数据分析
+
 ### 投研报告
 
 [元宇宙动态研究与跟踪](./assets/元宇宙动态研究与跟踪.pdf) 元宇宙动态研究与跟踪

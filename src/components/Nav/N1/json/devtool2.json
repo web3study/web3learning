@@ -47,6 +47,13 @@
     "href": "https://hardhat.org/hardhat-runner/docs",
     "description": "编译、部署、测试和调试以太坊应用的开发环境",
     "imageUrl": "/img/nav/hardhat.jpeg"
+  },
+  {
+    "id": 8,
+    "title": "eips",
+    "href": "https://eips.ethereum.org/erc",
+    "description": "EIP 列表",
+    "imageUrl": "/img/nav/eips.png"
   }
 ]
 

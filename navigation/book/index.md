@@ -30,7 +30,9 @@ description: 推荐阅读
 
 [激进市场](https://book.web3study.club/assets/激进市场.pdf) 主要描述激进市场的一种思维
 
-[How to NFT](https://book.web3study.club/assets/how_to_nft.pdf) NFT的应用
+[How to NFT](https://book.web3study.club/assets/how_to_nft.pdf) NFT的介绍及应用
+
+[How to Defi](https://book.web3study.club/assets/HowtoDeFi.pdf) Defi的介绍
 
 [深入浅出数据分析](https://book.web3study.club/assets/深入浅出数据分析.pdf) 深入浅出数据分析
 
@@ -40,9 +42,17 @@ description: 推荐阅读
 
 ### 投研报告
 
+[韭菜的自我修养](https://book.web3study.club/assets/20220404-A_Comprehensive_Guide_for_NFT_Novices-LION.pdf) 韭菜的自我修养
+
+[Nftgo 2022报告1-6月](https://book.web3study.club/assets/NFTGoNFTSemi-AnnualReport2022.pdf)  Nftgo NFT相关报告
+
+[Stepn 报告](https://book.web3study.club/assets/Report_Stepn_Lucky_PC_CN-83596412.pdf)  Stepn 报告相关报告
+
 [元宇宙动态研究与跟踪](https://book.web3study.club/assets/元宇宙动态研究与跟踪.pdf) 元宇宙动态研究与跟踪
 
 [6月投融事件](https://book.web3study.club/assets/6月投融事件.xlsx) 6月投融事件
+
+[谁是下一个Azuki 3月](https://book.web3study.club/assets/Who_is_The_Next_Azuki_NFT_Aerfa_Research_Final-1.pdf) 韭菜的自我修养
 
 [头等舱](https://book.web3study.club/assets/Report_Bored_Ape_Yacht_Club_Christina_PC_CN-43271985.pdf) BAYC 投研报告
 

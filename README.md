@@ -61,3 +61,9 @@ Currently deployed using Vercel for the `main` branch in this repo.
   5. vue wallet
 
 [![Stargazers web3learning](https://reporoster.com/stars/web3study/web3learning)](https://github.com/web3study/web3learning/stargazers)
+
+
+1. 申请github贡献者
+2. 社区成员申请表
+3. 考试测验![img.png](img.png)
+4. 安全建议

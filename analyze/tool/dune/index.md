@@ -12,5 +12,5 @@ Dune是区块链研究的一个强大的工具，完整的所有工具，您需�
 
 [简介](https://dune.com/docs/#dunecom)
 
-### 操作介绍：
+### 详细教程：
 <iframe src="https://player.bilibili.com/player.html?bvid=BV1pT411P7z2" scrolling="no" frameBorder="no" framespacing="0" allowFullScreen={false}></iframe>

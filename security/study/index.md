@@ -1,9 +1,9 @@
 ---
-title: 分析工具
-sidebar_label: 分析工具
-sidebar_position: 20
+title: 安全课
+sidebar_label: 安全课
+sidebar_position: 10
 image: /img/bac111.png
-description: 分析工具
+description: 问题科
 ---
 
 import DocCardList from '@theme/DocCardList';

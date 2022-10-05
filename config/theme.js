@@ -100,8 +100,8 @@ module.exports = {
         position: "left",
         items: [
           {
-            label: "👾 常见安全问题",
-            to: "/security/question",
+            label: "👾 安全教程",
+            to: "/security/study",
           },
           {
             label: "🐞 安全问题汇总",

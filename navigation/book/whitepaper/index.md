@@ -18,6 +18,6 @@ description: 白皮书
 
 [Balancer白皮书](https://book.web3study.club/assets/whitepaper-balancer.pdf) 一个非托管的通用自动做市商（AMM）协议，自我平衡的指数基金，不同的流动性池满足不同的需求
 
-[Bitcoin白皮书](https://book.web3study.club/assets/Bitcoin.pdf) 比特币白皮书：一种点对点电子货币系统
+[Bitcoin白皮书](https://book.web3study.club/assets/bitcoin.pdf) 比特币白皮书：一种点对点电子货币系统
 
 [Ethereum白皮书](https://ethereum.org/en/whitepaper/) 以太坊白皮书

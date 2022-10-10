@@ -1,6 +1,6 @@
 ---
-title: 安全课
-sidebar_label: 安全课
+title: 安全教程
+sidebar_label: 安全教程
 sidebar_position: 10
 image: /img/bac111.png
 description: 问题科

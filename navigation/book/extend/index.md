@@ -7,6 +7,8 @@ description: 扩展阅读
 
 ### 扩展阅读
 
+[DID元宇宙的信用基石](https://book.web3study.club/assets/DID%E5%85%83%E5%AE%87%E5%AE%99%E7%9A%84%E4%BF%A1%E7%94%A8%E5%9F%BA%E7%9F%B3.pdf) DID元宇宙的信用基石
+
 [MasteringEthereum](https://book.web3study.club/assets/MasteringEthereum.pdf) 以太坊入门书籍，微信阅读里可以免费阅读中文版
 
 [区块链黑暗森林自救手册](https://book.web3study.club/assets/区块链黑暗森林自救手册V1.pdf) 如果有安全相关的问题，可以阅读下，避免自己出现安全问题

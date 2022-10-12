@@ -7,6 +7,14 @@ description: 投研报告
 
 ### 投研报告
 
+[深度解析NFT和ETH之间相关性](https://book.web3study.club/assets/深度解析NFT和ETH之间相关性.pdf) 深度解析NFT和ETH之间相关性
+
+[NFT身处文化金融化时代我们应该做什么](https://book.web3study.club/assets/NFT身处文化金融化时代我们应该做什么.pdf) NFT身处文化金融化时代我们应该做什么
+
+[在市场低点时巨鲸如何抄底NFT](https://book.web3study.club/assets/在市场低点时巨鲸如何抄底NFT.pdf) 在市场低点时巨鲸如何抄底NFT
+
+[CURVE NFT深度研究报告](https://book.web3study.club/assets/CURVE_X0522.pdf) CURVE NFT深度研究报告
+
 [韭菜的自我修养](https://book.web3study.club/assets/20220404-A_Comprehensive_Guide_for_NFT_Novices-LION.pdf) 韭菜的自我修养
 
 [Nftgo 2022报告1-6月](https://book.web3study.club/assets/NFTGoNFTSemi-AnnualReport2022.pdf)  Nftgo NFT相关报告

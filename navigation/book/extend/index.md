@@ -13,6 +13,8 @@ description: 扩展阅读
 
 [区块链黑暗森林自救手册](https://book.web3study.club/assets/区块链黑暗森林自救手册V1.pdf) 如果有安全相关的问题，可以阅读下，避免自己出现安全问题
 
+[就业利息和货币通论](https://book.web3study.club/assets/%E5%B0%B1%E4%B8%9A%E5%88%A9%E6%81%AF%E5%92%8C%E8%B4%A7%E5%B8%81%E9%80%9A%E8%AE%BA.pdf) 就业、利息和货币通论 
+
 [激进市场](https://book.web3study.club/assets/激进市场.pdf) 主要描述激进市场的一种思维
 
 [How to NFT](https://book.web3study.club/assets/how_to_nft.pdf) NFT的介绍及应用

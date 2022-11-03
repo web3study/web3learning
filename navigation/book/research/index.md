@@ -7,6 +7,10 @@ description: 投研报告
 
 ### 投研报告
 
+[元宇宙动态研究与跟踪](https://book.web3study.club/assets/元宇宙动态研究与跟踪.pdf) 元宇宙动态研究与跟踪
+
+[Report_Art_Gobblers_Christina](https://book.web3study.club/assets/Report_Art_Gobblers_Christina.pdf) Art Gobblers头等舱分析报告
+
 [深度解析NFT和ETH之间相关性](https://book.web3study.club/assets/深度解析NFT和ETH之间相关性.pdf) 深度解析NFT和ETH之间相关性
 
 [NFT身处文化金融化时代我们应该做什么](https://book.web3study.club/assets/NFT身处文化金融化时代我们应该做什么.pdf) NFT身处文化金融化时代我们应该做什么

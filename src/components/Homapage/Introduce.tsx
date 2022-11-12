@@ -22,6 +22,9 @@ export default function Introduce() {
                 <span className=" block text-4xl font-bold sm:text-5xl xl:text-3xl">
                     这里有你想找到的入门知识
                 </span>
+                <span className=" block text-4xl font-bold sm:text-5xl xl:text-3xl">
+                    Do nothing out of contentiousness or out of egotism, but with humility consider others superior to you ——Philippians
+                </span>
               </div>
             </div>
           </div>

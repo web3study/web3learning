@@ -80,6 +80,7 @@ Alice这里加糖处理好排骨之后，会通过Cindy发给Bob，Bob使用醋�
    1. aB = a(bG)
    2. bA=b(aG)
    其中就可以把  a(bG) = b(aG) ，即 aB = bA
+
 ECDHE就是以上的椭圆曲线与DH混合起来的密钥交换算法，正向容易、逆向困难
 
 ## 扩展阅读

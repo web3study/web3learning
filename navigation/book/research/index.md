@@ -7,6 +7,10 @@ description: 各个机构发出的投研报告
 
 ### 投研报告
 
+[币安Web3社交研究报告](https://book.web3study.club/assets/币安Web3社交研究报告.pdf) 币安Web3社交研究报告
+
+[OpenSe背后的协议Wyvern](https://book.web3study.club/assets/OpenSe背后的协议Wyvern.pdf) OpenSe背后的协议Wyvern
+
 [元宇宙动态研究与跟踪](https://book.web3study.club/assets/元宇宙动态研究与跟踪.pdf) 元宇宙动态研究与跟踪
 
 [Report_Art_Gobblers_Christina](https://book.web3study.club/assets/Report_Art_Gobblers_Christina.pdf) Art Gobblers头等舱分析报告

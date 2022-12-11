@@ -2,7 +2,7 @@
 title: 创业必读
 sidebar_label: 🏠创业必读
 sidebar_position: 50
-description: 创业必读
+description: 一些管理、产品相关的内容
 ---
 
 ### 创业必读

@@ -2,7 +2,7 @@
 title: 扩展阅读
 sidebar_label: 🦌扩展阅读
 sidebar_position: 40
-description: 扩展阅读
+description: 主要针对区块链的周边相关的文章或书籍，大概需要了解的内容
 ---
 
 ### 扩展阅读

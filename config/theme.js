@@ -41,6 +41,9 @@ module.exports = {
           {
             label: "👁 代码示例",
             to: "wiki/example",
+          },{
+            label: "🏡 基础知识",
+            to: "wiki/baseknowledge",
           },
         ],
       },

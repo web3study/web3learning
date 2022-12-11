@@ -2,7 +2,7 @@
 title: 投研报告
 sidebar_label: 👁投研报告
 sidebar_position: 30
-description: 投研报告
+description: 各个机构发出的投研报告
 ---
 
 ### 投研报告

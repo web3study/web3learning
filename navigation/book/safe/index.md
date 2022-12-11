@@ -2,7 +2,7 @@
 title: 安全报告
 sidebar_label: 🔑安全报告
 sidebar_position: 20
-description: 安全报告
+description: 安全主题内容，比如一些安全机构的分析报告
 ---
 
 ### 安全报告

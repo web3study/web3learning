@@ -7,6 +7,10 @@ description: 各个机构发出的投研报告
 
 ### 投研报告
 
+[人生亏钱指南](https://book.web3study.club/assets/币安Web3社交研究报告.pdf) 人生亏钱指南
+
+[Aptos投研报告](https://book.web3study.club/assets/Aptos投研报告.pdf) Aptos投研报告
+
 [币安Web3社交研究报告](https://book.web3study.club/assets/币安Web3社交研究报告.pdf) 币安Web3社交研究报告
 
 [OpenSe背后的协议Wyvern](https://book.web3study.club/assets/OpenSe背后的协议Wyvern.pdf) OpenSe背后的协议Wyvern
@@ -33,7 +37,7 @@ description: 各个机构发出的投研报告
 
 [6月投融事件](https://book.web3study.club/assets/6月投融事件.xlsx) 6月投融事件
 
-[谁是下一个Azuki 3月](https://book.web3study.club/assets/Who_is_The_Next_Azuki_NFT_Aerfa_Research_Final-1.pdf) 韭菜的自我修养
+[谁是下一个Azuki 3月](https://book.web3study.club/assets/Who_is_The_Next_Azuki_NFT_Aerfa_Research_Final-1.pdf) 谁是下一个Azuki
 
 [头等舱](https://book.web3study.club/assets/Report_Bored_Ape_Yacht_Club_Christina_PC_CN-43271985.pdf) BAYC 投研报告
 

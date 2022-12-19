@@ -7,7 +7,7 @@ description: 各个机构发出的投研报告
 
 ### 投研报告
 
-[人生亏钱指南](https://book.web3study.club/assets/币安Web3社交研究报告.pdf) 人生亏钱指南
+[人生亏钱指南](https://book.web3study.club/assets/人生亏钱指南.pdf) 人生亏钱指南
 
 [Aptos投研报告](https://book.web3study.club/assets/Aptos投研报告.pdf) Aptos投研报告
 

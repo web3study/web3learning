@@ -7,6 +7,8 @@ description: 各个机构发出的投研报告
 
 ### 投研报告
 
+[2022年在加密市场里真金白银得到的22个教训](https://book.web3study.club/assets/2022年在加密市场里真金白银得到的22个教训.pdf) 2022年在加密市场里真金白银得到的22个教训
+
 [人生亏钱指南](https://book.web3study.club/assets/人生亏钱指南.pdf) 人生亏钱指南
 
 [Aptos投研报告](https://book.web3study.club/assets/Aptos投研报告.pdf) Aptos投研报告

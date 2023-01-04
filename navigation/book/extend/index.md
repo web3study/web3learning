@@ -9,6 +9,8 @@ description: 主要针对区块链的周边相关的文章或书籍，大概需�
 
 [深入浅出密码学2012中文版](https://book.web3study.club/assets/深入浅出密码学2012中文版.pdf) 深入浅出密码学2012中文版
 
+[计算机编程英语词汇](https://book.web3study.club/assets/计算机编程英语词汇.pdf) 计算机编程英语词汇
+
 [简洁非交互零知识证明综述](https://book.web3study.club/assets/简洁非交互零知识证明综述.pdf) 简洁非交互零知识证明综述
 
 [DID元宇宙的信用基石](https://book.web3study.club/assets/DID%E5%85%83%E5%AE%87%E5%AE%99%E7%9A%84%E4%BF%A1%E7%94%A8%E5%9F%BA%E7%9F%B3.pdf) DID元宇宙的信用基石

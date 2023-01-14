@@ -7,6 +7,8 @@ description: 各个机构发出的投研报告
 
 ### 投研报告
 
+[2023技术趋势报告](https://book.web3study.club/assets/2023技术趋势报告.pdf) 2023技术趋势报告
+
 [DODO研究院全解NFTfi赛道版图](https://book.web3study.club/assets/DODO研究院全解NFTfi赛道版图.pdf) DODO研究院全解NFTfi赛道版图
 
 [2022年在加密市场里真金白银得到的22个教训](https://book.web3study.club/assets/2022年在加密市场里真金白银得到的22个教训.pdf) 2022年在加密市场里真金白银得到的22个教训
